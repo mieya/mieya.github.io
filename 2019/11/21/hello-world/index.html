@@ -339,6 +339,22 @@
   
 
   
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "http://yoursite.com/2019/11/21/hello-world/",
+  owner: 'JoeyBling',
+  repo: 'yilia-plus-demo',
+  oauth: {
+    client_id: '1062039060f4021e8ae2',
+    client_secret: '6ffbfcbd49ef5b123d524664657145a662179f34',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
+  
 
 
           </div>
