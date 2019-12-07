@@ -10,19 +10,17 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="题目　　下载附件，从题目看就知道是py交易，但为确保万一，我们先直接右键查看文件属性　　确认了是pyc文件，于是直接在线反编译 ，因为这题没有修改magic number，因此我们可以直接得到源代码↓            import base64  def encode(message):     s = &amp;apos;&amp;apos;     for i in message:         x">
+  <meta name="description" content="题目　　下载附件，从题目看就知道是py交易，但为确保万一，我们先直接右键查看文件属性/img/191207/01.png　　确认了是pyc文件，于是直接在线反编译 ，因为这题没有修改magic number，因此我们可以直接得到源代码↓            import base64  def encode(message):     s = &amp;apos;&amp;apos;     for i in">
 <meta property="og:type" content="article">
 <meta property="og:title" content="XCTF 逆向新手区 python-trade">
 <meta property="og:url" content="http://yoursite.com/2019/12/07/XCTF-逆向新手区-python-trade/index.html">
 <meta property="og:site_name" content="lunalhx">
-<meta property="og:description" content="题目　　下载附件，从题目看就知道是py交易，但为确保万一，我们先直接右键查看文件属性　　确认了是pyc文件，于是直接在线反编译 ，因为这题没有修改magic number，因此我们可以直接得到源代码↓            import base64  def encode(message):     s = &amp;apos;&amp;apos;     for i in message:         x">
+<meta property="og:description" content="题目　　下载附件，从题目看就知道是py交易，但为确保万一，我们先直接右键查看文件属性/img/191207/01.png　　确认了是pyc文件，于是直接在线反编译 ，因为这题没有修改magic number，因此我们可以直接得到源代码↓            import base64  def encode(message):     s = &amp;apos;&amp;apos;     for i in">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/source/img/191207/01.png">
-<meta property="og:updated_time" content="2019-12-07T07:58:46.208Z">
+<meta property="og:updated_time" content="2019-12-07T08:08:02.115Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="XCTF 逆向新手区 python-trade">
-<meta name="twitter:description" content="题目　　下载附件，从题目看就知道是py交易，但为确保万一，我们先直接右键查看文件属性　　确认了是pyc文件，于是直接在线反编译 ，因为这题没有修改magic number，因此我们可以直接得到源代码↓            import base64  def encode(message):     s = &amp;apos;&amp;apos;     for i in message:         x">
-<meta name="twitter:image" content="http://yoursite.com/source/img/191207/01.png">
+<meta name="twitter:description" content="题目　　下载附件，从题目看就知道是py交易，但为确保万一，我们先直接右键查看文件属性/img/191207/01.png　　确认了是pyc文件，于是直接在线反编译 ，因为这题没有修改magic number，因此我们可以直接得到源代码↓            import base64  def encode(message):     s = &amp;apos;&amp;apos;     for i in">
   
     <link rel="alternative" href="/atom.xml" title="lunalhx" type="application/atom+xml">
   
@@ -237,7 +235,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">341字</span>
+      <span class="post-count">305字</span>
     </span>
   </span>
 
@@ -257,7 +255,7 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h5 id="题目"><a href="#题目" class="headerlink" title="题目　　"></a>题目　　</h5><p>下载附件，从题目看就知道是<del>py交易</del>，但为确保万一，我们先直接右键查看文件属性<br><img src="/source/img/191207/01.png" alt><br>　　确认了是pyc文件，于是直接<a href="https://tool.lu/pyc/" target="_blank" rel="noopener">在线反编译</a> ，因为这题没有修改magic number，因此我们可以直接得到源代码↓    </p>
+    <h5 id="题目"><a href="#题目" class="headerlink" title="题目　　"></a>题目　　</h5><p>下载附件，从题目看就知道是<del>py交易</del>，但为确保万一，我们先直接右键查看文件属性<br>/img/191207/01.png<br>　　确认了是pyc文件，于是直接<a href="https://tool.lu/pyc/" target="_blank" rel="noopener">在线反编译</a> ，因为这题没有修改magic number，因此我们可以直接得到源代码↓    </p>
 <pre><code>       import base64
 
 def encode(message):
@@ -276,7 +274,7 @@ flag = raw_input()
 if encode(flag) == correct:
     print &apos;correct&apos;
 else:
-    print &apos;wrong&apos;</code></pre><p>  我们可知按照源代码的思路为：<br>   &#160; &#160; &#160; &#160;1、x = 某符号的ascii值与32异或<br>    &#160; &#160; &#160; &#160;2、x+16<br>      &#160; &#160; &#160; &#160;3、再把得到的x串起来，char类型输出字符串<br>      &#160; &#160; &#160; &#160;4、将字符串再进行base64操作<br>      &#160; &#160; &#160; &#160;5、得到的结果为XlNkVmtUI1MgXWBZXCFeKY+AaXNt<br>       逆向思维：<br>       &#160; &#160; &#160; &#160;1、将base64（XlNkVmtUI1MgXWBZXCFeKY+AaXNt）解密得到字符串<br>       &#160; &#160; &#160; &#160;2、将字符串转换为ascii码<br>       &#160; &#160; &#160; &#160;3、ascii码减去16<br>       &#160; &#160; &#160; &#160;4、ascii值与32异或<br>       &#160; &#160; &#160; &#160;5、按char形式输出加工后的字符串   </p>
+    print &apos;wrong&apos;</code></pre><p>  我们可知按照源代码的思路为：<br>  <a id="more"></a><br>   1、x = 某符号的ascii值与32异或<br>   2、x+16<br>      3、再把得到的x串起来，char类型输出字符串<br>      4、将字符串再进行base64操作<br>      5、得到的结果为XlNkVmtUI1MgXWBZXCFeKY+AaXNt<br>       逆向思维：<br>       1、将base64（XlNkVmtUI1MgXWBZXCFeKY+AaXNt）解密得到字符串<br>       2、将字符串转换为ascii码<br>       3、ascii码减去16<br>       4、ascii值与32异或<br>       5、按char形式输出加工后的字符串   </p>
 <pre><code> import base64  
  s=&apos;XlNkVmtUI1MgXWBZXCFeKY+AaXNt&apos;   
  str=base64.b64decode(s)   

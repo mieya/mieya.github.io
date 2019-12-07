@@ -233,7 +233,7 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h5 id="题目"><a href="#题目" class="headerlink" title="题目　　"></a>题目　　</h5><p>下载附件，从题目看就知道是<del>py交易</del>，但为确保万一，我们先直接右键查看文件属性<br><img src="/source/img/191207/01.png" alt><br>　　确认了是pyc文件，于是直接<a href="https://tool.lu/pyc/" target="_blank" rel="noopener">在线反编译</a> ，因为这题没有修改magic number，因此我们可以直接得到源代码↓    </p>
+    <h5 id="题目"><a href="#题目" class="headerlink" title="题目　　"></a>题目　　</h5><p>下载附件，从题目看就知道是<del>py交易</del>，但为确保万一，我们先直接右键查看文件属性<br>/img/191207/01.png<br>　　确认了是pyc文件，于是直接<a href="https://tool.lu/pyc/" target="_blank" rel="noopener">在线反编译</a> ，因为这题没有修改magic number，因此我们可以直接得到源代码↓    </p>
 <pre><code>       import base64
 
 def encode(message):
@@ -252,17 +252,10 @@ flag = raw_input()
 if encode(flag) == correct:
     print &apos;correct&apos;
 else:
-    print &apos;wrong&apos;</code></pre><p>  我们可知按照源代码的思路为：<br>   &#160; &#160; &#160; &#160;1、x = 某符号的ascii值与32异或<br>    &#160; &#160; &#160; &#160;2、x+16<br>      &#160; &#160; &#160; &#160;3、再把得到的x串起来，char类型输出字符串<br>      &#160; &#160; &#160; &#160;4、将字符串再进行base64操作<br>      &#160; &#160; &#160; &#160;5、得到的结果为XlNkVmtUI1MgXWBZXCFeKY+AaXNt<br>       逆向思维：<br>       &#160; &#160; &#160; &#160;1、将base64（XlNkVmtUI1MgXWBZXCFeKY+AaXNt）解密得到字符串<br>       &#160; &#160; &#160; &#160;2、将字符串转换为ascii码<br>       &#160; &#160; &#160; &#160;3、ascii码减去16<br>       &#160; &#160; &#160; &#160;4、ascii值与32异或<br>       &#160; &#160; &#160; &#160;5、按char形式输出加工后的字符串   </p>
-<pre><code> import base64  
- s=&apos;XlNkVmtUI1MgXWBZXCFeKY+AaXNt&apos;   
- str=base64.b64decode(s)   
-flag=&apos;&apos;
-for i in str:
-    i-=16
-    i^=32
-    flag+=chr(i)
-print(flag)   </code></pre><h5 id="flag"><a href="#flag" class="headerlink" title="flag"></a>flag</h5><p>运行脚本得到flag：   </p>
-<pre><code>nctf{d3c0mpil1n9_PyC}</code></pre>
+    print &apos;wrong&apos;</code></pre><p>  我们可知按照源代码的思路为：<br>
+    
+    <a class="article-more-a" href="/2019/12/07/XCTF-逆向新手区-python-trade/#more">more >></a>
+    
     
 
     
