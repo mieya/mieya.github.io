@@ -6,20 +6,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>lunalhx</title>
+  <title>C语言动态数组 | lunalhx</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-    
-    <meta name="keywords" content="">
-  
-  <meta property="og:type" content="website">
-<meta property="og:title" content="lunalhx">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="动态数组   一：使用动态数组的原因及其构成  &amp;#160; &amp;#160; &amp;#160; &amp;#160;由于在实际的编程中，往往所需的内存空间取决于实际的输入，而无法预先确定。为了解决上述问题，C语言提供了一些内存管理函数，这些内存管理函数结合指针可以按需要动态地分配内存空间，来构建动态数组。动态数组的内存空间是从堆（heap）上分配（即动态分配）的。是通过执行代码而为其分配存储空间，为有效地利用内">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C语言动态数组">
+<meta property="og:url" content="http://yoursite.com/2020/03/08/C语言动态数组/index.html">
 <meta property="og:site_name" content="lunalhx">
+<meta property="og:description" content="动态数组   一：使用动态数组的原因及其构成  &amp;#160; &amp;#160; &amp;#160; &amp;#160;由于在实际的编程中，往往所需的内存空间取决于实际的输入，而无法预先确定。为了解决上述问题，C语言提供了一些内存管理函数，这些内存管理函数结合指针可以按需要动态地分配内存空间，来构建动态数组。动态数组的内存空间是从堆（heap）上分配（即动态分配）的。是通过执行代码而为其分配存储空间，为有效地利用内">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/img/200308/1.png">
+<meta property="og:image" content="http://yoursite.com/img/200308/2.png">
+<meta property="og:image" content="http://yoursite.com/img/200308/3.png">
+<meta property="og:image" content="http://yoursite.com/img/200308/4.png">
+<meta property="og:updated_time" content="2020-03-08T12:18:48.914Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="lunalhx">
+<meta name="twitter:title" content="C语言动态数组">
+<meta name="twitter:description" content="动态数组   一：使用动态数组的原因及其构成  &amp;#160; &amp;#160; &amp;#160; &amp;#160;由于在实际的编程中，往往所需的内存空间取决于实际的输入，而无法预先确定。为了解决上述问题，C语言提供了一些内存管理函数，这些内存管理函数结合指针可以按需要动态地分配内存空间，来构建动态数组。动态数组的内存空间是从堆（heap）上分配（即动态分配）的。是通过执行代码而为其分配存储空间，为有效地利用内">
+<meta name="twitter:image" content="http://yoursite.com/img/200308/1.png">
   
     <link rel="alternative" href="/atom.xml" title="lunalhx" type="application/atom+xml">
   
@@ -201,25 +207,25 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-
-  
-    <article id="post-C语言动态数组" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-C语言动态数组" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/03/08/C语言动态数组/" target="_blank">C语言动态数组</a>
-  
+    <h1 class="article-title" itemprop="name">
+      C语言动态数组
     </h1>
   
 
 
   
   
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
 <a href="/2020/03/08/C语言动态数组/" class="archive-article-date">
         <time datetime="2020-03-08T11:42:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-08</time>
 </a>
@@ -227,6 +233,27 @@
   
   
     
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">1.5k字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">6分</span>
+    </span>
+  </span>
+</div>
+
 
   
   </header>
@@ -237,13 +264,218 @@
 <h5>一：使用动态数组的原因及其构成</h5>
 
 <p>&#160; &#160; &#160; &#160;由于在实际的编程中，往往所需的内存空间取决于实际的输入，而无法预先确定。为了解决上述问题，C语言提供了一些内存管理函数，这些内存管理函数结合指针可以按需要动态地分配内存空间，来构建动态数组。动态数组的内存空间是从堆（heap）上分配（即动态分配）的。是通过执行代码而为其分配存储空间，为有效地利用内存资源提供了手段。   </p>
-    
-    <a class="article-more-a" href="/2020/03/08/C语言动态数组/#more">more >></a>
-    
-    
+<a id="more"></a>
+
+<h5>二：动态数组与静态数组的对比</h5> 
+&#160; &#160; &#160; &#160;对于静态数组，其创建非常方便，使用完也无需释放，要引用也简单，但是创建后无法改变其大小是其致命弱点。  
+&#160; &#160; &#160; &#160;对于动态数组，其创建麻烦，使用完必须由程序员释放，否则严重会引起内存泄露。但使用非常灵活，能根据程序需要动态分配大小。  
+
+<h5>三：动态内存分配函数</h5>
+
+
+<table>
+<thead>
+<tr>
+<th>函数原型</th>
+<th>返回</th>
+<th>功能说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>void *malloc(unsigned int size);</td>
+<td>成功：返回所开辟空间首地址 失败：返回空指针</td>
+<td>向系统申请size字节的 堆空间</td>
+</tr>
+<tr>
+<td>void *calloc(unsigned int num,unsigned int size);</td>
+<td>成功：返回所开辟空间首地址 失败：返回空指针</td>
+<td>按类型申请num个size字节的堆空间</td>
+</tr>
+<tr>
+<td>void *realloc(void *p,unsigned int size);</td>
+<td>成功：返回所开辟空间首地址 失败：返回空指针</td>
+<td>将p指向的堆空间变为 size</td>
+</tr>
+<tr>
+<td>释放内存函数：void free(void *p);         无返回值，释放p指向的堆空间。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><h5>四：如何构建动态数组</h5>原则：创建的时候从外层往里层，逐层创建；而释放的时候从里层往外层，逐层释放。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>指针：构建一维数组，需要一维指针；构建二维数组，需要一维、二维指针；三维需要一、二、三维指针；以此类推。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><h5>五：程序示例</h5></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&#160; &#160; &#160; &#160;在了解动态数组以前，我们只知道预先给程序开辟好内存空间，然后进行操作。如：</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int arr[5];</span><br></pre></td></tr></table></figure></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>&#160; &#160; &#160; &#160;这个数组在程序执行的过程中，开辟的内存空间是一直存在的，除非等到这个函数执行完毕，才会将空间释放。给我们造成了一些使用上的不方便，所以C中提供了一些动态内存分配函数。<br>例：  </p>
+<pre><code>double * p;  
+p = (double*)malloc(30*(double))  </code></pre><p>&#160; &#160; &#160; &#160;在这两行代码中，开辟了30个double类型大小的空间，然后把p指向这个空间的位置。指针p指向的事第一个double值，而不是全部开辟的30个double的空间。就和数组一样，指向数组的指针式指向数组首元素的地址，并不是整个数组的元素。<br>例：声明动态数组↓  </p>
+<pre><code>int arr[n];  
+p = (int *)malloc(n*sizeof(int));  </code></pre><p>例：动态内存分配函数↓  </p>
+<pre><code>#include&lt;stdio.h&gt;  
+#include&lt;stdlib.h&gt;        //定义杂项函数以及内存分配函数   
+int main(void){
+    char * p = NULL;    //声明一个char类型的空指针
+    p = (char *)malloc(10*sizeof(char));//使用malloc分配内存的首地址，然后赋值给p 
+    if(p==NULL){
+        printf(&quot;动态申请内存失败！\n&quot;);
+        exit(1);                       //异常退出 
+    } 
+    *p = 5;                //将分配的内存值，设为5 
+    printf(&quot;%d\n&quot;,*p);    //输出分配的内存值
+    free(p);
+return 0; 
+}   </code></pre><p>运行结果：<br><img src="/img/200308/1.png" alt><br>一维动态数组的创建：  </p>
+<pre><code>#include&lt;stdio.h&gt;
+#include&lt;stdlib.h&gt;
+int main(){
+    int l,i;
+    int * array;
+    printf(&quot;请输入所要创建的一维动态数组的长度：&quot;);
+    scanf(&quot;%d&quot;,&amp;l);
+    array=(int*)calloc(l,sizeof(int));    //按类型申请l个int所占字节的堆空间
+    for(i=0;i&lt;l;i++){
+        array[i]=i+1;
+        printf(&quot;%d\t&quot;,array[i]);
+    }
+    free(array);    //释放一维数组 
+    return 0;
+}  </code></pre><p>运行结果：<br><img src="/img/200308/2.png" alt>  </p>
+<p>二维数组的创建：  </p>
+<pre><code>#include&lt;stdio.h&gt;
+#include&lt;stdlib.h&gt;
+int main(){
+    int n1,n2;
+    int ** array;    //定义一个二维数组 
+    printf(&quot;请输入动态二维数组的第一个维度：&quot;);
+    scanf(&quot;%d&quot;,&amp;n1);
+    printf(&quot;请输入动态二维数组的第二个维度：&quot;);
+    scanf(&quot;%d&quot;,&amp;n2);
+    array=(int**)calloc(n1,sizeof(int));    //创建的时候从外层到里层
+    for(int i=0;i&lt;n1;i++){
+        array[i]=(int*)calloc(n2,sizeof(int));    //里层申请内存 
+    }
+    for(int i=0;i&lt;n1;i++){
+        for(int j=0;j&lt;n2;j++){
+            array[i][j]=i*n2+j+1;
+            printf(&quot;%d\t&quot;,array[i][j]);
+        }
+        printf(&quot;\n&quot;);
+    } 
+    for(int i=0;i&lt;n1;i++)
+        free(array[i]);        //释放第二维指针
+    free(array);            //释放第一维指针
+    return 0;
+}</code></pre><p>运行效果：<br><img src="/img/200308/3.png" alt><br>三维数组的创建：（从外到里）  </p>
+<pre><code>#include&lt;stdio.h&gt;
+#include&lt;stdlib.h&gt;
+int i,j,k;
+int n1,n2,n3;
+int ***array;
+scanf(&quot;%d%d%d&quot;,&amp;n1,&amp;n2,&amp;n3);
+array=(int***)calloc(n1,sizeof(int**));
+for(i=0;i&lt;n1;i++)
+{
+    array[i]=(int**)calloc(n2,sizeof(int*));
+    for(j=0;j&lt;n2;j++)
+    {
+        array[i][j]=(int*)calloc(n3,sizeof(int));
+        for(k=0;k&lt;n3;k++)
+        {
+            array[i][j][k]=i+j+k+1;
+        }
+    }
+}  </code></pre><p>三维数组内存的释放：（从里到外）  </p>
+<pre><code>for(i=0;i&lt;n1;i++)
+{
+    for(j=0;j&lt;n2;j++)
+    {
+        free(array[i][j]);//释放第三维指针
+    }
+}
+for(i=0;i&lt;n1;i++)
+{
+    free(array[i]);//释放第二维指针
+}
+free(array);//释放第一维指针  </code></pre><p>补充说明：<br>1.使用sizeof的目的是用来计算一种类型的占有的字节数，以便适合不同的编译器。<br>2.使用sizeof的目的是用来计算一种类型的占有的字节数，以便适合不同的编译器。<br>3.绝不能对非动态分配存储块使用free。也不能对同一块内存区同时用free释放两次。 如：free(p);free(p);    </p>
+<p>头文件：<br><img src="/img/200308/4.png" alt><br>可知要使用动态分配内存数组，可以使用#include&lt;stdlib.h&gt;头文件。</p>
 
     
 
+    
+    <div class="page-reward">
+      <a href="javascript:void(0);" class="page-reward-btn tooltip-top" target="_self">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/alipay.png">
+                    <span class="reward-type">支付宝</span>
+                  </div>
+                  
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/weixin.png">
+                    <span class="reward-type">微信</span>
+                  </div>
+                  
+                </div>
+              </span>
+            </span>
+          </span>
+        </div>
+      </a>
+    </div>
+    
+
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          望舒
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="http://yoursite.com/2020/03/08/C语言动态数组/" title="C语言动态数组" target="_blank">http://yoursite.com/2020/03/08/C语言动态数组/</a>
+        </li>
+        
+        <li>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
+        </li>
+        
+      </ul>
+    </div>
     
 
   </div>
@@ -253,16 +485,76 @@
     
 
     
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/03/08/C语言动态数组/">展开全文 >></a>
-    </p>
+
     
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/03/08/C语言动态数组/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
 
     
     <div class="clearfix"></div>
   </div>
   </div>
 </article>
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2020/02/14/刹那/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">刹那</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -283,554 +575,14 @@
 
 
 
-  
-    <article id="post-刹那" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/02/14/刹那/" target="_blank">刹那</a>
-  
-    </h1>
-  
 
 
-  
-  
-<a href="/2020/02/14/刹那/" class="archive-article-date">
-        <time datetime="2020-02-14T14:35:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-14</time>
-</a>
 
-  
-  
-    
 
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>大雨声在窗外哗啦<br>纯音乐在耳边开花<br>下不完的<strong>IDE</strong><br>看不完的源代码<br>心有思绪千万种<br>更何谈分心的步伐<br>一切皆在纯黑与曙光之间<br>等待抉择的那天<br><img src="/img/200214/01.jpg" alt></p>
 
-    
 
-    
 
-    
 
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/02/14/刹那/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-英语六级翻译例题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/12/13/英语六级翻译例题/" target="_blank"> 英语六级翻译例题</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2019/12/13/英语六级翻译例题/" class="archive-article-date">
-        <time datetime="2019-12-13T15:26:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-13</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h4 id="英语六级翻译例题"><a href="#英语六级翻译例题" class="headerlink" title="英语六级翻译例题"></a>英语六级翻译例题</h4><p>又到了考四六级的时候，故贴些个人认为比较常考的翻译上来供自己与大家学习。</p>
-<p>　　青海湖位于海拔3205米、青海省省会西宁以西约100公里处，是中国最大的咸水湖，面积4317平方公里、最深处255米。有23条河注入湖中、其中大部分是季节性的。百分之八十多湖水源于五条主要河流。青海湖位于跨越亚洲的几条候鸟迁徙路线的交叉处。许多鸟类把青海湖作为迁徙过程中的暂息地。湖大西侧是著名的”鸟岛“，吸引着来自世界各地的观鸟者。每年夏天，游客们也来这里观看国际自行车比赛。</p>
-    
-    <a class="article-more-a" href="/2019/12/13/英语六级翻译例题/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">英语</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/12/13/英语六级翻译例题/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-XCTF-逆向新手区-python-trade" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/12/07/XCTF-逆向新手区-python-trade/" target="_blank">XCTF 逆向新手区 python-trade</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2019/12/07/XCTF-逆向新手区-python-trade/" class="archive-article-date">
-        <time datetime="2019-12-07T07:14:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-07</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h5 id="题目"><a href="#题目" class="headerlink" title="题目　　"></a>题目　　</h5><p>下载附件，从题目看就知道是<del>py交易</del>，但为确保万一，我们先直接右键查看文件属性<br>   <img src="/img/191207/01.png" alt><br>　　确认了是pyc文件，于是直接<a href="https://tool.lu/pyc/" target="_blank" rel="noopener">在线反编译</a> ，因为这题没有修改magic number，因此我们可以直接得到源代码↓    </p>
-<pre><code>import base64
-
-def encode(message):
-    s = &apos;&apos;
-    for i in message:
-        x = ord(i) ^ 32   #ord()返回对应的 ASCII 数值,ascii值与32异或
-        x = x + 16
-        s += chr(x)
-
-    return base64.b64encode(s)   #base64编码后输出
-
-correct = &apos;XlNkVmtUI1MgXWBZXCFeKY+AaXNt&apos;
-flag = &apos;&apos;
-print &apos;Input flag:&apos;
-flag = raw_input()
-if encode(flag) == correct:
-    print &apos;correct&apos;
-else:
-    print &apos;wrong&apos;</code></pre><p>  我们可知按照源代码的思路为：<br>
-    
-    <a class="article-more-a" href="/2019/12/07/XCTF-逆向新手区-python-trade/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">reverse</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/12/07/XCTF-逆向新手区-python-trade/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-论菜鸡是如何使用hexo-github搭建个人博客的（下）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/12/07/论菜鸡是如何使用hexo-github搭建个人博客的（下）/" target="_blank">论菜鸡是如何使用hexo+github搭建个人博客的（下）</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2019/12/07/论菜鸡是如何使用hexo-github搭建个人博客的（下）/" class="archive-article-date">
-        <time datetime="2019-12-07T06:30:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-07</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h5 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h5><p>&#160; &#160; &#160; &#160;距离上次发博文着实过了不少时间，当然主要一是因为博客一直有bug没修好，二是平时生活中琐碎的事情太多，<del>三是因为我太懒</del>。总而言是，我又来更新啦，虽然没什么人看就是了。<br>&#160; &#160; &#160; &#160;首先，我来说明一下本博客之前所出现过的bug，那就是当点击页面下方的所有文章/友链/关于我时，会先另外弹出一个javascript:void(0)空白页。这个问题无论是在原来的yilia主题还是在现在刚换新的yilia-plus主题都存在，最后我私信了yilia-plus主题的开发者<a href="https://zhousiwei.gitee.io/yilia-plus-demo/" target="_blank" rel="noopener">試毅-思伟</a> ,在这位热心的前辈的帮助下，我才知道之所以会弹出新窗口是因为我的hexo版本过高。用前辈给出的解决方法<a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/issues/33" target="_blank" rel="noopener">https://github.com/JoeyBling/hexo-theme-yilia-plus/issues/33</a> 后成功解决。   </p>
-<h5 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h5><p>　　最后再次对前辈<a href="https://zhousiwei.gitee.io/yilia-plus-demo/" target="_blank" rel="noopener">試毅-思伟</a>表示感谢。(^_^)∠※</p>
-<p> 　　</p>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">安装</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/12/07/论菜鸡是如何使用hexo-github搭建个人博客的（下）/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/11/21/hello-world/" target="_blank">Hello World</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2019/11/21/hello-world/" class="archive-article-date">
-        <time datetime="2019-11-21T14:34:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-21</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">安装</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/11/21/hello-world/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-1.my-first-blog" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/11/19/1.my-first-blog/" target="_blank">论菜鸡是如何使用hexo+github搭建个人博客的</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2019/11/19/1.my-first-blog/" class="archive-article-date">
-        <time datetime="2019-11-19T13:28:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-19</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h5 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h5><p>　　在大一开始的时候就有前辈跟我说最好搭建一个自己的博客，一是可以与大家分享经验，二是可以强化自己的知识点。但因为之前的我一直很忙<del>（太懒）</del>因此一直没有动手试过。但随着我拜读了越来越多大佬的博客，自己也搭建一个博客的愿望就强烈了起来，我在搭建这个博客的过程中走了许多弯路，故在此将我的过程记录下来，希望能对他人有所帮助。</p>
-<h5 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h5>
-    
-    <a class="article-more-a" href="/2019/11/19/1.my-first-blog/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">安装</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/11/19/1.my-first-blog/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-  
 
 
           </div>
@@ -870,8 +622,8 @@ else:
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
