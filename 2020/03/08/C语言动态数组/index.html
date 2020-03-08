@@ -10,21 +10,21 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="动态数组   一：使用动态数组的原因及其构成  &amp;#160; &amp;#160; &amp;#160; &amp;#160;由于在实际的编程中，往往所需的内存空间取决于实际的输入，而无法预先确定。为了解决上述问题，C语言提供了一些内存管理函数，这些内存管理函数结合指针可以按需要动态地分配内存空间，来构建动态数组。动态数组的内存空间是从堆（heap）上分配（即动态分配）的。是通过执行代码而为其分配存储空间，为有效地利用内">
+  <meta name="description" content="动态数组   &amp;gt;**本博文参考了以下资料：**   &amp;gt;**https://blog.csdn.net/zhanshen112/article/details/80758850**     &amp;gt;**https://www.runoob.com/w3cnote/c-dynamic-array.html**   &amp;gt;**https://www.php.cn/csharp-article-443121.htm">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C语言动态数组">
 <meta property="og:url" content="http://yoursite.com/2020/03/08/C语言动态数组/index.html">
 <meta property="og:site_name" content="lunalhx">
-<meta property="og:description" content="动态数组   一：使用动态数组的原因及其构成  &amp;#160; &amp;#160; &amp;#160; &amp;#160;由于在实际的编程中，往往所需的内存空间取决于实际的输入，而无法预先确定。为了解决上述问题，C语言提供了一些内存管理函数，这些内存管理函数结合指针可以按需要动态地分配内存空间，来构建动态数组。动态数组的内存空间是从堆（heap）上分配（即动态分配）的。是通过执行代码而为其分配存储空间，为有效地利用内">
+<meta property="og:description" content="动态数组   &amp;gt;**本博文参考了以下资料：**   &amp;gt;**https://blog.csdn.net/zhanshen112/article/details/80758850**     &amp;gt;**https://www.runoob.com/w3cnote/c-dynamic-array.html**   &amp;gt;**https://www.php.cn/csharp-article-443121.htm">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/img/200308/1.png">
 <meta property="og:image" content="http://yoursite.com/img/200308/2.png">
 <meta property="og:image" content="http://yoursite.com/img/200308/3.png">
 <meta property="og:image" content="http://yoursite.com/img/200308/4.png">
-<meta property="og:updated_time" content="2020-03-08T12:18:48.914Z">
+<meta property="og:updated_time" content="2020-03-08T12:32:02.508Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C语言动态数组">
-<meta name="twitter:description" content="动态数组   一：使用动态数组的原因及其构成  &amp;#160; &amp;#160; &amp;#160; &amp;#160;由于在实际的编程中，往往所需的内存空间取决于实际的输入，而无法预先确定。为了解决上述问题，C语言提供了一些内存管理函数，这些内存管理函数结合指针可以按需要动态地分配内存空间，来构建动态数组。动态数组的内存空间是从堆（heap）上分配（即动态分配）的。是通过执行代码而为其分配存储空间，为有效地利用内">
+<meta name="twitter:description" content="动态数组   &amp;gt;**本博文参考了以下资料：**   &amp;gt;**https://blog.csdn.net/zhanshen112/article/details/80758850**     &amp;gt;**https://www.runoob.com/w3cnote/c-dynamic-array.html**   &amp;gt;**https://www.php.cn/csharp-article-443121.htm">
 <meta name="twitter:image" content="http://yoursite.com/img/200308/1.png">
   
     <link rel="alternative" href="/atom.xml" title="lunalhx" type="application/atom+xml">
@@ -261,6 +261,11 @@
   <div class="article-entry" itemprop="articleBody">
     
     <h3>动态数组</h3>  
+>**本博文参考了以下资料：**  
+>**https://blog.csdn.net/zhanshen112/article/details/80758850**    
+>**https://www.runoob.com/w3cnote/c-dynamic-array.html**  
+>**https://www.php.cn/csharp-article-443121.html**
+
 <h5>一：使用动态数组的原因及其构成</h5>
 
 <p>&#160; &#160; &#160; &#160;由于在实际的编程中，往往所需的内存空间取决于实际的输入，而无法预先确定。为了解决上述问题，C语言提供了一些内存管理函数，这些内存管理函数结合指针可以按需要动态地分配内存空间，来构建动态数组。动态数组的内存空间是从堆（heap）上分配（即动态分配）的。是通过执行代码而为其分配存储空间，为有效地利用内存资源提供了手段。   </p>
