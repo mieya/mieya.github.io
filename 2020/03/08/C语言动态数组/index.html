@@ -10,22 +10,22 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="动态数组    本博文参考了以下资料：   https://blog.csdn.net/zhanshen112/article/details/80758850  https://www.runoob.com/w3cnote/c-dynamic-array.html    https://www.php.cn/csharp-article-443121.html     一：使用动态数组的原因及其">
+  <meta name="description" content="动态数组    本博文参考了以下资料：   https://blog.csdn.net/zhanshen112/article/details/80758850     https://www.runoob.com/w3cnote/c-dynamic-array.html    https://www.php.cn/csharp-article-443121.html   一：使用动态数组的原因及">
 <meta name="keywords" content="数据结构">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C语言动态数组">
 <meta property="og:url" content="http://yoursite.com/2020/03/08/C语言动态数组/index.html">
 <meta property="og:site_name" content="lunalhx">
-<meta property="og:description" content="动态数组    本博文参考了以下资料：   https://blog.csdn.net/zhanshen112/article/details/80758850  https://www.runoob.com/w3cnote/c-dynamic-array.html    https://www.php.cn/csharp-article-443121.html     一：使用动态数组的原因及其">
+<meta property="og:description" content="动态数组    本博文参考了以下资料：   https://blog.csdn.net/zhanshen112/article/details/80758850     https://www.runoob.com/w3cnote/c-dynamic-array.html    https://www.php.cn/csharp-article-443121.html   一：使用动态数组的原因及">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/img/200308/1.png">
 <meta property="og:image" content="http://yoursite.com/img/200308/2.png">
 <meta property="og:image" content="http://yoursite.com/img/200308/3.png">
 <meta property="og:image" content="http://yoursite.com/img/200308/4.png">
-<meta property="og:updated_time" content="2020-03-08T12:58:26.306Z">
+<meta property="og:updated_time" content="2020-03-08T13:06:17.651Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C语言动态数组">
-<meta name="twitter:description" content="动态数组    本博文参考了以下资料：   https://blog.csdn.net/zhanshen112/article/details/80758850  https://www.runoob.com/w3cnote/c-dynamic-array.html    https://www.php.cn/csharp-article-443121.html     一：使用动态数组的原因及其">
+<meta name="twitter:description" content="动态数组    本博文参考了以下资料：   https://blog.csdn.net/zhanshen112/article/details/80758850     https://www.runoob.com/w3cnote/c-dynamic-array.html    https://www.php.cn/csharp-article-443121.html   一：使用动态数组的原因及">
 <meta name="twitter:image" content="http://yoursite.com/img/200308/1.png">
   
     <link rel="alternative" href="/atom.xml" title="lunalhx" type="application/atom+xml">
@@ -263,10 +263,10 @@
     
     <h3>动态数组</h3>  
  本博文参考了以下资料：  
-https://blog.csdn.net/zhanshen112/article/details/80758850  https://www.runoob.com/w3cnote/c-dynamic-array.html   
-https://www.php.cn/csharp-article-443121.html  
+https://blog.csdn.net/zhanshen112/article/details/80758850   
 
-
+<p><a href="https://www.runoob.com/w3cnote/c-dynamic-array.html" target="_blank" rel="noopener">https://www.runoob.com/w3cnote/c-dynamic-array.html</a>   </p>
+<p><a href="https://www.php.cn/csharp-article-443121.html" target="_blank" rel="noopener">https://www.php.cn/csharp-article-443121.html</a>  </p>
 <h5>一：使用动态数组的原因及其构成</h5>
 
 <p>&#160; &#160; &#160; &#160;由于在实际的编程中，往往所需的内存空间取决于实际的输入，而无法预先确定。为了解决上述问题，C语言提供了一些内存管理函数，这些内存管理函数结合指针可以按需要动态地分配内存空间，来构建动态数组。动态数组的内存空间是从堆（heap）上分配（即动态分配）的。是通过执行代码而为其分配存储空间，为有效地利用内存资源提供了手段。   </p>
@@ -302,37 +302,14 @@ https://www.php.cn/csharp-article-443121.html
 <td>成功：返回所开辟空间首地址 失败：返回空指针</td>
 <td>将p指向的堆空间变为 size</td>
 </tr>
-<tr>
-<td>释放内存函数：void free(void *p);         无返回值，释放p指向的堆空间。</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><h5>四：如何构建动态数组</h5>原则：创建的时候从外层往里层，逐层创建；而释放的时候从里层往外层，逐层释放。</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>指针：构建一维数组，需要一维指针；构建二维数组，需要一维、二维指针；三维需要一、二、三维指针；以此类推。</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><h5>五：程序示例</h5></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>&#160; &#160; &#160; &#160;在了解动态数组以前，我们只知道预先给程序开辟好内存空间，然后进行操作。如：</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int arr[5];</span><br></pre></td></tr></table></figure></td>
-<td></td>
-<td></td>
-</tr>
 </tbody></table>
+<p>释放内存函数：void free(void *p);<br>无返回值，释放p指向的堆空间。  </p>
+<h5>四：如何构建动态数组</h5>原则：创建的时候从外层往里层，逐层创建；而释放的时候从里层往外层，逐层释放。  
+指针：构建一维数组，需要一维指针；构建二维数组，需要一维、二维指针；三维需要一、二、三维指针；以此类推。  
+<h5>五：程序示例</h5>  
+&#160; &#160; &#160; &#160;在了解动态数组以前，我们只知道预先给程序开辟好内存空间，然后进行操作。如：  
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int arr[5];</span><br></pre></td></tr></table></figure>
+
 <p>&#160; &#160; &#160; &#160;这个数组在程序执行的过程中，开辟的内存空间是一直存在的，除非等到这个函数执行完毕，才会将空间释放。给我们造成了一些使用上的不方便，所以C中提供了一些动态内存分配函数。<br>例：  </p>
 <pre><code>double * p;  
 p = (double*)malloc(30*(double))  </code></pre><p>&#160; &#160; &#160; &#160;在这两行代码中，开辟了30个double类型大小的空间，然后把p指向这个空间的位置。指针p指向的事第一个double值，而不是全部开辟的30个double的空间。就和数组一样，指向数组的指针式指向数组首元素的地址，并不是整个数组的元素。<br>例：声明动态数组↓  </p>
