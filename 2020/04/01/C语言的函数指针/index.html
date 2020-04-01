@@ -6,27 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>C语言动态数组 | lunalhx</title>
+  <title>C语言的函数指针 | lunalhx</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="动态数组    本博文参考了以下资料：    https://blog.csdn.net/zhanshen112/article/details/80758850    https://www.runoob.com/w3cnote/c-dynamic-array.html    https://www.php.cn/csharp-article-443121.html   一：使用动态数组的原因及">
+  <meta name="description" content="本博文参考了：https://www.cnblogs.com/bianchengzhuji/p/10222335.htmlhttp://c.biancheng.net/cpp/html/62.html   一、函数指针概述&amp;#160; &amp;#160; &amp;#160; &amp;#160;函数指针是指向函数的指针变量，一个函数总是占用一段连续的内存区域，函数名在表达式中有时也会被转换为该函数所在内存区域的首地">
 <meta name="keywords" content="数据结构">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C语言动态数组">
-<meta property="og:url" content="http://yoursite.com/2020/03/08/C语言动态数组/index.html">
+<meta property="og:title" content="C语言的函数指针">
+<meta property="og:url" content="http://yoursite.com/2020/04/01/C语言的函数指针/index.html">
 <meta property="og:site_name" content="lunalhx">
-<meta property="og:description" content="动态数组    本博文参考了以下资料：    https://blog.csdn.net/zhanshen112/article/details/80758850    https://www.runoob.com/w3cnote/c-dynamic-array.html    https://www.php.cn/csharp-article-443121.html   一：使用动态数组的原因及">
+<meta property="og:description" content="本博文参考了：https://www.cnblogs.com/bianchengzhuji/p/10222335.htmlhttp://c.biancheng.net/cpp/html/62.html   一、函数指针概述&amp;#160; &amp;#160; &amp;#160; &amp;#160;函数指针是指向函数的指针变量，一个函数总是占用一段连续的内存区域，函数名在表达式中有时也会被转换为该函数所在内存区域的首地">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/img/200308/1.png">
-<meta property="og:image" content="http://yoursite.com/img/200308/2.png">
-<meta property="og:image" content="http://yoursite.com/img/200308/3.png">
-<meta property="og:image" content="http://yoursite.com/img/200308/4.png">
-<meta property="og:updated_time" content="2020-03-08T13:10:20.263Z">
+<meta property="og:updated_time" content="2020-04-01T03:33:55.442Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="C语言动态数组">
-<meta name="twitter:description" content="动态数组    本博文参考了以下资料：    https://blog.csdn.net/zhanshen112/article/details/80758850    https://www.runoob.com/w3cnote/c-dynamic-array.html    https://www.php.cn/csharp-article-443121.html   一：使用动态数组的原因及">
-<meta name="twitter:image" content="http://yoursite.com/img/200308/1.png">
+<meta name="twitter:title" content="C语言的函数指针">
+<meta name="twitter:description" content="本博文参考了：https://www.cnblogs.com/bianchengzhuji/p/10222335.htmlhttp://c.biancheng.net/cpp/html/62.html   一、函数指针概述&amp;#160; &amp;#160; &amp;#160; &amp;#160;函数指针是指向函数的指针变量，一个函数总是占用一段连续的内存区域，函数名在表达式中有时也会被转换为该函数所在内存区域的首地">
   
     <link rel="alternative" href="/atom.xml" title="lunalhx" type="application/atom+xml">
   
@@ -208,14 +203,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-C语言动态数组" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-C语言的函数指针" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      C语言动态数组
+      C语言的函数指针
     </h1>
   
 
@@ -227,8 +222,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2020/03/08/C语言动态数组/" class="archive-article-date">
-        <time datetime="2020-03-08T11:42:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-08</time>
+<a href="/2020/04/01/C语言的函数指针/" class="archive-article-date">
+        <time datetime="2020-04-01T03:09:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-01</time>
 </a>
 
   
@@ -241,7 +236,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">1.5k字</span>
+      <span class="post-count">2k字</span>
     </span>
   </span>
 
@@ -250,7 +245,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">6分</span>
+      <span class="post-count">7分</span>
     </span>
   </span>
 </div>
@@ -261,147 +256,47 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h3>动态数组</h3>  
- 本博文参考了以下资料：  
+    <blockquote>
+<p>本博文参考了：<br><a href="https://www.cnblogs.com/bianchengzhuji/p/10222335.html" target="_blank" rel="noopener">https://www.cnblogs.com/bianchengzhuji/p/10222335.html</a><br><a href="http://c.biancheng.net/cpp/html/62.html" target="_blank" rel="noopener">http://c.biancheng.net/cpp/html/62.html</a> </p>
+</blockquote>
+<p>一、函数指针概述<br>&#160; &#160; &#160; &#160;函数指针是指向函数的指针变量，一个函数总是占用一段连续的内存区域，函数名在表达式中有时也会被转换为该函数所在内存区域的首地址，这和数组名非常类似。我们可以把函数的这个首地址赋给一个指针变量，使指针变量指向函数所在的内存区域，然后通过指针变量就可以找到并调用该函数。这种指针就是函数指针。换言之，我们平时所说的指针变量通常指向一个整形、字符型、或者数组等变量，而函数指针指向的是函数。  </p>
+<p>二、如何声明函数指针<br>&#160; &#160; &#160; &#160;声明普通类型指针时，需要指明指针所指向的数据类型，声明函数指针时，也需要指明指针所指向的函数类型，即需要指明函数的返回值类型和形参类型。<br>如下面的函数原型：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">int max(int a,int b)&#123;</span><br><span class="line">    return a&gt;b ? a : b; </span><br><span class="line">&#125; </span><br><span class="line">```  </span><br><span class="line">&lt;!--more--&gt;</span><br><span class="line">max函数的形参是两个整形，返回值也是整形，所以对应的函数指针：</span><br></pre></td></tr></table></figure>
 
-<p><a href="https://blog.csdn.net/zhanshen112/article/details/80758850" target="_blank" rel="noopener">https://blog.csdn.net/zhanshen112/article/details/80758850</a>   </p>
-<p><a href="https://www.runoob.com/w3cnote/c-dynamic-array.html" target="_blank" rel="noopener">https://www.runoob.com/w3cnote/c-dynamic-array.html</a>   </p>
-<p><a href="https://www.php.cn/csharp-article-443121.html" target="_blank" rel="noopener">https://www.php.cn/csharp-article-443121.html</a>  </p>
-<h5>一：使用动态数组的原因及其构成</h5>
+<p>int (*pMax)(int,int);  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">其中pMax为函数指针名，这样就声明了和max函数类型相同的函数指针fp。  </span><br><span class="line"></span><br><span class="line">&amp;#160; &amp;#160; &amp;#160; &amp;#160;经常使用函数指针后，会发现每次声明函数指针都要带上长长的形参和返回值，非常不便。这个时候，我们可以使用typedef，即为某类型的函数指针起一个别名，这样使用起来就方便许多了。  </span><br><span class="line">例如，对于前面提到的函数可以使用下面的方式声明：</span><br></pre></td></tr></table></figure>
 
-<p>&#160; &#160; &#160; &#160;由于在实际的编程中，往往所需的内存空间取决于实际的输入，而无法预先确定。为了解决上述问题，C语言提供了一些内存管理函数，这些内存管理函数结合指针可以按需要动态地分配内存空间，来构建动态数组。动态数组的内存空间是从堆（heap）上分配（即动态分配）的。是通过执行代码而为其分配存储空间，为有效地利用内存资源提供了手段。   </p>
-<a id="more"></a>
+<p>typedef int (*pMax)(int,int);  //为该函数指针类型起一个更方便的名字<br>pMax p1;      //声明pMax类型的函数指针p1</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">上例的pMax就是一个函数指针类型，在其他地方就可以很方便的用来声明变量了，pMax p1实际上相当于 int a，即数据类型＋变量。  </span><br><span class="line"></span><br><span class="line">三、如何为函数指针赋值</span><br></pre></td></tr></table></figure>
 
-<h5>二：动态数组与静态数组的对比</h5> 
-&#160; &#160; &#160; &#160;对于静态数组，其创建非常方便，使用完也无需释放，要引用也简单，但是创建后无法改变其大小是其致命弱点。  
-&#160; &#160; &#160; &#160;对于动态数组，其创建麻烦，使用完必须由程序员释放，否则严重会引起内存泄露。但使用非常灵活，能根据程序需要动态分配大小。  
+<p>P1 = max;  //将max函数的首地址赋给函数指针p1<br>P1 = &max; //或者使用这种方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">这两种方法都可以，就好比定义一个数组arr[],arr表示这个数组的首地址，但&amp;arr同样可以表示首地址。  </span><br><span class="line">程序示例：</span><br></pre></td></tr></table></figure>
 
-<h5>三：动态内存分配函数</h5>
+<p>#include &lt;stdio.h&gt;<br>    int max(int a, int b){<br>        return a&gt;b ? a : b;  //返回两个数中较大的一个<br>    }<br>    typedef int (*pMax)(int, int);  //定义函数指针<br>    int main(){<br>        int x, y, maxval;<br>        pMax p1 = max;   //为函数指针赋值<br>        printf(“请输入两个需要比较大小的数字:\n”);<br>        scanf(“%d %d”, &amp;x, &amp;y);<br>        maxval = p1(x, y);   //对函数进行了调用<br>        printf(“比较大的数字为: %d\n”, maxval);<br>        return 0;<br>    }<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">运行结果：  </span><br><span class="line">![](/img/200401/01.png)  </span><br><span class="line"></span><br><span class="line">四、函数指针作为结构体成员  </span><br><span class="line">&amp;#160; &amp;#160; &amp;#160; &amp;#160;其实在结构体中，也可以像定义一般变量一样，定义函数指针变量。其实C语言中的struct很接近Java中类的概念，但是在C语言的struct中只有成员，不能有函数，但是可以有指向函数的指针，这也就方便了我们使用函数了。</span><br></pre></td></tr></table></figure></p>
+<p> typedef struct calc<br>{<br>    int x,y;<br>    int (*func)(int,int); //结构体中包含的函数指针<br>}CALC;  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">这里在定义类型的同时定义变量，CALC等价于struct calc是一种数据类型。  </span><br><span class="line"></span><br><span class="line">下面是一种简单的实现：</span><br></pre></td></tr></table></figure>
 
+<p>#include &lt;stdio.h&gt;<br>typedef struct calc<br>{<br>    int x,y;<br>    int (*func)(int,int); //结构体中包含的函数指针<br>}CALC;  //CALC等价于struct calc</p>
+<p>int add1(int x,int y)<br>{<br>    return x+y;   //返回两数之和<br>}  </p>
+<p>int main()<br>{<br>    CALC demo;  //CALC等价于struct calc<br>    demo.func=add1; //为结构体函数指针赋值<br>    printf(“func(3,4)=%d\n”,demo.func(3,4));<br>}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">运行结果：  </span><br><span class="line"> ![](/img/200401/02.png)  </span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"> 五、函数指针作为函数的参数  </span><br><span class="line">&amp;#160; &amp;#160; &amp;#160; &amp;#160;函数指针有两种常用的用法，一种是作为结构体成员，另一种就是函数指针作为函数的形参。函数指针可以作为一个参数传递给另一个函数，就像普通的常量和变量一样。当函数指针作为参数传递时，接受这个参数的函数通常需要根据这个指针调用那个函数。如果把函数的指针（地址）作为参数传递给另一个函数，当这个指针被用来调用其所指向的函数时，我们就说这是**回调函数**。  </span><br><span class="line">&amp;#160; &amp;#160; &amp;#160; &amp;#160;简而言之，函数指针变量可以作为某个函数的参数来使用，回调函数就是一个通过函数指针调用的函数。  </span><br><span class="line">（1）为什么要使用回调函数？  </span><br><span class="line">&amp;#160; &amp;#160; &amp;#160; &amp;#160;为什么不像普通的函数调用那样，在回调的地方直接写函数的名字？为什么有时候还得用回调函数？  </span><br><span class="line">&amp;#160; &amp;#160; &amp;#160; &amp;#160;因为可以把调用者与被调用者分开。调用者不关心谁是被调用者，所有它需知道的，只是存在一个具有某种特定原型、某些限制条件（如返回值为int）的被调用函数。就好比使用变量而不是常量来做参数一样，就是要以不变应万变，因为形参是不用变的，而实参是变的。把函数做成参数”和“把变量做成参数”目的是一致的，就是能降低耦合。  </span><br><span class="line">&amp;#160; &amp;#160; &amp;#160; &amp;#160;此外，传函数指针和传数据相比还有一个好处就是节约内存。我们知道，传数据拷贝的是内存单元的数据，如果数据很多的话拷贝过来都要为它们分配内存。而传指针的话只需要传递 4 字节的地址就行了。  </span><br><span class="line">（2）怎么使用回调函数？  </span><br><span class="line">举例说明函数指针如何作为函数的形参被调用，形成回调函数。  </span><br><span class="line"></span><br><span class="line">首先定义函数指针：</span><br></pre></td></tr></table></figure>
 
-<table>
-<thead>
-<tr>
-<th>函数原型</th>
-<th>返回</th>
-<th>功能说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>void *malloc(unsigned int size);</td>
-<td>成功：返回所开辟空间首地址 失败：返回空指针</td>
-<td>向系统申请size字节的 堆空间</td>
-</tr>
-<tr>
-<td>void *calloc(unsigned int num,unsigned int size);</td>
-<td>成功：返回所开辟空间首地址 失败：返回空指针</td>
-<td>按类型申请num个size字节的堆空间</td>
-</tr>
-<tr>
-<td>void *realloc(void *p,unsigned int size);</td>
-<td>成功：返回所开辟空间首地址 失败：返回空指针</td>
-<td>将p指向的堆空间变为 size</td>
-</tr>
-</tbody></table>
-<p>释放内存函数：void free(void *p);<br>无返回值，释放p指向的堆空间。  </p>
-<h5>四：如何构建动态数组</h5>原则：创建的时候从外层往里层，逐层创建；而释放的时候从里层往外层，逐层释放。  
-指针：构建一维数组，需要一维指针；构建二维数组，需要一维、二维指针；三维需要一、二、三维指针；以此类推。  
-<h5>五：程序示例</h5>  
-&#160; &#160; &#160; &#160;在了解动态数组以前，我们只知道预先给程序开辟好内存空间，然后进行操作。如：  
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int arr[5];</span><br></pre></td></tr></table></figure>
+<p>#include &lt;stdio.h&gt;<br>int sum(int a,int b){<br>    return a+b;<br>}<br>typedef int (*pSum)(int,int);    //定义函数指针</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">接着将函数指针作为函数的形参即可调用所指向的函数：</span><br></pre></td></tr></table></figure>
 
-<p>&#160; &#160; &#160; &#160;这个数组在程序执行的过程中，开辟的内存空间是一直存在的，除非等到这个函数执行完毕，才会将空间释放。给我们造成了一些使用上的不方便，所以C中提供了一些动态内存分配函数。<br>例：  </p>
-<pre><code>double * p;  
-p = (double*)malloc(30*(double))  </code></pre><p>&#160; &#160; &#160; &#160;在这两行代码中，开辟了30个double类型大小的空间，然后把p指向这个空间的位置。指针p指向的事第一个double值，而不是全部开辟的30个double的空间。就和数组一样，指向数组的指针式指向数组首元素的地址，并不是整个数组的元素。<br>例：声明动态数组↓  </p>
-<pre><code>int arr[n];  
-p = (int *)malloc(n*sizeof(int));  </code></pre><p>例：动态内存分配函数↓  </p>
-<pre><code>#include&lt;stdio.h&gt;  
-#include&lt;stdlib.h&gt;        //定义杂项函数以及内存分配函数   
-int main(void){
-    char * p = NULL;    //声明一个char类型的空指针
-    p = (char *)malloc(10*sizeof(char));//使用malloc分配内存的首地址，然后赋值给p 
-    if(p==NULL){
-        printf(&quot;动态申请内存失败！\n&quot;);
-        exit(1);                       //异常退出 
-    } 
-    *p = 5;                //将分配的内存值，设为5 
-    printf(&quot;%d\n&quot;,*p);    //输出分配的内存值
-    free(p);
-return 0; 
-}   </code></pre><p>运行结果：<br><img src="/img/200308/1.png" alt><br>一维动态数组的创建：  </p>
-<pre><code>#include&lt;stdio.h&gt;
-#include&lt;stdlib.h&gt;
-int main(){
-    int l,i;
-    int * array;
-    printf(&quot;请输入所要创建的一维动态数组的长度：&quot;);
-    scanf(&quot;%d&quot;,&amp;l);
-    array=(int*)calloc(l,sizeof(int));    //按类型申请l个int所占字节的堆空间
-    for(i=0;i&lt;l;i++){
-        array[i]=i+1;
-        printf(&quot;%d\t&quot;,array[i]);
-    }
-    free(array);    //释放一维数组 
-    return 0;
-}  </code></pre><p>运行结果：<br><img src="/img/200308/2.png" alt>  </p>
-<p>二维数组的创建：  </p>
-<pre><code>#include&lt;stdio.h&gt;
-#include&lt;stdlib.h&gt;
-int main(){
-    int n1,n2;
-    int ** array;    //定义一个二维数组 
-    printf(&quot;请输入动态二维数组的第一个维度：&quot;);
-    scanf(&quot;%d&quot;,&amp;n1);
-    printf(&quot;请输入动态二维数组的第二个维度：&quot;);
-    scanf(&quot;%d&quot;,&amp;n2);
-    array=(int**)calloc(n1,sizeof(int));    //创建的时候从外层到里层
-    for(int i=0;i&lt;n1;i++){
-        array[i]=(int*)calloc(n2,sizeof(int));    //里层申请内存 
-    }
-    for(int i=0;i&lt;n1;i++){
-        for(int j=0;j&lt;n2;j++){
-            array[i][j]=i*n2+j+1;
-            printf(&quot;%d\t&quot;,array[i][j]);
-        }
-        printf(&quot;\n&quot;);
-    } 
-    for(int i=0;i&lt;n1;i++)
-        free(array[i]);        //释放第二维指针
-    free(array);            //释放第一维指针
-    return 0;
-}</code></pre><p>运行效果：<br><img src="/img/200308/3.png" alt><br>三维数组的创建：（从外到里）  </p>
-<pre><code>#include&lt;stdio.h&gt;
-#include&lt;stdlib.h&gt;
-int i,j,k;
-int n1,n2,n3;
-int ***array;
-scanf(&quot;%d%d%d&quot;,&amp;n1,&amp;n2,&amp;n3);
-array=(int***)calloc(n1,sizeof(int**));
-for(i=0;i&lt;n1;i++)
-{
-    array[i]=(int**)calloc(n2,sizeof(int*));
-    for(j=0;j&lt;n2;j++)
-    {
-        array[i][j]=(int*)calloc(n3,sizeof(int));
-        for(k=0;k&lt;n3;k++)
-        {
-            array[i][j][k]=i+j+k+1;
-        }
-    }
-}  </code></pre><p>三维数组内存的释放：（从里到外）  </p>
-<pre><code>for(i=0;i&lt;n1;i++)
-{
-    for(j=0;j&lt;n2;j++)
-    {
-        free(array[i][j]);//释放第三维指针
-    }
-}
-for(i=0;i&lt;n1;i++)
-{
-    free(array[i]);//释放第二维指针
-}
-free(array);//释放第一维指针  </code></pre><p>补充说明：<br>1.使用sizeof的目的是用来计算一种类型的占有的字节数，以便适合不同的编译器。<br>2.使用sizeof的目的是用来计算一种类型的占有的字节数，以便适合不同的编译器。<br>3.绝不能对非动态分配存储块使用free。也不能对同一块内存区同时用free释放两次。 如：free(p);free(p);    </p>
-<p>头文件：<br><img src="/img/200308/4.png" alt><br>可知要使用动态分配内存数组，可以使用#include&lt;stdlib.h&gt;头文件。</p>
+<p>int sum2(int,pSum,int,int); </p>
+<p>int main()<br>{<br>    pSum p = sum;<br>    printf(“SUM=%d\n”,p(1,2));<br>    printf(“SUM2= %d\n”,sum2(2,p,1,2));<br>    return 0;<br>}<br>//sum2回调sum函数<br>int sum2(int num,pSum p,int a,int b){    //函数指针作为sum2函数的形参<br>    return  num * sum(a,b);<br>}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">运行结果：  </span><br><span class="line">![](/img/200401/03.png)  </span><br><span class="line">（3）简单举例说明</span><br></pre></td></tr></table></figure>
+
+<p>#include &lt;stdio.h&gt;<br>int add(int, int);<br>int sub(int, int);<br>typedef int (*pFun)(int,int);    //定义函数指针<br>int calc(pFun, int, int);    //函数指针作为函数的形参</p>
+<p>int add(int num1, int mun2)<br>{<br>    return num1 + mun2;<br>}</p>
+<p>int sub(int num1, int mun2)<br>{<br>    return num1 - mun2;<br>}</p>
+<p>int calc(pFun p, int num1, int num2)//函数指针作为另一函数的形参被调用<br>{<br>    return (*p)(num1, num2);   //使用回调函数<br>}</p>
+<p>int main()<br>{<br>    pFun pAdd = add;    //指向加法函数的函数指针<br>    pFun pSub = sub;       //指向减法函数的函数指针<br>    printf(“3 + 5 = %d\n”, calc(pAdd, 3 , 5));<br>    printf(“3 - 5 = %d\n”, calc(pSub, 3 , 5));<br>    return 0;<br>}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">运行结果：  </span><br><span class="line">![](/img/200401/04.png)  </span><br><span class="line"></span><br><span class="line">&lt;h5&gt;最后注意：&lt;/h5&gt;</span><br><span class="line">&amp;#160; &amp;#160; &amp;#160; &amp;#160;在定义函数指针时，如上例中的typedef int (*pFun)(int,int); 里面pFun外的小括号不能去掉，因为这样写一是能明确表明pFun是指针，二是去掉的话意思就大相径庭了。</span><br></pre></td></tr></table></figure>
+
+<p>typedef int *pFun (int,int);</p>
+<p>```<br>这样写表明声明了一个参数为两个int类型，返回值为int类型的指针的函数，而不是一个函数指针。</p>
 
     
 
@@ -448,7 +343,7 @@ free(array);//释放第一维指针  </code></pre><p>补充说明：<br>1.使用
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://yoursite.com/2020/03/08/C语言动态数组/" title="C语言动态数组" target="_blank">http://yoursite.com/2020/03/08/C语言动态数组/</a>
+          <a href="http://yoursite.com/2020/04/01/C语言的函数指针/" title="C语言的函数指针" target="_blank">http://yoursite.com/2020/04/01/C语言的函数指针/</a>
         </li>
         
         <li>
@@ -526,7 +421,7 @@ free(array);//释放第一维指针  </code></pre><p>补充说明：<br>1.使用
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/03/08/C语言动态数组/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/04/01/C语言的函数指针/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -541,18 +436,9 @@ free(array);//释放第一维指针  </code></pre><p>补充说明：<br>1.使用
 
 <nav id="article-nav">
   
-    <a href="/2020/04/01/C语言的函数指针/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          C语言的函数指针
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/02/14/刹那/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">刹那</div>
+    <a href="/2020/03/08/C语言动态数组/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">C语言动态数组</div>
       <i class="icon-circle-right"></i>
     </a>
   
