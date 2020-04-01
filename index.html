@@ -238,44 +238,12 @@
 </blockquote>
 <p>一、函数指针概述<br>&#160; &#160; &#160; &#160;函数指针是指向函数的指针变量，一个函数总是占用一段连续的内存区域，函数名在表达式中有时也会被转换为该函数所在内存区域的首地址，这和数组名非常类似。我们可以把函数的这个首地址赋给一个指针变量，使指针变量指向函数所在的内存区域，然后通过指针变量就可以找到并调用该函数。这种指针就是函数指针。换言之，我们平时所说的指针变量通常指向一个整形、字符型、或者数组等变量，而函数指针指向的是函数。  </p>
 <p>二、如何声明函数指针<br>&#160; &#160; &#160; &#160;声明普通类型指针时，需要指明指针所指向的数据类型，声明函数指针时，也需要指明指针所指向的函数类型，即需要指明函数的返回值类型和形参类型。<br>如下面的函数原型：  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">int max(int a,int b)&#123;</span><br><span class="line">    return a&gt;b ? a : b; </span><br><span class="line">&#125; </span><br><span class="line">```    </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;!--more--&gt;</span><br><span class="line">max函数的形参是两个整形，返回值也是整形，所以对应的函数指针：</span><br></pre></td></tr></table></figure>
-
-<p>int (*pMax)(int,int);  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">其中pMax为函数指针名，这样就声明了和max函数类型相同的函数指针fp。  </span><br><span class="line"></span><br><span class="line">&amp;#160; &amp;#160; &amp;#160; &amp;#160;经常使用函数指针后，会发现每次声明函数指针都要带上长长的形参和返回值，非常不便。这个时候，我们可以使用typedef，即为某类型的函数指针起一个别名，这样使用起来就方便许多了。  </span><br><span class="line">例如，对于前面提到的函数可以使用下面的方式声明：</span><br></pre></td></tr></table></figure>
-
-<p>typedef int (*pMax)(int,int);  //为该函数指针类型起一个更方便的名字<br>pMax p1;      //声明pMax类型的函数指针p1</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">上例的pMax就是一个函数指针类型，在其他地方就可以很方便的用来声明变量了，pMax p1实际上相当于 int a，即数据类型＋变量。  </span><br><span class="line"></span><br><span class="line">三、如何为函数指针赋值</span><br></pre></td></tr></table></figure>
-
-<p>P1 = max;  //将max函数的首地址赋给函数指针p1<br>P1 = &max; //或者使用这种方法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">这两种方法都可以，就好比定义一个数组arr[],arr表示这个数组的首地址，但&amp;arr同样可以表示首地址。  </span><br><span class="line">程序示例：</span><br></pre></td></tr></table></figure>
-
-<p>#include &lt;stdio.h&gt;<br>    int max(int a, int b){<br>        return a&gt;b ? a : b;  //返回两个数中较大的一个<br>    }<br>    typedef int (*pMax)(int, int);  //定义函数指针<br>    int main(){<br>        int x, y, maxval;<br>        pMax p1 = max;   //为函数指针赋值<br>        printf(“请输入两个需要比较大小的数字:\n”);<br>        scanf(“%d %d”, &amp;x, &amp;y);<br>        maxval = p1(x, y);   //对函数进行了调用<br>        printf(“比较大的数字为: %d\n”, maxval);<br>        return 0;<br>    }<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">运行结果：  </span><br><span class="line"> ![](/img/200401/01.png)  </span><br><span class="line"> </span><br><span class="line"> 四、函数指针作为结构体成员  </span><br><span class="line"> &amp;#160; &amp;#160; &amp;#160; &amp;#160;其实在结构体中，也可以像定义一般变量一样，定义函数指针变量。其实C语言中的struct很接近Java中类的概念，但是在C语言的struct中只有成员，不能有函数，但是可以有指向函数的指针，这也就方便了我们使用函数了。</span><br></pre></td></tr></table></figure></p>
-<p> typedef struct calc<br>{<br>    int x,y;<br>    int (*func)(int,int); //结构体中包含的函数指针<br>}CALC;  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">这里在定义类型的同时定义变量，CALC等价于struct calc是一种数据类型。  </span><br><span class="line"></span><br><span class="line">下面是一种简单的实现：</span><br></pre></td></tr></table></figure>
-
-<p>#include &lt;stdio.h&gt;<br>typedef struct calc<br>{<br>    int x,y;<br>    int (*func)(int,int); //结构体中包含的函数指针<br>}CALC;  //CALC等价于struct calc</p>
-<p>int add1(int x,int y)<br>{<br>    return x+y;   //返回两数之和<br>}  </p>
-<p>int main()<br>{<br>    CALC demo;  //CALC等价于struct calc<br>    demo.func=add1; //为结构体函数指针赋值<br>    printf(“func(3,4)=%d\n”,demo.func(3,4));<br>}</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">运行结果：  </span><br><span class="line"> ![](/img/200401/02.png)  </span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"> 五、函数指针作为函数的参数  </span><br><span class="line">&amp;#160; &amp;#160; &amp;#160; &amp;#160;函数指针有两种常用的用法，一种是作为结构体成员，另一种就是函数指针作为函数的形参。函数指针可以作为一个参数传递给另一个函数，就像普通的常量和变量一样。当函数指针作为参数传递时，接受这个参数的函数通常需要根据这个指针调用那个函数。如果把函数的指针（地址）作为参数传递给另一个函数，当这个指针被用来调用其所指向的函数时，我们就说这是**回调函数**。  </span><br><span class="line">&amp;#160; &amp;#160; &amp;#160; &amp;#160;简而言之，函数指针变量可以作为某个函数的参数来使用，回调函数就是一个通过函数指针调用的函数。  </span><br><span class="line">（1）为什么要使用回调函数？  </span><br><span class="line">&amp;#160; &amp;#160; &amp;#160; &amp;#160;为什么不像普通的函数调用那样，在回调的地方直接写函数的名字？为什么有时候还得用回调函数？  </span><br><span class="line">&amp;#160; &amp;#160; &amp;#160; &amp;#160;因为可以把调用者与被调用者分开。调用者不关心谁是被调用者，所有它需知道的，只是存在一个具有某种特定原型、某些限制条件（如返回值为int）的被调用函数。就好比使用变量而不是常量来做参数一样，就是要以不变应万变，因为形参是不用变的，而实参是变的。把函数做成参数”和“把变量做成参数”目的是一致的，就是能降低耦合。  </span><br><span class="line">&amp;#160; &amp;#160; &amp;#160; &amp;#160;此外，传函数指针和传数据相比还有一个好处就是节约内存。我们知道，传数据拷贝的是内存单元的数据，如果数据很多的话拷贝过来都要为它们分配内存。而传指针的话只需要传递 4 字节的地址就行了。  </span><br><span class="line">（2）怎么使用回调函数？  </span><br><span class="line">举例说明函数指针如何作为函数的形参被调用，形成回调函数。  </span><br><span class="line"></span><br><span class="line">首先定义函数指针：</span><br></pre></td></tr></table></figure>
-
-<p>#include &lt;stdio.h&gt;<br>int sum(int a,int b){<br>    return a+b;<br>}<br>typedef int (*pSum)(int,int);    //定义函数指针</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">接着将函数指针作为函数的形参即可调用所指向的函数：</span><br></pre></td></tr></table></figure>
-
-<p>int sum2(int,pSum,int,int); </p>
-<p>int main()<br>{<br>    pSum p = sum;<br>    printf(“SUM=%d\n”,p(1,2));<br>    printf(“SUM2= %d\n”,sum2(2,p,1,2));<br>    return 0;<br>}<br>//sum2回调sum函数<br>int sum2(int num,pSum p,int a,int b){    //函数指针作为sum2函数的形参<br>    return  num * sum(a,b);<br>}</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">运行结果：  </span><br><span class="line">![](/img/200401/03.png)  </span><br><span class="line">（3）简单举例说明</span><br></pre></td></tr></table></figure>
-
-<p>#include &lt;stdio.h&gt;<br>int add(int, int);<br>int sub(int, int);<br>typedef int (*pFun)(int,int);    //定义函数指针<br>int calc(pFun, int, int);    //函数指针作为函数的形参</p>
-<p>int add(int num1, int mun2)<br>{<br>    return num1 + mun2;<br>}</p>
-<p>int sub(int num1, int mun2)<br>{<br>    return num1 - mun2;<br>}</p>
-<p>int calc(pFun p, int num1, int num2)//函数指针作为另一函数的形参被调用<br>{<br>    return (*p)(num1, num2);   //使用回调函数<br>}</p>
-<p>int main()<br>{<br>    pFun pAdd = add;    //指向加法函数的函数指针<br>    pFun pSub = sub;       //指向减法函数的函数指针<br>    printf(“3 + 5 = %d\n”, calc(pAdd, 3 , 5));<br>    printf(“3 - 5 = %d\n”, calc(pSub, 3 , 5));<br>    return 0;<br>}</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">运行结果：  </span><br><span class="line">![](/img/200401/04.png)  </span><br><span class="line"></span><br><span class="line">&lt;h5&gt;最后注意：&lt;/h5&gt;</span><br><span class="line">&amp;#160; &amp;#160; &amp;#160; &amp;#160;在定义函数指针时，如上例中的typedef int (*pFun)(int,int); 里面pFun外的小括号不能去掉，因为这样写一是能明确表明pFun是指针，二是去掉的话意思就大相径庭了。</span><br></pre></td></tr></table></figure>
-
-<p>typedef int *pFun (int,int);</p>
-<p>```  </p>
-<p>这样写表明声明了一个参数为两个int类型，返回值为int类型的指针的函数，而不是一个函数指针。</p>
-
+<pre><code class="C"><span class="function"><span class="keyword">int</span> <span class="title">max</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>{
+    <span class="keyword">return</span> a&gt;b ? a : b; 
+} </code></pre>
+    
+    <a class="article-more-a" href="/2020/04/01/C语言的函数指针/#more">more >></a>
+    
     
 
     
