@@ -600,25 +600,10 @@
   <div class="article-entry" itemprop="articleBody">
     
     <h5 id="题目"><a href="#题目" class="headerlink" title="题目　　"></a>题目　　</h5><p>下载附件，从题目看就知道是<del>py交易</del>，但为确保万一，我们先直接右键查看文件属性<br>   <img src="/img/191207/01.png" alt><br>　　确认了是pyc文件，于是直接<a href="https://tool.lu/pyc/" target="_blank" rel="noopener">在线反编译</a> ，因为这题没有修改magic number，因此我们可以直接得到源代码↓    </p>
-<pre><code>import base64
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> base64</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">encode</span><span class="params">(message)</span>:</span></span><br><span class="line">    s = <span class="string">''</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> message:</span><br><span class="line">        x = ord(i) ^ <span class="number">32</span>   <span class="comment">#ord()返回对应的 ASCII 数值,ascii值与32异或</span></span><br><span class="line">        x = x + <span class="number">16</span></span><br><span class="line">        s += chr(x)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> base64.b64encode(s)   <span class="comment">#base64编码后输出</span></span><br><span class="line"></span><br><span class="line">correct = <span class="string">'XlNkVmtUI1MgXWBZXCFeKY+AaXNt'</span></span><br><span class="line">flag = <span class="string">''</span></span><br><span class="line"><span class="keyword">print</span> <span class="string">'Input flag:'</span></span><br><span class="line">flag = raw_input()</span><br><span class="line"><span class="keyword">if</span> encode(flag) == correct:</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'correct'</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'wrong'</span></span><br></pre></td></tr></table></figure>
 
-def encode(message):
-    s = &apos;&apos;
-    for i in message:
-        x = ord(i) ^ 32   #ord()返回对应的 ASCII 数值,ascii值与32异或
-        x = x + 16
-        s += chr(x)
 
-    return base64.b64encode(s)   #base64编码后输出
-
-correct = &apos;XlNkVmtUI1MgXWBZXCFeKY+AaXNt&apos;
-flag = &apos;&apos;
-print &apos;Input flag:&apos;
-flag = raw_input()
-if encode(flag) == correct:
-    print &apos;correct&apos;
-else:
-    print &apos;wrong&apos;</code></pre><p>  我们可知按照源代码的思路为：<br>
+<p>  我们可知按照源代码的思路为：<br>
     
     <a class="article-more-a" href="/2019/12/07/XCTF-逆向新手区-python-trade/#more">more >></a>
     

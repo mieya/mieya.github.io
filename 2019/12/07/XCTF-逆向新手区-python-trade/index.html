@@ -10,19 +10,19 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="题目　　下载附件，从题目看就知道是py交易，但为确保万一，我们先直接右键查看文件属性   　　确认了是pyc文件，于是直接在线反编译 ，因为这题没有修改magic number，因此我们可以直接得到源代码↓     import base64  def encode(message):     s = &amp;apos;&amp;apos;     for i in message:         x = o">
+  <meta name="description" content="题目　　下载附件，从题目看就知道是py交易，但为确保万一，我们先直接右键查看文件属性   　　确认了是pyc文件，于是直接在线反编译 ，因为这题没有修改magic number，因此我们可以直接得到源代码↓     12345678910111213141516171819import base64def encode(message):    s = &apos;&apos;    for i in message">
 <meta name="keywords" content="reverse">
 <meta property="og:type" content="article">
 <meta property="og:title" content="XCTF 逆向新手区 python-trade">
 <meta property="og:url" content="http://yoursite.com/2019/12/07/XCTF-逆向新手区-python-trade/index.html">
 <meta property="og:site_name" content="lunalhx">
-<meta property="og:description" content="题目　　下载附件，从题目看就知道是py交易，但为确保万一，我们先直接右键查看文件属性   　　确认了是pyc文件，于是直接在线反编译 ，因为这题没有修改magic number，因此我们可以直接得到源代码↓     import base64  def encode(message):     s = &amp;apos;&amp;apos;     for i in message:         x = o">
+<meta property="og:description" content="题目　　下载附件，从题目看就知道是py交易，但为确保万一，我们先直接右键查看文件属性   　　确认了是pyc文件，于是直接在线反编译 ，因为这题没有修改magic number，因此我们可以直接得到源代码↓     12345678910111213141516171819import base64def encode(message):    s = &apos;&apos;    for i in message">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/img/191207/01.png">
-<meta property="og:updated_time" content="2019-12-09T08:54:42.052Z">
+<meta property="og:updated_time" content="2020-04-01T03:59:44.474Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="XCTF 逆向新手区 python-trade">
-<meta name="twitter:description" content="题目　　下载附件，从题目看就知道是py交易，但为确保万一，我们先直接右键查看文件属性   　　确认了是pyc文件，于是直接在线反编译 ，因为这题没有修改magic number，因此我们可以直接得到源代码↓     import base64  def encode(message):     s = &amp;apos;&amp;apos;     for i in message:         x = o">
+<meta name="twitter:description" content="题目　　下载附件，从题目看就知道是py交易，但为确保万一，我们先直接右键查看文件属性   　　确认了是pyc文件，于是直接在线反编译 ，因为这题没有修改magic number，因此我们可以直接得到源代码↓     12345678910111213141516171819import base64def encode(message):    s = &apos;&apos;    for i in message">
 <meta name="twitter:image" content="http://yoursite.com/img/191207/01.png">
   
     <link rel="alternative" href="/atom.xml" title="lunalhx" type="application/atom+xml">
@@ -238,7 +238,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">301字</span>
+      <span class="post-count">284字</span>
     </span>
   </span>
 
@@ -259,34 +259,13 @@
   <div class="article-entry" itemprop="articleBody">
     
     <h5 id="题目"><a href="#题目" class="headerlink" title="题目　　"></a>题目　　</h5><p>下载附件，从题目看就知道是<del>py交易</del>，但为确保万一，我们先直接右键查看文件属性<br>   <img src="/img/191207/01.png" alt><br>　　确认了是pyc文件，于是直接<a href="https://tool.lu/pyc/" target="_blank" rel="noopener">在线反编译</a> ，因为这题没有修改magic number，因此我们可以直接得到源代码↓    </p>
-<pre><code>import base64
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> base64</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">encode</span><span class="params">(message)</span>:</span></span><br><span class="line">    s = <span class="string">''</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> message:</span><br><span class="line">        x = ord(i) ^ <span class="number">32</span>   <span class="comment">#ord()返回对应的 ASCII 数值,ascii值与32异或</span></span><br><span class="line">        x = x + <span class="number">16</span></span><br><span class="line">        s += chr(x)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> base64.b64encode(s)   <span class="comment">#base64编码后输出</span></span><br><span class="line"></span><br><span class="line">correct = <span class="string">'XlNkVmtUI1MgXWBZXCFeKY+AaXNt'</span></span><br><span class="line">flag = <span class="string">''</span></span><br><span class="line"><span class="keyword">print</span> <span class="string">'Input flag:'</span></span><br><span class="line">flag = raw_input()</span><br><span class="line"><span class="keyword">if</span> encode(flag) == correct:</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'correct'</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'wrong'</span></span><br></pre></td></tr></table></figure>
 
-def encode(message):
-    s = &apos;&apos;
-    for i in message:
-        x = ord(i) ^ 32   #ord()返回对应的 ASCII 数值,ascii值与32异或
-        x = x + 16
-        s += chr(x)
 
-    return base64.b64encode(s)   #base64编码后输出
+<p>  我们可知按照源代码的思路为：<br>  <a id="more"></a><br>   1、x = 某符号的ascii值与32异或<br>   2、x+16<br>      3、再把得到的x串起来，char类型输出字符串<br>      4、将字符串再进行base64操作<br>      5、得到的结果为XlNkVmtUI1MgXWBZXCFeKY+AaXNt<br>       逆向思维：<br>       1、将base64（XlNkVmtUI1MgXWBZXCFeKY+AaXNt）解密得到字符串<br>       2、将字符串转换为ascii码<br>       3、ascii码减去16<br>       4、ascii值与32异或<br>       5、按char形式输出加工后的字符串   </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">import</span> base64  </span><br><span class="line"> s=<span class="string">'XlNkVmtUI1MgXWBZXCFeKY+AaXNt'</span>   </span><br><span class="line"> str=base64.b64decode(s)   </span><br><span class="line">flag=<span class="string">''</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> str:</span><br><span class="line">    i-=<span class="number">16</span></span><br><span class="line">    i^=<span class="number">32</span></span><br><span class="line">    flag+=chr(i)</span><br><span class="line">print(flag)</span><br></pre></td></tr></table></figure>
 
-correct = &apos;XlNkVmtUI1MgXWBZXCFeKY+AaXNt&apos;
-flag = &apos;&apos;
-print &apos;Input flag:&apos;
-flag = raw_input()
-if encode(flag) == correct:
-    print &apos;correct&apos;
-else:
-    print &apos;wrong&apos;</code></pre><p>  我们可知按照源代码的思路为：<br>  <a id="more"></a><br>   1、x = 某符号的ascii值与32异或<br>   2、x+16<br>      3、再把得到的x串起来，char类型输出字符串<br>      4、将字符串再进行base64操作<br>      5、得到的结果为XlNkVmtUI1MgXWBZXCFeKY+AaXNt<br>       逆向思维：<br>       1、将base64（XlNkVmtUI1MgXWBZXCFeKY+AaXNt）解密得到字符串<br>       2、将字符串转换为ascii码<br>       3、ascii码减去16<br>       4、ascii值与32异或<br>       5、按char形式输出加工后的字符串   </p>
-<pre><code> import base64  
- s=&apos;XlNkVmtUI1MgXWBZXCFeKY+AaXNt&apos;   
- str=base64.b64decode(s)   
-flag=&apos;&apos;
-for i in str:
-    i-=16
-    i^=32
-    flag+=chr(i)
-print(flag)   </code></pre><h5 id="flag"><a href="#flag" class="headerlink" title="flag"></a>flag</h5><p>运行脚本得到flag：   </p>
+<h5 id="flag"><a href="#flag" class="headerlink" title="flag"></a>flag</h5><p>运行脚本得到flag：   </p>
 <pre><code>nctf{d3c0mpil1n9_PyC}</code></pre>
     
 

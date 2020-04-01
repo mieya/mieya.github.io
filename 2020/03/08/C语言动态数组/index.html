@@ -22,7 +22,7 @@
 <meta property="og:image" content="http://yoursite.com/img/200308/2.png">
 <meta property="og:image" content="http://yoursite.com/img/200308/3.png">
 <meta property="og:image" content="http://yoursite.com/img/200308/4.png">
-<meta property="og:updated_time" content="2020-03-08T13:10:20.263Z">
+<meta property="og:updated_time" content="2020-04-01T03:57:57.771Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C语言动态数组">
 <meta name="twitter:description" content="动态数组    本博文参考了以下资料：    https://blog.csdn.net/zhanshen112/article/details/80758850    https://www.runoob.com/w3cnote/c-dynamic-array.html    https://www.php.cn/csharp-article-443121.html   一：使用动态数组的原因及">
@@ -308,99 +308,105 @@
 指针：构建一维数组，需要一维指针；构建二维数组，需要一维、二维指针；三维需要一、二、三维指针；以此类推。  
 <h5>五：程序示例</h5>  
 &#160; &#160; &#160; &#160;在了解动态数组以前，我们只知道预先给程序开辟好内存空间，然后进行操作。如：  
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int arr[5];</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> arr[<span class="number">5</span>];</span><br></pre></td></tr></table></figure>
 
 <p>&#160; &#160; &#160; &#160;这个数组在程序执行的过程中，开辟的内存空间是一直存在的，除非等到这个函数执行完毕，才会将空间释放。给我们造成了一些使用上的不方便，所以C中提供了一些动态内存分配函数。<br>例：  </p>
-<pre><code>double * p;  
-p = (double*)malloc(30*(double))  </code></pre><p>&#160; &#160; &#160; &#160;在这两行代码中，开辟了30个double类型大小的空间，然后把p指向这个空间的位置。指针p指向的事第一个double值，而不是全部开辟的30个double的空间。就和数组一样，指向数组的指针式指向数组首元素的地址，并不是整个数组的元素。<br>例：声明动态数组↓  </p>
+<pre><code class="C"><span class="keyword">double</span> * p;  
+p = (<span class="keyword">double</span>*)<span class="built_in">malloc</span>(<span class="number">30</span>*(<span class="keyword">double</span>))  </code></pre>
+<p>&#160; &#160; &#160; &#160;在这两行代码中，开辟了30个double类型大小的空间，然后把p指向这个空间的位置。指针p指向的事第一个double值，而不是全部开辟的30个double的空间。就和数组一样，指向数组的指针式指向数组首元素的地址，并不是整个数组的元素。<br>例：声明动态数组↓  </p>
 <pre><code>int arr[n];  
 p = (int *)malloc(n*sizeof(int));  </code></pre><p>例：动态内存分配函数↓  </p>
-<pre><code>#include&lt;stdio.h&gt;  
-#include&lt;stdlib.h&gt;        //定义杂项函数以及内存分配函数   
-int main(void){
-    char * p = NULL;    //声明一个char类型的空指针
-    p = (char *)malloc(10*sizeof(char));//使用malloc分配内存的首地址，然后赋值给p 
-    if(p==NULL){
-        printf(&quot;动态申请内存失败！\n&quot;);
-        exit(1);                       //异常退出 
+<pre><code class="C"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;  </span></span>
+<span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;        //定义杂项函数以及内存分配函数   </span></span>
+<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span>{
+    <span class="keyword">char</span> * p = <span class="literal">NULL</span>;    <span class="comment">//声明一个char类型的空指针</span>
+    p = (<span class="keyword">char</span> *)<span class="built_in">malloc</span>(<span class="number">10</span>*<span class="keyword">sizeof</span>(<span class="keyword">char</span>));<span class="comment">//使用malloc分配内存的首地址，然后赋值给p </span>
+    <span class="keyword">if</span>(p==<span class="literal">NULL</span>){
+        <span class="built_in">printf</span>(<span class="string">"动态申请内存失败！\n"</span>);
+        <span class="built_in">exit</span>(<span class="number">1</span>);                       <span class="comment">//异常退出 </span>
     } 
-    *p = 5;                //将分配的内存值，设为5 
-    printf(&quot;%d\n&quot;,*p);    //输出分配的内存值
-    free(p);
-return 0; 
-}   </code></pre><p>运行结果：<br><img src="/img/200308/1.png" alt><br>一维动态数组的创建：  </p>
-<pre><code>#include&lt;stdio.h&gt;
-#include&lt;stdlib.h&gt;
-int main(){
-    int l,i;
-    int * array;
-    printf(&quot;请输入所要创建的一维动态数组的长度：&quot;);
-    scanf(&quot;%d&quot;,&amp;l);
-    array=(int*)calloc(l,sizeof(int));    //按类型申请l个int所占字节的堆空间
-    for(i=0;i&lt;l;i++){
-        array[i]=i+1;
-        printf(&quot;%d\t&quot;,array[i]);
+    *p = <span class="number">5</span>;                <span class="comment">//将分配的内存值，设为5 </span>
+    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,*p);    <span class="comment">//输出分配的内存值</span>
+    <span class="built_in">free</span>(p);
+<span class="keyword">return</span> <span class="number">0</span>; 
+}   </code></pre>
+<p>运行结果：<br><img src="/img/200308/1.png" alt><br>一维动态数组的创建：  </p>
+<pre><code class="C"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span>
+<span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;</span></span>
+<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{
+    <span class="keyword">int</span> l,i;
+    <span class="keyword">int</span> * <span class="built_in">array</span>;
+    <span class="built_in">printf</span>(<span class="string">"请输入所要创建的一维动态数组的长度："</span>);
+    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;l);
+    <span class="built_in">array</span>=(<span class="keyword">int</span>*)<span class="built_in">calloc</span>(l,<span class="keyword">sizeof</span>(<span class="keyword">int</span>));    <span class="comment">//按类型申请l个int所占字节的堆空间</span>
+    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;l;i++){
+        <span class="built_in">array</span>[i]=i+<span class="number">1</span>;
+        <span class="built_in">printf</span>(<span class="string">"%d\t"</span>,<span class="built_in">array</span>[i]);
     }
-    free(array);    //释放一维数组 
-    return 0;
-}  </code></pre><p>运行结果：<br><img src="/img/200308/2.png" alt>  </p>
+    <span class="built_in">free</span>(<span class="built_in">array</span>);    <span class="comment">//释放一维数组 </span>
+    <span class="keyword">return</span> <span class="number">0</span>;
+}  </code></pre>
+<p>运行结果：<br><img src="/img/200308/2.png" alt>  </p>
 <p>二维数组的创建：  </p>
-<pre><code>#include&lt;stdio.h&gt;
-#include&lt;stdlib.h&gt;
-int main(){
-    int n1,n2;
-    int ** array;    //定义一个二维数组 
-    printf(&quot;请输入动态二维数组的第一个维度：&quot;);
-    scanf(&quot;%d&quot;,&amp;n1);
-    printf(&quot;请输入动态二维数组的第二个维度：&quot;);
-    scanf(&quot;%d&quot;,&amp;n2);
-    array=(int**)calloc(n1,sizeof(int));    //创建的时候从外层到里层
-    for(int i=0;i&lt;n1;i++){
-        array[i]=(int*)calloc(n2,sizeof(int));    //里层申请内存 
+<pre><code class="C"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span>
+<span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;</span></span>
+<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{
+    <span class="keyword">int</span> n1,n2;
+    <span class="keyword">int</span> ** <span class="built_in">array</span>;    <span class="comment">//定义一个二维数组 </span>
+    <span class="built_in">printf</span>(<span class="string">"请输入动态二维数组的第一个维度："</span>);
+    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n1);
+    <span class="built_in">printf</span>(<span class="string">"请输入动态二维数组的第二个维度："</span>);
+    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n2);
+    <span class="built_in">array</span>=(<span class="keyword">int</span>**)<span class="built_in">calloc</span>(n1,<span class="keyword">sizeof</span>(<span class="keyword">int</span>));    <span class="comment">//创建的时候从外层到里层</span>
+    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n1;i++){
+        <span class="built_in">array</span>[i]=(<span class="keyword">int</span>*)<span class="built_in">calloc</span>(n2,<span class="keyword">sizeof</span>(<span class="keyword">int</span>));    <span class="comment">//里层申请内存 </span>
     }
-    for(int i=0;i&lt;n1;i++){
-        for(int j=0;j&lt;n2;j++){
-            array[i][j]=i*n2+j+1;
-            printf(&quot;%d\t&quot;,array[i][j]);
+    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n1;i++){
+        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;n2;j++){
+            <span class="built_in">array</span>[i][j]=i*n2+j+<span class="number">1</span>;
+            <span class="built_in">printf</span>(<span class="string">"%d\t"</span>,<span class="built_in">array</span>[i][j]);
         }
-        printf(&quot;\n&quot;);
+        <span class="built_in">printf</span>(<span class="string">"\n"</span>);
     } 
-    for(int i=0;i&lt;n1;i++)
-        free(array[i]);        //释放第二维指针
-    free(array);            //释放第一维指针
-    return 0;
-}</code></pre><p>运行效果：<br><img src="/img/200308/3.png" alt><br>三维数组的创建：（从外到里）  </p>
-<pre><code>#include&lt;stdio.h&gt;
-#include&lt;stdlib.h&gt;
-int i,j,k;
-int n1,n2,n3;
-int ***array;
-scanf(&quot;%d%d%d&quot;,&amp;n1,&amp;n2,&amp;n3);
-array=(int***)calloc(n1,sizeof(int**));
-for(i=0;i&lt;n1;i++)
+    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n1;i++)
+        <span class="built_in">free</span>(<span class="built_in">array</span>[i]);        <span class="comment">//释放第二维指针</span>
+    <span class="built_in">free</span>(<span class="built_in">array</span>);            <span class="comment">//释放第一维指针</span>
+    <span class="keyword">return</span> <span class="number">0</span>;
+}</code></pre>
+<p>运行效果：<br><img src="/img/200308/3.png" alt><br>三维数组的创建：（从外到里）  </p>
+<pre><code class="C"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span>
+<span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;</span></span>
+<span class="keyword">int</span> i,j,k;
+<span class="keyword">int</span> n1,n2,n3;
+<span class="keyword">int</span> ***<span class="built_in">array</span>;
+<span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;n1,&amp;n2,&amp;n3);
+<span class="built_in">array</span>=(<span class="keyword">int</span>***)<span class="built_in">calloc</span>(n1,<span class="keyword">sizeof</span>(<span class="keyword">int</span>**));
+<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n1;i++)
 {
-    array[i]=(int**)calloc(n2,sizeof(int*));
-    for(j=0;j&lt;n2;j++)
+    <span class="built_in">array</span>[i]=(<span class="keyword">int</span>**)<span class="built_in">calloc</span>(n2,<span class="keyword">sizeof</span>(<span class="keyword">int</span>*));
+    <span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;n2;j++)
     {
-        array[i][j]=(int*)calloc(n3,sizeof(int));
-        for(k=0;k&lt;n3;k++)
+        <span class="built_in">array</span>[i][j]=(<span class="keyword">int</span>*)<span class="built_in">calloc</span>(n3,<span class="keyword">sizeof</span>(<span class="keyword">int</span>));
+        <span class="keyword">for</span>(k=<span class="number">0</span>;k&lt;n3;k++)
         {
-            array[i][j][k]=i+j+k+1;
+            <span class="built_in">array</span>[i][j][k]=i+j+k+<span class="number">1</span>;
         }
     }
-}  </code></pre><p>三维数组内存的释放：（从里到外）  </p>
-<pre><code>for(i=0;i&lt;n1;i++)
+}  </code></pre>
+<p>三维数组内存的释放：（从里到外）  </p>
+<pre><code class="C"><span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n1;i++)
 {
-    for(j=0;j&lt;n2;j++)
+    <span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;n2;j++)
     {
-        free(array[i][j]);//释放第三维指针
+        <span class="built_in">free</span>(<span class="built_in">array</span>[i][j]);<span class="comment">//释放第三维指针</span>
     }
 }
-for(i=0;i&lt;n1;i++)
+<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n1;i++)
 {
-    free(array[i]);//释放第二维指针
+    <span class="built_in">free</span>(<span class="built_in">array</span>[i]);<span class="comment">//释放第二维指针</span>
 }
-free(array);//释放第一维指针  </code></pre><p>补充说明：<br>1.使用sizeof的目的是用来计算一种类型的占有的字节数，以便适合不同的编译器。<br>2.使用sizeof的目的是用来计算一种类型的占有的字节数，以便适合不同的编译器。<br>3.绝不能对非动态分配存储块使用free。也不能对同一块内存区同时用free释放两次。 如：free(p);free(p);    </p>
+<span class="built_in">free</span>(<span class="built_in">array</span>);<span class="comment">//释放第一维指针  </span></code></pre>
+<p>补充说明：<br>1.使用sizeof的目的是用来计算一种类型的占有的字节数，以便适合不同的编译器。<br>2.使用sizeof的目的是用来计算一种类型的占有的字节数，以便适合不同的编译器。<br>3.绝不能对非动态分配存储块使用free。也不能对同一块内存区同时用free释放两次。 如：free(p);free(p);    </p>
 <p>头文件：<br><img src="/img/200308/4.png" alt><br>可知要使用动态分配内存数组，可以使用#include&lt;stdlib.h&gt;头文件。</p>
 
     
