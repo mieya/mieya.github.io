@@ -236,8 +236,8 @@
     <blockquote>
 <p>本博文参考了：<br><a href="https://www.cnblogs.com/bianchengzhuji/p/10222335.html" target="_blank" rel="noopener">https://www.cnblogs.com/bianchengzhuji/p/10222335.html</a><br><a href="http://c.biancheng.net/cpp/html/62.html" target="_blank" rel="noopener">http://c.biancheng.net/cpp/html/62.html</a> </p>
 </blockquote>
-<p>一、函数指针概述<br>&#160; &#160; &#160; &#160;函数指针是指向函数的指针变量，一个函数总是占用一段连续的内存区域，函数名在表达式中有时也会被转换为该函数所在内存区域的首地址，这和数组名非常类似。我们可以把函数的这个首地址赋给一个指针变量，使指针变量指向函数所在的内存区域，然后通过指针变量就可以找到并调用该函数。这种指针就是函数指针。换言之，我们平时所说的指针变量通常指向一个整形、字符型、或者数组等变量，而函数指针指向的是函数。  </p>
-<p>二、如何声明函数指针<br>&#160; &#160; &#160; &#160;声明普通类型指针时，需要指明指针所指向的数据类型，声明函数指针时，也需要指明指针所指向的函数类型，即需要指明函数的返回值类型和形参类型。<br>如下面的函数原型：  </p>
+<p><strong>一、函数指针概述</strong><br>&#160; &#160; &#160; &#160;函数指针是指向函数的指针变量，一个函数总是占用一段连续的内存区域，函数名在表达式中有时也会被转换为该函数所在内存区域的首地址，这和数组名非常类似。我们可以把函数的这个首地址赋给一个指针变量，使指针变量指向函数所在的内存区域，然后通过指针变量就可以找到并调用该函数。这种指针就是函数指针。换言之，我们平时所说的指针变量通常指向一个整形、字符型、或者数组等变量，而函数指针指向的是函数。  </p>
+<p><strong>二、如何声明函数指针</strong><br>&#160; &#160; &#160; &#160;声明普通类型指针时，需要指明指针所指向的数据类型，声明函数指针时，也需要指明指针所指向的函数类型，即需要指明函数的返回值类型和形参类型。<br>如下面的函数原型：  </p>
 <pre><code class="C"><span class="function"><span class="keyword">int</span> <span class="title">max</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>{
     <span class="keyword">return</span> a&gt;b ? a : b; 
 } </code></pre>

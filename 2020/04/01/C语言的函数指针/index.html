@@ -22,7 +22,7 @@
 <meta property="og:image" content="http://yoursite.com/img/200401/02.png">
 <meta property="og:image" content="http://yoursite.com/img/200401/03.png">
 <meta property="og:image" content="http://yoursite.com/img/200401/04.png">
-<meta property="og:updated_time" content="2020-04-01T07:51:57.520Z">
+<meta property="og:updated_time" content="2020-04-11T03:24:07.102Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C语言的函数指针">
 <meta name="twitter:description" content="本博文参考了：https://www.cnblogs.com/bianchengzhuji/p/10222335.htmlhttp://c.biancheng.net/cpp/html/62.html   一、函数指针概述&amp;#160; &amp;#160; &amp;#160; &amp;#160;函数指针是指向函数的指针变量，一个函数总是占用一段连续的内存区域，函数名在表达式中有时也会被转换为该函数所在内存区域的首地">
@@ -264,8 +264,8 @@
     <blockquote>
 <p>本博文参考了：<br><a href="https://www.cnblogs.com/bianchengzhuji/p/10222335.html" target="_blank" rel="noopener">https://www.cnblogs.com/bianchengzhuji/p/10222335.html</a><br><a href="http://c.biancheng.net/cpp/html/62.html" target="_blank" rel="noopener">http://c.biancheng.net/cpp/html/62.html</a> </p>
 </blockquote>
-<p>一、函数指针概述<br>&#160; &#160; &#160; &#160;函数指针是指向函数的指针变量，一个函数总是占用一段连续的内存区域，函数名在表达式中有时也会被转换为该函数所在内存区域的首地址，这和数组名非常类似。我们可以把函数的这个首地址赋给一个指针变量，使指针变量指向函数所在的内存区域，然后通过指针变量就可以找到并调用该函数。这种指针就是函数指针。换言之，我们平时所说的指针变量通常指向一个整形、字符型、或者数组等变量，而函数指针指向的是函数。  </p>
-<p>二、如何声明函数指针<br>&#160; &#160; &#160; &#160;声明普通类型指针时，需要指明指针所指向的数据类型，声明函数指针时，也需要指明指针所指向的函数类型，即需要指明函数的返回值类型和形参类型。<br>如下面的函数原型：  </p>
+<p><strong>一、函数指针概述</strong><br>&#160; &#160; &#160; &#160;函数指针是指向函数的指针变量，一个函数总是占用一段连续的内存区域，函数名在表达式中有时也会被转换为该函数所在内存区域的首地址，这和数组名非常类似。我们可以把函数的这个首地址赋给一个指针变量，使指针变量指向函数所在的内存区域，然后通过指针变量就可以找到并调用该函数。这种指针就是函数指针。换言之，我们平时所说的指针变量通常指向一个整形、字符型、或者数组等变量，而函数指针指向的是函数。  </p>
+<p><strong>二、如何声明函数指针</strong><br>&#160; &#160; &#160; &#160;声明普通类型指针时，需要指明指针所指向的数据类型，声明函数指针时，也需要指明指针所指向的函数类型，即需要指明函数的返回值类型和形参类型。<br>如下面的函数原型：  </p>
 <pre><code class="C"><span class="function"><span class="keyword">int</span> <span class="title">max</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>{
     <span class="keyword">return</span> a&gt;b ? a : b; 
 } </code></pre>
@@ -276,7 +276,7 @@
 <pre><code class="C"><span class="function"><span class="keyword">typedef</span> <span class="title">int</span> <span class="params">(*pMax)</span><span class="params">(<span class="keyword">int</span>,<span class="keyword">int</span>)</span></span>;  <span class="comment">//为该函数指针类型起一个更方便的名字</span>
 pMax p1;      <span class="comment">//声明pMax类型的函数指针p1</span></code></pre>
 <p>上例的pMax就是一个函数指针类型，在其他地方就可以很方便的用来声明变量了，pMax p1实际上相当于 int a，即数据类型＋变量。  </p>
-<p>三、如何为函数指针赋值  </p>
+<p><strong>三、如何为函数指针赋值</strong> </p>
 <pre><code class="C">P1 = <span class="built_in">max</span>;  <span class="comment">//将max函数的首地址赋给函数指针p1</span>
 P1 = &amp;<span class="built_in">max</span>; <span class="comment">//或者使用这种方法</span></code></pre>
 <p>这两种方法都可以，就好比定义一个数组arr[],arr表示这个数组的首地址，但&amp;arr同样可以表示首地址。<br>程序示例：  </p>
@@ -295,7 +295,7 @@ P1 = &amp;<span class="built_in">max</span>; <span class="comment">//或者使�
         <span class="keyword">return</span> <span class="number">0</span>;
     }</code></pre>
 <p>运行结果：<br> <img src="/img/200401/01.png" alt>  </p>
-<p> 四、函数指针作为结构体成员<br> &#160; &#160; &#160; &#160;其实在结构体中，也可以像定义一般变量一样，定义函数指针变量。其实C语言中的struct很接近Java中类的概念，但是在C语言的struct中只有成员，不能有函数，但是可以有指向函数的指针，这也就方便了我们使用函数了。  </p>
+<p> <strong>四、函数指针作为结构体成员</strong><br> &#160; &#160; &#160; &#160;其实在结构体中，也可以像定义一般变量一样，定义函数指针变量。其实C语言中的struct很接近Java中类的概念，但是在C语言的struct中只有成员，不能有函数，但是可以有指向函数的指针，这也就方便了我们使用函数了。  </p>
 <pre><code class="C"> <span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">calc</span>  </span>
 <span class="class">{</span>  
     <span class="keyword">int</span> x,y;  
@@ -322,7 +322,7 @@ P1 = &amp;<span class="built_in">max</span>; <span class="comment">//或者使�
     <span class="built_in">printf</span>(<span class="string">"func(3,4)=%d\n"</span>,demo.func(<span class="number">3</span>,<span class="number">4</span>));  
 }</code></pre>
 <p>运行结果：<br> <img src="/img/200401/02.png" alt>  </p>
-<p> 五、函数指针作为函数的参数<br>&#160; &#160; &#160; &#160;函数指针有两种常用的用法，一种是作为结构体成员，另一种就是函数指针作为函数的形参。函数指针可以作为一个参数传递给另一个函数，就像普通的常量和变量一样。当函数指针作为参数传递时，接受这个参数的函数通常需要根据这个指针调用那个函数。如果把函数的指针（地址）作为参数传递给另一个函数，当这个指针被用来调用其所指向的函数时，我们就说这是<strong>回调函数</strong>。<br>&#160; &#160; &#160; &#160;简而言之，函数指针变量可以作为某个函数的参数来使用，回调函数就是一个通过函数指针调用的函数。<br>（1）为什么要使用回调函数？<br>&#160; &#160; &#160; &#160;为什么不像普通的函数调用那样，在回调的地方直接写函数的名字？为什么有时候还得用回调函数？<br>&#160; &#160; &#160; &#160;因为可以把调用者与被调用者分开。调用者不关心谁是被调用者，所有它需知道的，只是存在一个具有某种特定原型、某些限制条件（如返回值为int）的被调用函数。就好比使用变量而不是常量来做参数一样，就是要以不变应万变，因为形参是不用变的，而实参是变的。把函数做成参数”和“把变量做成参数”目的是一致的，就是能降低耦合。<br>&#160; &#160; &#160; &#160;此外，传函数指针和传数据相比还有一个好处就是节约内存。我们知道，传数据拷贝的是内存单元的数据，如果数据很多的话拷贝过来都要为它们分配内存。而传指针的话只需要传递 4 字节的地址就行了。<br>（2）怎么使用回调函数？<br>举例说明函数指针如何作为函数的形参被调用，形成回调函数。  </p>
+<p> <strong>五、函数指针作为函数的参数</strong><br>&#160; &#160; &#160; &#160;函数指针有两种常用的用法，一种是作为结构体成员，另一种就是函数指针作为函数的形参。函数指针可以作为一个参数传递给另一个函数，就像普通的常量和变量一样。当函数指针作为参数传递时，接受这个参数的函数通常需要根据这个指针调用那个函数。如果把函数的指针（地址）作为参数传递给另一个函数，当这个指针被用来调用其所指向的函数时，我们就说这是<strong>回调函数</strong>。<br>&#160; &#160; &#160; &#160;简而言之，函数指针变量可以作为某个函数的参数来使用，回调函数就是一个通过函数指针调用的函数。<br>（1）为什么要使用回调函数？<br>&#160; &#160; &#160; &#160;为什么不像普通的函数调用那样，在回调的地方直接写函数的名字？为什么有时候还得用回调函数？<br>&#160; &#160; &#160; &#160;因为可以把调用者与被调用者分开。调用者不关心谁是被调用者，所有它需知道的，只是存在一个具有某种特定原型、某些限制条件（如返回值为int）的被调用函数。就好比使用变量而不是常量来做参数一样，就是要以不变应万变，因为形参是不用变的，而实参是变的。把函数做成参数”和“把变量做成参数”目的是一致的，就是能降低耦合。<br>&#160; &#160; &#160; &#160;此外，传函数指针和传数据相比还有一个好处就是节约内存。我们知道，传数据拷贝的是内存单元的数据，如果数据很多的话拷贝过来都要为它们分配内存。而传指针的话只需要传递 4 字节的地址就行了。<br>（2）怎么使用回调函数？<br>举例说明函数指针如何作为函数的形参被调用，形成回调函数。  </p>
 <p>首先定义函数指针：  </p>
 <pre><code class="C"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span>
 <span class="function"><span class="keyword">int</span> <span class="title">sum</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>{
