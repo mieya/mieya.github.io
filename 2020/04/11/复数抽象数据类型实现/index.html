@@ -19,7 +19,7 @@
 <meta property="og:description" content="&amp;#160; &amp;#160; &amp;#160; &amp;#160;为了简单复习C语言的结构体类型，于是写个程序通过使用结构体引用参数来实现使C语言实现复数的描述及操作。复数的存储结构及相关操作的声明：   12345678//复数的存储结构#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt;typedef struct Complex&amp;#123;float rea">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/img/200411/02.png">
-<meta property="og:updated_time" content="2020-04-11T03:43:11.771Z">
+<meta property="og:updated_time" content="2020-04-11T03:52:06.733Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="复数抽象数据类型实现">
 <meta name="twitter:description" content="&amp;#160; &amp;#160; &amp;#160; &amp;#160;为了简单复习C语言的结构体类型，于是写个程序通过使用结构体引用参数来实现使C语言实现复数的描述及操作。复数的存储结构及相关操作的声明：   12345678//复数的存储结构#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt;typedef struct Complex&amp;#123;float rea">
@@ -265,7 +265,7 @@
 <p>基本操作的声明：  </p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span>   <span class="title">InitComplex</span><span class="params">(&amp;C,vr,vi)</span></span>;</span><br><span class="line">操作结果：构造一个复数,元素a,b分别被赋以参数vr,vi的值。</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">OutComplex</span><span class="params">(C)</span></span>;</span><br><span class="line">操作结果:输出一个复数。</span><br><span class="line"><span class="function">Complex <span class="title">AddComplex</span><span class="params">(&amp;C,C1,C2)</span></span>;</span><br><span class="line">操作结果：求两个复数C1,C2之和,结果存入C。</span><br><span class="line"><span class="function">Complex <span class="title">SubComplex</span><span class="params">(&amp;C,C1,C2)</span></span>;</span><br><span class="line">操作结果：求两个复数C1，C2之差，结果存入C。</span><br><span class="line"><span class="function">Complex <span class="title">MulComplex</span><span class="params">(&amp;C,C1,C2)</span></span>;</span><br><span class="line">操作结果：求两个复数C1，C2的积，结果存入C。</span><br><span class="line"><span class="function">Complex <span class="title">SComplex</span><span class="params">(&amp;C,C1,C2)</span></span>;</span><br><span class="line">操作结果：求两个复数C1，C2的商，结果存入C。</span><br></pre></td></tr></table></figure>
 
-<p>下面是具体的实现代码↓</p>
+<p>下面是具体的实现代码：</p>
 <pre><code class="C"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span>
 <span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;</span></span>
 
@@ -293,7 +293,6 @@ InitComplex2(Complex  &amp;C2, <span class="keyword">float</span> vr2, <span cla
     <span class="keyword">else</span>{
         <span class="built_in">printf</span>(<span class="string">" C=%f+%fi\n"</span>,C.real,C.<span class="built_in">image</span>);
     }
-
     <span class="keyword">return</span> <span class="number">1</span>; 
 }
 
@@ -340,9 +339,6 @@ InitComplex2(Complex  &amp;C2, <span class="keyword">float</span> vr2, <span cla
     C.<span class="built_in">image</span> = ((C1.<span class="built_in">image</span> * C2.real) - (C1.real * C2.<span class="built_in">image</span>)) / ((C2.real * C2.real) + (C2.<span class="built_in">image</span> * C2.<span class="built_in">image</span>));
     <span class="built_in">printf</span>(<span class="string">"C1与C2的商为"</span>);
 }
-
-
-
 
 main(){
     Complex C,C1,C2;
@@ -413,13 +409,11 @@ main(){
              <span class="built_in">printf</span>(<span class="string">" Over "</span>);        
         }
         <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;num);
-    }
-
-
+    }        
     <span class="keyword">return</span> <span class="number">0</span>;
 }
 </code></pre>
-<p>运行效果为：<br><img src="/img/200411/02.png" alt>  </p>
+<p>运行效果为：<br><img src="/img/200411/02.png" alt></p>
 
     
 
