@@ -237,60 +237,9 @@
 <p>本博文参考了<a href="http://www.ga1axy.top/index.php/archives/28/" target="_blank" rel="noopener">http://www.ga1axy.top/index.php/archives/28/</a>    </p>
 </blockquote>
 <p>&#160; &#160; &#160; &#160;太久没刷题了，这次参赛真的感觉自己更菜了，只做出了一道入门逆向，连签到题的断点下载都没发现，blueshark题更是发现了压缩包却不会提取（因为对软件的相关操作不熟悉）。赛后根据一些师傅的博文复现了几道，下面是部分wp。  </p>
-<h5>6G还远吗</h5>
-&#160; &#160; &#160; &#160;这题的确是签到题的水平（~~但俺当时还是没做出来~~）。下载的资源是一个大小约为1G的文件，当时一看到这个大小就觉得也许下不来，结果还真的是在下载几秒后变变成了1kb的速度，看了相关博客后了解到这里涉及到**断点下载**，即下载几秒钟后停止下载，这题将下载得到的部分文件用winhex查看，即可在开头找到flag。  
-![](/img/200425/06.png)  
-<h5>blueshark</h5>
-&#160; &#160; &#160; &#160;这题的下载资源是一个后缀为pcapng的文件，搜索后发现可以用wireshark进行分析提取。
-![](/img/200425/03.png)  
-如上图，可以发现一个以.7z为后缀的压缩包，在左下角选中相关部分，接着左上角选择文件->导出字节流，保存为压缩包文件后即可分离出压缩包。  
-![](/img/200425/04.png)  
-点击压缩包，发现解压需要密码，这时压缩包里面唯一的文本文件的文件名password_is_Bluetooth_PIN给了我们提示，于是回到wireshark进行相关的字符串搜索。  
-![](/img/200425/01.png)  
-在下方可以看见141854，这即为压缩包的解压密码  
-![](/img/200425/02.png)  
-解压后，打开文本文件即可得到flag：  
-![](/img/200425/05.png)  
-##### 入门reverse    
-&#160; &#160; &#160; &#160;这题下载附件后得到一个可运行的exe文件，提示需要输入key。之后将它拖入IDA，F5即可看到关键部分的伪代码  
-![](/img/200425/07.png)  
-值得注意的是这里的v6[i-11]实际上就是v5的起始地址，因为v6与v5起始地址相差112  
-![](/img/200425/08.png)  
-![](/img/200425/09.png)  
-如上图，十六进制78-08得到70，转换为十进制即为**112**。  
-伪代码中的逻辑可用代码简单表示为：  
-```C  
-#include<stdio.h> 
-#include<cstring>
-int main(){
-    int ret;
-    char str1[27];
-    printf("please input your key：\n"); 
-    scanf("%s",&str1);
-    for(int i = 0; i < strlen(str1); ++i)
-        str1[i] = (str1[i] ^ 6) + 1;
-    ret = strcmp(str1,"akhb~chdaZrdaZudqduvdZvvv|");
-
-<pre><code>if(!ret)
-    printf(&quot;yes!you are right&quot;);
-else
-    printf(&quot;try again&quot;);
-return 0;</code></pre><p>}</p>
-<pre><code>可知，将用户输入的字符串每位与6进行异或后再加上1，最后得到的字符串与“akhb~chdaZrdaZudqduvdZvvv|”进行比对，若一致则得到flag，因此为了得到用户输入我们将此过程逆向，先将字符串“akhb~chdaZrdaZudqduvdZvvv|”每位减去1接着再与6进行异或，记得得到用户应该输入的字符串。  
-```C
-#include&lt;stdio.h&gt;
-int main(){
-    char a[27]=&quot;akhb~chdaZrdaZudqduvdZvvv|&quot;;
-    int i; 
-    for( i = 0;i &lt; 26; ++i )
-    {
-    a[i] = a[i] - 1;
-    a[i] = a[i] ^ 6;
-    printf(&quot;%c&quot;,a[i]);
-    }
-    return 0;
-}</code></pre><p>运行得到flag：<br><img src="/img/200425/10.png" alt></p>
-</cstring></stdio.h>
+    
+    <a class="article-more-a" href="/2020/04/25/2020安恒四月春季赛/#more">more >></a>
+    
     
 
     

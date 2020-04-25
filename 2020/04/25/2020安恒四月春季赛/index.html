@@ -10,19 +10,28 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="本博文参考了http://www.ga1axy.top/index.php/archives/28/      &amp;#160; &amp;#160; &amp;#160; &amp;#160;太久没刷题了，这次参赛真的感觉自己更菜了，只做出了一道入门逆向，连签到题的断点下载都没发现，blueshark题更是发现了压缩包却不会提取（因为对软件的相关操作不熟悉）。赛后根据一些师傅的博文复现了几道，下面是部分wp。   6G还">
+  <meta name="description" content="本博文参考了http://www.ga1axy.top/index.php/archives/28/      &amp;#160; &amp;#160; &amp;#160; &amp;#160;太久没刷题了，这次参赛真的感觉自己更菜了，只做出了一道入门逆向，连签到题的断点下载都没发现，blueshark题更是发现了压缩包却不会提取（因为对软件的相关操作不熟悉）。赛后根据一些师傅的博文复现了几道，下面是部分wp。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2020安恒四月春季赛部分WriteUp">
 <meta property="og:url" content="http://yoursite.com/2020/04/25/2020安恒四月春季赛/index.html">
 <meta property="og:site_name" content="lunalhx">
-<meta property="og:description" content="本博文参考了http://www.ga1axy.top/index.php/archives/28/      &amp;#160; &amp;#160; &amp;#160; &amp;#160;太久没刷题了，这次参赛真的感觉自己更菜了，只做出了一道入门逆向，连签到题的断点下载都没发现，blueshark题更是发现了压缩包却不会提取（因为对软件的相关操作不熟悉）。赛后根据一些师傅的博文复现了几道，下面是部分wp。   6G还">
+<meta property="og:description" content="本博文参考了http://www.ga1axy.top/index.php/archives/28/      &amp;#160; &amp;#160; &amp;#160; &amp;#160;太久没刷题了，这次参赛真的感觉自己更菜了，只做出了一道入门逆向，连签到题的断点下载都没发现，blueshark题更是发现了压缩包却不会提取（因为对软件的相关操作不熟悉）。赛后根据一些师傅的博文复现了几道，下面是部分wp。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/img/200425/06.png">
+<meta property="og:image" content="http://yoursite.com/img/200425/03.png">
+<meta property="og:image" content="http://yoursite.com/img/200425/04.png">
+<meta property="og:image" content="http://yoursite.com/img/200425/01.png">
+<meta property="og:image" content="http://yoursite.com/img/200425/02.png">
+<meta property="og:image" content="http://yoursite.com/img/200425/05.png">
+<meta property="og:image" content="http://yoursite.com/img/200425/07.png">
+<meta property="og:image" content="http://yoursite.com/img/200425/08.png">
+<meta property="og:image" content="http://yoursite.com/img/200425/09.png">
 <meta property="og:image" content="http://yoursite.com/img/200425/10.png">
-<meta property="og:updated_time" content="2020-04-25T15:19:07.684Z">
+<meta property="og:updated_time" content="2020-04-25T15:26:05.299Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2020安恒四月春季赛部分WriteUp">
-<meta name="twitter:description" content="本博文参考了http://www.ga1axy.top/index.php/archives/28/      &amp;#160; &amp;#160; &amp;#160; &amp;#160;太久没刷题了，这次参赛真的感觉自己更菜了，只做出了一道入门逆向，连签到题的断点下载都没发现，blueshark题更是发现了压缩包却不会提取（因为对软件的相关操作不熟悉）。赛后根据一些师傅的博文复现了几道，下面是部分wp。   6G还">
-<meta name="twitter:image" content="http://yoursite.com/img/200425/10.png">
+<meta name="twitter:description" content="本博文参考了http://www.ga1axy.top/index.php/archives/28/      &amp;#160; &amp;#160; &amp;#160; &amp;#160;太久没刷题了，这次参赛真的感觉自己更菜了，只做出了一道入门逆向，连签到题的断点下载都没发现，blueshark题更是发现了压缩包却不会提取（因为对软件的相关操作不熟悉）。赛后根据一些师傅的博文复现了几道，下面是部分wp。">
+<meta name="twitter:image" content="http://yoursite.com/img/200425/06.png">
   
     <link rel="alternative" href="/atom.xml" title="lunalhx" type="application/atom+xml">
   
@@ -237,7 +246,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">784字</span>
+      <span class="post-count">745字</span>
     </span>
   </span>
 
@@ -246,7 +255,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">3分</span>
+      <span class="post-count">2分</span>
     </span>
   </span>
 </div>
@@ -261,60 +270,42 @@
 <p>本博文参考了<a href="http://www.ga1axy.top/index.php/archives/28/" target="_blank" rel="noopener">http://www.ga1axy.top/index.php/archives/28/</a>    </p>
 </blockquote>
 <p>&#160; &#160; &#160; &#160;太久没刷题了，这次参赛真的感觉自己更菜了，只做出了一道入门逆向，连签到题的断点下载都没发现，blueshark题更是发现了压缩包却不会提取（因为对软件的相关操作不熟悉）。赛后根据一些师傅的博文复现了几道，下面是部分wp。  </p>
-<h5>6G还远吗</h5>
-&#160; &#160; &#160; &#160;这题的确是签到题的水平（~~但俺当时还是没做出来~~）。下载的资源是一个大小约为1G的文件，当时一看到这个大小就觉得也许下不来，结果还真的是在下载几秒后变变成了1kb的速度，看了相关博客后了解到这里涉及到**断点下载**，即下载几秒钟后停止下载，这题将下载得到的部分文件用winhex查看，即可在开头找到flag。  
-![](/img/200425/06.png)  
-<h5>blueshark</h5>
-&#160; &#160; &#160; &#160;这题的下载资源是一个后缀为pcapng的文件，搜索后发现可以用wireshark进行分析提取。
-![](/img/200425/03.png)  
-如上图，可以发现一个以.7z为后缀的压缩包，在左下角选中相关部分，接着左上角选择文件->导出字节流，保存为压缩包文件后即可分离出压缩包。  
-![](/img/200425/04.png)  
-点击压缩包，发现解压需要密码，这时压缩包里面唯一的文本文件的文件名password_is_Bluetooth_PIN给了我们提示，于是回到wireshark进行相关的字符串搜索。  
-![](/img/200425/01.png)  
-在下方可以看见141854，这即为压缩包的解压密码  
-![](/img/200425/02.png)  
-解压后，打开文本文件即可得到flag：  
-![](/img/200425/05.png)  
-##### 入门reverse    
-&#160; &#160; &#160; &#160;这题下载附件后得到一个可运行的exe文件，提示需要输入key。之后将它拖入IDA，F5即可看到关键部分的伪代码  
-![](/img/200425/07.png)  
-值得注意的是这里的v6[i-11]实际上就是v5的起始地址，因为v6与v5起始地址相差112  
-![](/img/200425/08.png)  
-![](/img/200425/09.png)  
-如上图，十六进制78-08得到70，转换为十进制即为**112**。  
-伪代码中的逻辑可用代码简单表示为：  
-```C  
-#include<stdio.h> 
-#include<cstring>
-int main(){
-    int ret;
-    char str1[27];
-    printf("please input your key：\n"); 
-    scanf("%s",&str1);
-    for(int i = 0; i < strlen(str1); ++i)
-        str1[i] = (str1[i] ^ 6) + 1;
-    ret = strcmp(str1,"akhb~chdaZrdaZudqduvdZvvv|");
+<a id="more"></a>
+<h4 id="6G还远吗"><a href="#6G还远吗" class="headerlink" title="6G还远吗"></a>6G还远吗</h4><p>&#160; &#160; &#160; &#160;这题的确是签到题的水平（<del>但俺当时还是没做出来</del>）。下载的资源是一个大小约为1G的文件，当时一看到这个大小就觉得也许下不来，结果还真的是在下载几秒后变变成了1kb的速度，看了相关博客后了解到这里涉及到<strong>断点下载</strong>，即下载几秒钟后停止下载，这题将下载得到的部分文件用winhex查看，即可在开头找到flag。<br><img src="/img/200425/06.png" alt>  </p>
+<h4 id="blueshark"><a href="#blueshark" class="headerlink" title="blueshark"></a>blueshark</h4><p>&#160; &#160; &#160; &#160;这题的下载资源是一个后缀为pcapng的文件，搜索后发现可以用wireshark进行分析提取。<br><img src="/img/200425/03.png" alt><br>如上图，可以发现一个以.7z为后缀的压缩包，在左下角选中相关部分，接着左上角选择文件-&gt;导出字节流，保存为压缩包文件后即可分离出压缩包。<br><img src="/img/200425/04.png" alt><br>点击压缩包，发现解压需要密码，这时压缩包里面唯一的文本文件的文件名password_is_Bluetooth_PIN给了我们提示，于是回到wireshark进行相关的字符串搜索。<br><img src="/img/200425/01.png" alt><br>在下方可以看见141854，这就是压缩包的解压密码<br><img src="/img/200425/02.png" alt><br>解压后，打开文本文件即可得到flag：<br><img src="/img/200425/05.png" alt>  </p>
+<h4 id="入门reverse"><a href="#入门reverse" class="headerlink" title="入门reverse"></a>入门reverse</h4><p>&#160; &#160; &#160; &#160;这题下载附件后得到一个可运行的exe文件，提示需要输入key。之后将它拖入IDA，F5即可看到关键部分的伪代码<br><img src="/img/200425/07.png" alt><br>值得注意的是这里的v6[i-11]实际上就是v5的起始地址，因为v6与v5起始地址相差112<br><img src="/img/200425/08.png" alt><br><img src="/img/200425/09.png" alt><br>如上图，十六进制78-08得到70，转换为十进制即为<strong>112</strong>。<br>伪代码中的逻辑可用代码简单表示为：  </p>
+<pre><code class="C"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt; </span></span>
+<span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span>
+<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{
+    <span class="keyword">int</span> ret;
+    <span class="keyword">char</span> str1[<span class="number">27</span>];
+    <span class="built_in">printf</span>(<span class="string">"please input your key：\n"</span>); 
+    <span class="built_in">scanf</span>(<span class="string">"%s"</span>,&amp;str1);
+    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="built_in">strlen</span>(str1); ++i)
+        str1[i] = (str1[i] ^ <span class="number">6</span>) + <span class="number">1</span>;
+    ret = <span class="built_in">strcmp</span>(str1,<span class="string">"akhb~chdaZrdaZudqduvdZvvv|"</span>);
 
-<pre><code>if(!ret)
-    printf(&quot;yes!you are right&quot;);
-else
-    printf(&quot;try again&quot;);
-return 0;</code></pre><p>}</p>
-<pre><code>可知，将用户输入的字符串每位与6进行异或后再加上1，最后得到的字符串与“akhb~chdaZrdaZudqduvdZvvv|”进行比对，若一致则得到flag，因此为了得到用户输入我们将此过程逆向，先将字符串“akhb~chdaZrdaZudqduvdZvvv|”每位减去1接着再与6进行异或，记得得到用户应该输入的字符串。  
-```C
-#include&lt;stdio.h&gt;
-int main(){
-    char a[27]=&quot;akhb~chdaZrdaZudqduvdZvvv|&quot;;
-    int i; 
-    for( i = 0;i &lt; 26; ++i )
+    <span class="keyword">if</span>(!ret)
+        <span class="built_in">printf</span>(<span class="string">"yes!you are right"</span>);
+    <span class="keyword">else</span>
+        <span class="built_in">printf</span>(<span class="string">"try again"</span>);
+    <span class="keyword">return</span> <span class="number">0</span>;
+}</code></pre>
+<p>可知，将用户输入的字符串每位与6进行异或后再加上1，最后得到的字符串与“akhb<del>chdaZrdaZudqduvdZvvv|”进行比对，若一致则得到flag，因此为了得到用户输入我们将此过程逆向，先将字符串“akhb</del>chdaZrdaZudqduvdZvvv|”每位减去1接着再与6进行异或，记得得到用户应该输入的字符串。  </p>
+<pre><code class="C"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span>
+<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{
+    <span class="keyword">char</span> a[<span class="number">27</span>]=<span class="string">"akhb~chdaZrdaZudqduvdZvvv|"</span>;
+    <span class="keyword">int</span> i; 
+    <span class="keyword">for</span>( i = <span class="number">0</span>;i &lt; <span class="number">26</span>; ++i )
     {
-    a[i] = a[i] - 1;
-    a[i] = a[i] ^ 6;
-    printf(&quot;%c&quot;,a[i]);
+    a[i] = a[i] - <span class="number">1</span>;
+    a[i] = a[i] ^ <span class="number">6</span>;
+    <span class="built_in">printf</span>(<span class="string">"%c"</span>,a[i]);
     }
-    return 0;
-}</code></pre><p>运行得到flag：<br><img src="/img/200425/10.png" alt></p>
-</cstring></stdio.h>
+    <span class="keyword">return</span> <span class="number">0</span>;
+}</code></pre>
+<p>运行得到flag：<br><img src="/img/200425/10.png" alt></p>
+
     
 
     
