@@ -6,17 +6,30 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020/4 | lunalhx</title>
+  <title>BUUCTF reverse 1-5题WP | lunalhx</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="lunalhx">
-<meta property="og:url" content="http://yoursite.com/archives/2020/04/index.html">
+  <meta name="description" content="1.easyre没什么好说的，ida打开查看字符串即可发现flag 2.reverse1ida打开，F5查看伪代码，发现是两个字符串的比对">
+<meta property="og:type" content="article">
+<meta property="og:title" content="BUUCTF reverse 1-5题WP">
+<meta property="og:url" content="http://yoursite.com/2020/04/30/BUUCTF-reverse-1-5题WP/index.html">
 <meta property="og:site_name" content="lunalhx">
+<meta property="og:description" content="1.easyre没什么好说的，ida打开查看字符串即可发现flag 2.reverse1ida打开，F5查看伪代码，发现是两个字符串的比对">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/img/200430/01.png">
+<meta property="og:image" content="http://yoursite.com/img/200430/02.png">
+<meta property="og:image" content="http://yoursite.com/img/200430/03.png">
+<meta property="og:image" content="http://yoursite.com/img/200430/04.png">
+<meta property="og:image" content="http://yoursite.com/img/200430/05.png">
+<meta property="og:image" content="http://yoursite.com/img/200430/06.png">
+<meta property="og:image" content="http://yoursite.com/img/200430/07.png">
+<meta property="og:image" content="http://yoursite.com/img/200430/08.png">
+<meta property="og:updated_time" content="2020-04-30T08:29:48.878Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="lunalhx">
+<meta name="twitter:title" content="BUUCTF reverse 1-5题WP">
+<meta name="twitter:description" content="1.easyre没什么好说的，ida打开查看字符串即可发现flag 2.reverse1ida打开，F5查看伪代码，发现是两个字符串的比对">
+<meta name="twitter:image" content="http://yoursite.com/img/200430/01.png">
   
     <link rel="alternative" href="/atom.xml" title="lunalhx" type="application/atom+xml">
   
@@ -198,183 +211,239 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-BUUCTF-reverse-1-5题WP" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
   
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
+    <h1 class="article-title" itemprop="name">
+      BUUCTF reverse 1-5题WP
+    </h1>
+  
+
+
+  
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
 <a href="/2020/04/30/BUUCTF-reverse-1-5题WP/" class="archive-article-date">
         <time datetime="2020-04-30T08:07:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-30</time>
 </a>
 
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">248字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">1分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h2 id="1-easyre"><a href="#1-easyre" class="headerlink" title="1.easyre"></a>1.easyre</h2><p>没什么好说的，ida打开查看字符串即可发现flag</p>
+<h2 id="2-reverse1"><a href="#2-reverse1" class="headerlink" title="2.reverse1"></a>2.reverse1</h2><p>ida打开，F5查看伪代码，发现是两个字符串的比对  </p>
+<a id="more"></a>
+<p><img src="/img/200430/01.png" alt><br>其中str1为用户输入，str2为内置的字符串，查看str2<br><img src="/img/200430/02.png" alt><br>根据：<br><img src="/img/200430/03.png" alt><br>可知str2中的o被替换成了0，于是str1应该为{hell0_w0rld}，加上flag即为最终的flag。</p>
+<blockquote>
+<p>flag{hell0_w0rld}</p>
+</blockquote>
+<h2 id="3-reverse2"><a href="#3-reverse2" class="headerlink" title="3.reverse2"></a>3.reverse2</h2><p>可以在ida中看到内部的flag：{hacking_for_fun}<br><img src="/img/200430/04.png" alt><br><img src="/img/200430/05.png" alt><br>与上一题同样是用户输入的字符串与内置字符串的比对，可以看见代码逻辑是将原本的flag中的i以及r改为1<br>{hacking_for_fun}  –&gt; {hack1ng_fo1_fun}</p>
+<blockquote>
+<p>flag{hack1ng_fo1_fun}</p>
+</blockquote>
+<h2 id="4-新年快乐"><a href="#4-新年快乐" class="headerlink" title="4.新年快乐"></a>4.新年快乐</h2><p>ida打开后，查看字符串发现没有特殊字符，于是考虑到可能加了壳<br>进行查壳：<br><img src="/img/200430/06.png" alt><br>使用upx脱壳机脱壳后，用ida查看<br><img src="/img/200430/07.png" alt><br>可以看出直接就是字符串的比对，没有进行任何额外处理  </p>
+<blockquote>
+<p>flag{HappyNewYear!}</p>
+</blockquote>
+<h2 id="5-helloworld"><a href="#5-helloworld" class="headerlink" title="5.helloworld"></a>5.helloworld</h2><p>下载发现是一个apk文件，使用jeb打开后点击MainActivity<br><img src="/img/200430/08.png" alt><br>即可发现flag</p>
+
+    
+
+    
+    <div class="page-reward">
+      <a href="javascript:void(0);" class="page-reward-btn tooltip-top" target="_self">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/alipay.png">
+                    <span class="reward-type">支付宝</span>
+                  </div>
+                  
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/weixin.png">
+                    <span class="reward-type">微信</span>
+                  </div>
+                  
+                </div>
+              </span>
+            </span>
+          </span>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/04/30/BUUCTF-reverse-1-5题WP/" target="_blank">BUUCTF reverse 1-5题WP</a>
-  
-    </h1>
-  
+      </a>
+    </div>
+    
 
-
-        <div class="article-info info-on-right">
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          望舒
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="http://yoursite.com/2020/04/30/BUUCTF-reverse-1-5题WP/" title="BUUCTF reverse 1-5题WP" target="_blank">http://yoursite.com/2020/04/30/BUUCTF-reverse-1-5题WP/</a>
+        </li>
+        
+        <li>
+          <strong>版权声明： </strong>
           
-          
+          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
+        </li>
+        
+      </ul>
+    </div>
+    
 
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/04/30/BUUCTF-reverse-1-5题WP/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/04/25/2020安恒四月春季赛/" class="archive-article-date">
-        <time datetime="2020-04-25T14:40:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-25</time>
-</a>
 
+
+<nav id="article-nav">
+  
+  
+    <a href="/2020/04/25/2020安恒四月春季赛/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">2020安恒四月春季赛部分WriteUp</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/04/25/2020安恒四月春季赛/" target="_blank">2020安恒四月春季赛部分WriteUp</a>
-  
-    </h1>
-  
+        
+        
+    </div>
+</aside>
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">WriteUp</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/04/11/复数抽象数据类型实现/" class="archive-article-date">
-        <time datetime="2020-04-11T03:22:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-11</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/04/11/复数抽象数据类型实现/" target="_blank">复数抽象数据类型实现</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">程序</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/04/01/C语言的函数指针/" class="archive-article-date">
-        <time datetime="2020-04-01T03:09:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-01</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/04/01/C语言的函数指针/" target="_blank">C语言的函数指针</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
-    
+
+
+
 
 
           </div>
@@ -415,8 +484,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
