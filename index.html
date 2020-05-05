@@ -233,23 +233,13 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p>关键flag{49d3c93df25caad81232130f3d2ebfad}## 第六题 内涵的软件<br>exe运行起来的效果：<br><img src="https://s1.ax1x.com/2020/05/05/YF6B4K.png" alt="YF6B4K.png"><br>这题是真的把我给整懵了，本以为需要写脚本，没想到一打开ida就能一眼看见，当然格式需要进行修改，将外面的DBAPP改为flag即可<br><a href="https://imgchr.com/i/YFcAV1" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/05/05/YFcAV1.png" alt="YFcAV1.png"></a>  </p>
+    <h2 id="第六题-内涵的软件"><a href="#第六题-内涵的软件" class="headerlink" title="第六题 内涵的软件"></a>第六题 内涵的软件</h2><p>exe运行起来的效果：<br><img src="https://s1.ax1x.com/2020/05/05/YF6B4K.png" alt="YF6B4K.png"><br>这题是真的把我给整懵了，本以为需要写脚本，没想到一打开ida就能一眼看见，当然格式需要进行修改，将外面的DBAPP改为flag即可<br><a href="https://imgchr.com/i/YFcAV1" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/05/05/YFcAV1.png" alt="YFcAV1.png"></a>  </p>
 <blockquote>
 <p>flag{49d3c93df25caad81232130f3d2ebfad}  </p>
 </blockquote>
-<h2 id="第七题-xor"><a href="#第七题-xor" class="headerlink" title="第七题 xor"></a>第七题 xor</h2><p>小tips：选中数组中所需要的元素，shift+e便能直接转换成所需要的形式<br><img src="https://s1.ax1x.com/2020/05/05/YFccGT.png" alt="YFccGT.png"><br>关键地方的伪代码：<br><img src="https://s1.ax1x.com/2020/05/05/YFcqzD.png" alt="YFcqzD.png"><br>写脚本：  </p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> str1[<span class="number">34</span>] =&#123;<span class="number">102</span>,  <span class="number">10</span>, <span class="number">107</span>,  <span class="number">12</span>, <span class="number">119</span>,  <span class="number">38</span>,  <span class="number">79</span>,  <span class="number">46</span>,  <span class="number">64</span>,  <span class="number">17</span>, </span><br><span class="line">  <span class="number">120</span>,  <span class="number">13</span>,  <span class="number">90</span>,  <span class="number">59</span>,  <span class="number">85</span>,  <span class="number">17</span>, <span class="number">112</span>,  <span class="number">25</span>,  <span class="number">70</span>,  <span class="number">31</span>, </span><br><span class="line">  <span class="number">118</span>,  <span class="number">34</span>,  <span class="number">77</span>,  <span class="number">35</span>,  <span class="number">68</span>,  <span class="number">14</span>, <span class="number">103</span>,   <span class="number">6</span>, <span class="number">104</span>,  <span class="number">15</span>, </span><br><span class="line">   <span class="number">71</span>,  <span class="number">50</span>,  <span class="number">79</span>,   <span class="number">0</span>&#125;;</span><br><span class="line">	<span class="keyword">int</span> i; </span><br><span class="line">	<span class="keyword">char</span> a[<span class="number">34</span>];</span><br><span class="line">    <span class="keyword">for</span>( i = <span class="number">0</span>;i &lt; <span class="number">33</span>; ++i )</span><br><span class="line">    &#123;</span><br><span class="line">    	a[i]= str1[i] ^ str1[i - <span class="number">1</span>];</span><br><span class="line">    	<span class="built_in">printf</span>(<span class="string">"%c"</span>,a[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;  </span><br><span class="line">```  </span><br><span class="line">运行即可得到flag  </span><br><span class="line">&gt;flag&#123;QianQiuWanDai_YiTongJiangHu&#125;  </span><br><span class="line"></span><br><span class="line">## 第八题 guessgame  </span><br><span class="line">运行效果:  </span><br><span class="line">![YFInR1.png](https:<span class="comment">//s1.ax1x.com/2020/05/05/YFInR1.png)  </span></span><br><span class="line">这题也是直接IDA中即可查看到：  </span><br><span class="line">![YFHSTU.png](https:<span class="comment">//s1.ax1x.com/2020/05/05/YFHSTU.png)  </span></span><br><span class="line">BJD&#123;S1mple_ReV3r5e_W1th_0D_0r_IDA&#125;改为  </span><br><span class="line">&gt;flag&#123;S1mple_ReV3r5e_W1th_0D_0r_IDA&#125;  </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 第九题 reverse3</span><br><span class="line">![YFHHHK.png](https:<span class="comment">//s1.ax1x.com/2020/05/05/YFHHHK.png)</span></span><br><span class="line">在字符串窗口中看见ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=</span><br><span class="line">首先想到可能会涉及base64加解密</span><br><span class="line">![YFbCHf.png](https:<span class="comment">//s1.ax1x.com/2020/05/05/YFbCHf.png)  </span></span><br><span class="line">编写脚本:  </span><br><span class="line">```C  </span><br><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line"><span class="keyword">int</span> main(<span class="keyword">void</span>)&#123;</span><br><span class="line">	<span class="keyword">char</span> str1[<span class="number">17</span>]=<span class="string">"e3nifIH9b_C@n@dH"</span>;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">char</span> str2[<span class="number">17</span>];</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">16</span>;++i)&#123;</span><br><span class="line">		str2[i] = str1[i] - i;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%c"</span>,str2[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>脚本运行得到e2lfbDB2ZV95b3V9<br>加上格式后发现提交还是不对，这时候想起来base64编码，base64解密后得到{i_l0ve_you}<br>flag即为</p>
-<blockquote>
-<p>flag{i_l0ve_you}  </p>
-</blockquote>
-<h2 id="第十题-不一样的flag"><a href="#第十题-不一样的flag" class="headerlink" title="第十题 不一样的flag"></a>第十题 不一样的flag</h2><p>运行效果：<br><img src="https://s1.ax1x.com/2020/05/05/YkpQyD.png" alt="YkpQyD.png"><br>用IDA查看可以看见一串字符：<br><img src="https://s1.ax1x.com/2020/05/05/YkpaSf.png" alt="YkpaSf.png"><br>关键伪代码：<br><img src="https://s1.ax1x.com/2020/05/05/YkpWlT.png" alt="YkpWlT.png"><br>第51-56行中<br><img src="https://s1.ax1x.com/2020/05/05/YkCEP1.png" alt="YkCEP1.png"><br>可以看到要有个东西等于#就说明输入的命令是正确，只要是1程序就结束。再结合运行效果中可选择的上下左右操作，基本可以确定这是走迷宫。<br>将那一串字符以5*5的规格显示：  </p>
-<p>*1111<br>01000<br>01010<br>00010<br>1111#<br>直接按照命令来进行走<br>走0不走1<br>得到字符串：222441144222</p>
-<blockquote>
-<p>flag{222441144222}</p>
-</blockquote>
-
+    
+    <a class="article-more-a" href="/2020/05/05/BUUCTF-reverse-6-10题WP/#more">more >></a>
+    
     
 
     
@@ -260,6 +250,25 @@
   <div class="article-info article-info-index">
     
     
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">reverse</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">WriteUp</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ctf</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
     
 
     
