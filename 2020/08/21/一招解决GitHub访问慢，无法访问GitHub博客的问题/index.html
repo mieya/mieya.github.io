@@ -10,13 +10,13 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="参考自以下文章  完美解决github访问速度慢   解决无法访问github博客的问题    最近发现访问GitHub的速度越来越慢，紧接着又发现我的博客无法访问。">
+  <meta name="description" content="参考自以下文章  完美解决github访问速度慢解决无法访问github博客的问题    最近发现访问GitHub的速度越来越慢，紧接着又发现我的博客无法访问。">
 <meta name="keywords" content="GitHub,教程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="一招解决GitHub访问慢，无法访问GitHub博客的问题">
 <meta property="og:url" content="http://yoursite.com/2020/08/21/一招解决GitHub访问慢，无法访问GitHub博客的问题/index.html">
 <meta property="og:site_name" content="lunalhx">
-<meta property="og:description" content="参考自以下文章  完美解决github访问速度慢   解决无法访问github博客的问题    最近发现访问GitHub的速度越来越慢，紧接着又发现我的博客无法访问。">
+<meta property="og:description" content="参考自以下文章  完美解决github访问速度慢解决无法访问github博客的问题    最近发现访问GitHub的速度越来越慢，紧接着又发现我的博客无法访问。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://s1.ax1x.com/2020/08/21/dYGEAP.jpg">
 <meta property="og:image" content="https://s1.ax1x.com/2020/08/21/dYNzyF.jpg">
@@ -24,10 +24,10 @@
 <meta property="og:image" content="https://s1.ax1x.com/2020/08/21/dY8WT0.jpg">
 <meta property="og:image" content="https://s1.ax1x.com/2020/08/21/dY3sq1.jpg">
 <meta property="og:image" content="https://s1.ax1x.com/2020/08/21/dYdeVH.jpg">
-<meta property="og:updated_time" content="2020-08-21T02:59:17.448Z">
+<meta property="og:updated_time" content="2020-08-21T03:03:30.135Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一招解决GitHub访问慢，无法访问GitHub博客的问题">
-<meta name="twitter:description" content="参考自以下文章  完美解决github访问速度慢   解决无法访问github博客的问题    最近发现访问GitHub的速度越来越慢，紧接着又发现我的博客无法访问。">
+<meta name="twitter:description" content="参考自以下文章  完美解决github访问速度慢解决无法访问github博客的问题    最近发现访问GitHub的速度越来越慢，紧接着又发现我的博客无法访问。">
 <meta name="twitter:image" content="https://s1.ax1x.com/2020/08/21/dYGEAP.jpg">
   
     <link rel="alternative" href="/atom.xml" title="lunalhx" type="application/atom+xml">
@@ -243,7 +243,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">314字</span>
+      <span class="post-count">312字</span>
     </span>
   </span>
 
@@ -265,10 +265,7 @@
     
     <p>参考自以下文章</p>
 <blockquote>
-<p><a href="https://zhuanlan.zhihu.com/p/93436925" target="_blank" rel="noopener">完美解决github访问速度慢</a></p>
-</blockquote>
-<blockquote>
-<p><a href="https://blog.csdn.net/gao5805123/article/details/107822883" target="_blank" rel="noopener">解决无法访问github博客的问题</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/93436925" target="_blank" rel="noopener">完美解决github访问速度慢</a><br><a href="https://blog.csdn.net/gao5805123/article/details/107822883" target="_blank" rel="noopener">解决无法访问github博客的问题</a></p>
 </blockquote>
 <p>  最近发现访问GitHub的速度越来越慢，紧接着又发现<a href="https://mieya.github.io/" target="_blank" rel="noopener">我的博客</a>无法访问。<br>  <img src="https://s1.ax1x.com/2020/08/21/dYGEAP.jpg" alt="dYGEAP.jpg"><br> <a id="more"></a></p>
 <h2 id="GitHub访问慢"><a href="#GitHub访问慢" class="headerlink" title="GitHub访问慢"></a>GitHub访问慢</h2><p>  在网上搜集了相关问题的解决方法后，发现通过修改本地hosts文件增加<a href="http://github.global.ssl.fastly.net" target="_blank" rel="noopener">http://github.global.ssl.fastly.net</a> 和<a href="http://github.com" target="_blank" rel="noopener">http://github.com</a> 的映射是最简便的方法。  </p>
@@ -277,13 +274,7 @@
 </blockquote>
 <p>  在etc目录下可看见hosts文件，使用记事本打开<br>  接下来我们需要获取相关网站的ip，我们访问<a href="https://www.ipaddress.com" target="_blank" rel="noopener">ipaddress</a> ，  在正中间的搜索栏中分别输入github.global.ssl.fastly.net和github.com，查询ip地址<br>  <img src="https://s1.ax1x.com/2020/08/21/dYNzyF.jpg" alt="dYNzyF.jpg"><br>  <img src="https://s1.ax1x.com/2020/08/21/dYUkJx.jpg" alt="dYUkJx.jpg"><br>  因此我的配置为：</p>
 <blockquote>
-<p>199.232.69.194 github.global.ssl.fastly.net  </p>
-</blockquote>
-<blockquote>
-<p>github.com同操作，得到</p>
-</blockquote>
-<blockquote>
-<p>140.82.114.4 github.com  </p>
+<p>199.232.69.194 github.global.ssl.fastly.net<br>github.com同操作，得到<br>140.82.114.4 github.com  </p>
 </blockquote>
 <p> 将这两行写入hosts文件即可，此时再比对访问速度，可以看见有很大的提升  </p>
 <h5 id="修改前："><a href="#修改前：" class="headerlink" title="修改前："></a>修改前：</h5><p> <img src="https://s1.ax1x.com/2020/08/21/dY8WT0.jpg" alt="dY8WT0.jpg"></p>
