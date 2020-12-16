@@ -36,7 +36,7 @@ int main()
         printf(" ¶­·É-2020-12-14");
   		printf("==========================\n");
   		printf("    Çë  Ñ¡ Ôñ 0-4£º ");
-	    scanf("%d",&choice);
+	    scanf("%f",&choice);
 	    switch(choice) 
 	    {
 		case 1:
