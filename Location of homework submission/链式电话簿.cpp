@@ -33,10 +33,10 @@ int main()
   		printf("    3.通讯者结点的删除\n");
   		printf("    4.通讯录链表的输出\n");
   		printf("    0.退出管理系统\n");
-                                printf(" 董飞333333333333");
+        printf(" 董飞-2020-12-14");
   		printf("==========================\n");
   		printf("    请  选 择 0-4： ");
-	    scanf("%d",&choice);
+	    scanf("%f",&choice);
 	    switch(choice) 
 	    {
 		case 1:
