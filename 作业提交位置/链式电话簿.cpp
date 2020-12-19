@@ -66,7 +66,7 @@ int main()
 		case 0:
 			exit_system();
 			break;	
-		default:printf("输入有误，请重新输入：\n");
+		default:printf("输入有误，请重新输入!：\n");
 		    break;	
 	    }
     }
