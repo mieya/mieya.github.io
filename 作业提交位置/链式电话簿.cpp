@@ -171,6 +171,7 @@ void print_peo(LinkList &L)
     while(p->next!=NULL){
         p=p->next;
         printf("%s\t%s\n",p->data.name,p->data.number);
+	printf();
     }
 }
 
