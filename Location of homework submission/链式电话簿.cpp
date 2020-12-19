@@ -3,7 +3,7 @@
 #include<string.h>
 typedef char DataType;
 typedef struct abc{    //通讯录结点类型 
-        char name[20]; //联系人姓名 
+        char name[30]; //联系人姓名 
         char number[12]; //联系人电话号码 
 }Data; //定义结构变量 
 
