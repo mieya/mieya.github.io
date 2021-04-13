@@ -204,6 +204,89 @@
             
 
   
+    <article id="post-Git更新本地冲突：commit-your-changes-or-stash-them-before-you-can-merge" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2021/04/13/Git更新本地冲突：commit-your-changes-or-stash-them-before-you-can-merge/" target="_blank">Git更新本地冲突：commit your changes or stash them before you can merge</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2021/04/13/Git更新本地冲突：commit-your-changes-or-stash-them-before-you-can-merge/" class="archive-article-date">
+        <time datetime="2021-04-13T07:08:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-13</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>今天更新博客主题的时候遇到了报错：</p>
+<pre><code>commit your changes or stash them before you can merge</code></pre><p><a href="https://imgtu.com/i/csPMhF" target="_blank" rel="noopener"><img src="https://z3.ax1x.com/2021/04/13/csPMhF.png" alt="csPMhF.png"></a><br>大意就是，您对以下文件的本地更改将被合并覆盖，请在你可以合并之前，提交你的修改或者隐藏它们。</p>
+<p>网上找到的解决方法主要有两种：</p>
+<p>⚪stash</p>
+<p>git stash<br>git pull<br>git stash pop  </p>
+<p>⚪直接覆盖本地修改<br>git reset –hard<br>git pull  </p>
+<p>我采取了第一种方法，但却遇上了连接github超时的错误：  </p>
+<pre><code>Failed to connect to github.com port 443: Timed out</code></pre><p><a href="https://imgtu.com/i/csi7xH" target="_blank" rel="noopener"><img src="https://z3.ax1x.com/2021/04/13/csi7xH.png" alt="csi7xH.png"></a><br>搜索后发现只要在git_bash执行以下命令就可以了：  </p>
+<pre><code>git config --global --unset http.proxy</code></pre><p>再次git pull，成功<br><a href="https://imgtu.com/i/csFiss" target="_blank" rel="noopener"><img src="https://z3.ax1x.com/2021/04/13/csFiss.png" alt="csFiss.png"></a><br>最后git stash pop<br><a href="https://imgtu.com/i/csFQy9" target="_blank" rel="noopener"><img src="https://z3.ax1x.com/2021/04/13/csFQy9.png" alt="csFQy9.png"></a><br>完成o(<em>￣▽￣</em>)ブ</p>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2021/04/13/Git更新本地冲突：commit-your-changes-or-stash-them-before-you-can-merge/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-2020四川省“安洵杯”-开始抑郁-WP" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1032,95 +1115,6 @@
     
     <p class="article-more-link">
       <a class="article-more-a" href="/2020/02/14/刹那/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-英语六级翻译例题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/12/13/英语六级翻译例题/" target="_blank"> 英语六级翻译例题</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2019/12/13/英语六级翻译例题/" class="archive-article-date">
-        <time datetime="2019-12-13T15:26:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-13</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h4 id="英语六级翻译例题"><a href="#英语六级翻译例题" class="headerlink" title="英语六级翻译例题"></a>英语六级翻译例题</h4><p>又到了考四六级的时候，故贴些个人认为比较常考的翻译上来供自己与大家学习。</p>
-<p>　　青海湖位于海拔3205米、青海省省会西宁以西约100公里处，是中国最大的咸水湖，面积4317平方公里、最深处255米。有23条河注入湖中、其中大部分是季节性的。百分之八十多湖水源于五条主要河流。青海湖位于跨越亚洲的几条候鸟迁徙路线的交叉处。许多鸟类把青海湖作为迁徙过程中的暂息地。湖大西侧是著名的”鸟岛“，吸引着来自世界各地的观鸟者。每年夏天，游客们也来这里观看国际自行车比赛。</p>
-    
-    <a class="article-more-a" href="/2019/12/13/英语六级翻译例题/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">英语</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/12/13/英语六级翻译例题/">展开全文 >></a>
     </p>
     
 
