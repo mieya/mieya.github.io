@@ -235,14 +235,9 @@
     
     <p>今天更新博客主题的时候遇到了报错：</p>
 <pre><code>commit your changes or stash them before you can merge</code></pre><p><a href="https://imgtu.com/i/csPMhF" target="_blank" rel="noopener"><img src="https://z3.ax1x.com/2021/04/13/csPMhF.png" alt="csPMhF.png"></a><br>大意就是，您对以下文件的本地更改将被合并覆盖，请在你可以合并之前，提交你的修改或者隐藏它们。</p>
-<p>网上找到的解决方法主要有两种：</p>
-<p>⚪stash</p>
-<p>git stash<br>git pull<br>git stash pop  </p>
-<p>⚪直接覆盖本地修改<br>git reset –hard<br>git pull  </p>
-<p>我采取了第一种方法，但却遇上了连接github超时的错误：  </p>
-<pre><code>Failed to connect to github.com port 443: Timed out</code></pre><p><a href="https://imgtu.com/i/csi7xH" target="_blank" rel="noopener"><img src="https://z3.ax1x.com/2021/04/13/csi7xH.png" alt="csi7xH.png"></a><br>搜索后发现只要在git_bash执行以下命令就可以了：  </p>
-<pre><code>git config --global --unset http.proxy</code></pre><p>再次git pull，成功<br><a href="https://imgtu.com/i/csFiss" target="_blank" rel="noopener"><img src="https://z3.ax1x.com/2021/04/13/csFiss.png" alt="csFiss.png"></a><br>最后git stash pop<br><a href="https://imgtu.com/i/csFQy9" target="_blank" rel="noopener"><img src="https://z3.ax1x.com/2021/04/13/csFQy9.png" alt="csFQy9.png"></a><br>完成o(<em>￣▽￣</em>)ブ</p>
-
+    
+    <a class="article-more-a" href="/2021/04/13/Git更新本地冲突：commit-your-changes-or-stash-them-before-you-can-merge/#more">more >></a>
+    
     
 
     
@@ -253,6 +248,21 @@
   <div class="article-info article-info-index">
     
     
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">github</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
     
 
     
@@ -1334,6 +1344,14 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">writeup</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
               </li>
             
             <div class="clearfix"></div>
