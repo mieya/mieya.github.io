@@ -2642,11 +2642,3 @@ mjx-container[display='true'] + br {
     padding: 10px 12px;
   }
 }
-.menu .menu-item a:hover {
-  background: #3d78d7;
-  border-bottom-color: transparent;
-}
-.menu-item-active a {
-  background: rgba(251,203,63,0.741);
-  border-bottom-color: transparent;
-}
