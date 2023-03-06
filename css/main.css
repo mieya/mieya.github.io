@@ -2649,3 +2649,9 @@ body {
   background-size: cover;
   background-position: 100% 100%;
 }
+.sidebar {
+  opacity: 0.9;
+}
+.header-inner {
+  background: rgba(255,255,255,0.9);
+}

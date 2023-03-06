@@ -6,7 +6,7 @@
   <link href="https://mieya.github.io/atom.xml" rel="self"/>
   
   <link href="https://mieya.github.io/"/>
-  <updated>2023-03-02T13:13:47.420Z</updated>
+  <updated>2023-03-06T14:01:43.564Z</updated>
   <id>https://mieya.github.io/</id>
   
   <author>
@@ -17,19 +17,43 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Typora+PicGo+Github搭建图床</title>
+    <link href="https://mieya.github.io/2023/03/06/Typora+PicGo+Github%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/"/>
+    <id>https://mieya.github.io/2023/03/06/Typora+PicGo+Github%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/</id>
+    <published>2023-03-06T13:49:50.000Z</published>
+    <updated>2023-03-06T14:01:43.564Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="图床选择"><a href="#图床选择" class="headerlink" title="图床选择"></a>图床选择</h3><p>图床是一个用于存储和管理图片的网站或服务。它可以允许用户上传、存储、管理和分享图片，并为用户生成图片的URL，这样用户可以在需要时将图片链接嵌入到其它网站或应用程序中，非常方便个人博客使用。</p><p>在将Markdown编辑器换成Typora后，我发现将Typora与PicGo结合起来，可以一键式将md文件里的图片上传图床并自动生成外链，非常方便。</p><span id="more"></span><p>此前，我一直采用【路过图床】作为博客的图床，但仅是简单使用，再去了解后我才发现【路过图床】免费版的有这么多限制，比如：每小时限制上传50张图片，每天限制上传100张图片，而且免费版用户的存储容量貌似不过300M。而其它一些免费的图床不是跑路了就是限制太多，比如限制每小时上传的次数、单张图片不大于5MB等等。因此，最后我选择使用Github作为新的图床。</p><p>使用Github也有缺点，国内访问速度可能会比较慢，不过我们可以利用jsDelivr CDN加速访问，在Typora里设置好一键上传图片至PicGo，操作简单又高效。此外，使用Github和jsDelivr还不用担心用到一半跑路的问题，并且完全免费。</p><h3 id="新建Github仓库"><a href="#新建Github仓库" class="headerlink" title="新建Github仓库"></a>新建Github仓库</h3><p>在Github中新建一个仓库，注意要将仓库设置为公开（public），因为使用 PicGo 访问私有仓库里的图片时，会生成带有 Token 的 URL。这个 Token 是有过期时间的，一旦过期就无法继续访问。</p><p><img data-src="https://cdn.jsdelivr.net/gh/mieya/BlogImg/BLOG-IMG/image-20230306212028034.png" alt="image-20230306212028034"></p><p>仓库建好之后，在个人主页依次选择【Settings】-【Developer settings】-【Personal access tokens】- 【Tokens(classic)】，然后点击【Generate new token】。填写好描述，有效期Expiration可以选择永久，勾选【repo】，然后点击【Generate token】就会生成一个 Token。注意，这个 Token 只会显示一次，请务必先保存下来，或者等后面配置好 PicGo 后再关闭此网页。</p><h3 id="配置PicGo"><a href="#配置PicGo" class="headerlink" title="配置PicGo"></a>配置PicGo</h3><p>Token生成后就可以在PicGo里进行配置了，点击此处<a href="https://github.com/Molunerfinn/picgo/releases">下载PicGo</a>，安装完毕后，进入并在左侧【图床设置】中找到【Github】图床配置。</p><p><img data-src="https://cdn.jsdelivr.net/gh/mieya/BlogImg/BLOG-IMG/image-20230306212903776.png" alt="image-20230306212903776"></p><p>注意<strong>设定分支名</strong>改为【main】，因为GitHub 官方表示,从2020年10月1日起,在该平台上创建的所有新的源代码仓库将默认被命名为”main”,而不是原先的”master”。<strong>设定存储路径</strong>可以为空，如果想将图片上传到仓库的指定目录下，可以填写目录名加&#x2F;，比如我想将图片存放在BlogImg仓库下的BLOG-IMG文件夹中，则此处需设置为 BLOG-IMG&#x2F;。</p><p>设置定义域名：</p><p>这里使用jsDelivr的CDN加速服务，上传图片成功后，PicGo会将自定义域名和上传的图片名拼接起来生成一个访问链接。</p><blockquote><p>自定义域名格式：<a href="https://cdn.jsdelivr.net/gh/GitHub%E8%B4%A6%E6%88%B7%E5%90%8D/%E4%BB%93%E5%BA%93%E5%90%8D">https://cdn.jsdelivr.net/gh/GitHub账户名/仓库名</a> </p><p>以我的格式为例：<a href="https://cdn.jsdelivr.net/gh/mieya/BlogImg">https://cdn.jsdelivr.net/gh/mieya/BlogImg</a></p></blockquote><h3 id="配置Typora"><a href="#配置Typora" class="headerlink" title="配置Typora"></a>配置Typora</h3><p>在Typora中依次选择【文件】-【偏好设置】-【图像】，做出如下图所示设置，最后点击验证图片上传选项，显示验证成功即可。</p><p><img data-src="https://cdn.jsdelivr.net/gh/mieya/BlogImg/BLOG-IMG/image-20230306213619040.png" alt="image-20230306213619040"></p><p>之后在编写md文件时，只要在【格式】-【图像】中找到【上传所有本地图片】，即可将当前文件中的所有本地图片上传至Github仓库。</p><h3 id="相关参考资料"><a href="#相关参考资料" class="headerlink" title="相关参考资料"></a>相关参考资料</h3><p><a href="https://blog.csdn.net/qq_36759224/article/details/98058240">Github+jsDelivr+PicGo 打造稳定快速、高效免费图床_github 图床_ITBOB • 鲍勃的博客-CSDN博客</a></p><p><a href="https://www.cnblogs.com/wdysblog/p/16610733.html#1-%E7%BB%91%E5%AE%9Agithub%E5%9B%BE%E5%BA%8A">PicGo+GitHub 图床搭建 - Jinweidy - 博客园 (cnblogs.com)</a></p>]]></content>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;图床选择&quot;&gt;&lt;a href=&quot;#图床选择&quot; class=&quot;headerlink&quot; title=&quot;图床选择&quot;&gt;&lt;/a&gt;图床选择&lt;/h3&gt;&lt;p&gt;图床是一个用于存储和管理图片的网站或服务。它可以允许用户上传、存储、管理和分享图片，并为用户生成图片的URL，这样用户可以在需要时将图片链接嵌入到其它网站或应用程序中，非常方便个人博客使用。&lt;/p&gt;
+&lt;p&gt;在将Markdown编辑器换成Typora后，我发现将Typora与PicGo结合起来，可以一键式将md文件里的图片上传图床并自动生成外链，非常方便。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="博客" scheme="https://mieya.github.io/categories/%E5%8D%9A%E5%AE%A2/"/>
+    
+    
+    <category term="Typora" scheme="https://mieya.github.io/tags/Typora/"/>
+    
+    <category term="图床" scheme="https://mieya.github.io/tags/%E5%9B%BE%E5%BA%8A/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Hello World</title>
     <link href="https://mieya.github.io/2023/03/02/hello-world/"/>
     <id>https://mieya.github.io/2023/03/02/hello-world/</id>
     <published>2023-03-02T13:13:47.419Z</published>
-    <updated>2023-03-02T13:13:47.420Z</updated>
+    <updated>2023-03-06T14:02:37.793Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><span id="more"></span><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
     
     
-      
-      
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for</summary>
-      
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&amp;quot;My New Post&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/writing.html&quot;&gt;Writing&lt;/a&gt;&lt;/p&gt;</summary>
     
     
     
@@ -41,7 +65,7 @@
     <link href="https://mieya.github.io/2023/01/28/%E5%8D%9A%E5%AE%A2%E9%87%8D%E5%BB%BA%E7%9A%84%E6%96%B0%E5%BC%80%E5%A7%8B/"/>
     <id>https://mieya.github.io/2023/01/28/%E5%8D%9A%E5%AE%A2%E9%87%8D%E5%BB%BA%E7%9A%84%E6%96%B0%E5%BC%80%E5%A7%8B/</id>
     <published>2023-01-27T19:35:23.000Z</published>
-    <updated>2023-03-02T13:13:47.420Z</updated>
+    <updated>2023-03-06T13:49:07.241Z</updated>
     
     <content type="html"><![CDATA[<p>好心痛，系统重装没有保存原来19年原博客的文件，只好重新建站了。</p>]]></content>
     
