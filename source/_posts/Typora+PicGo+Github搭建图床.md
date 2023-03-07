@@ -27,7 +27,7 @@ tags:
 
 在Github中新建一个仓库，注意要将仓库设置为公开（public），因为使用 PicGo 访问私有仓库里的图片时，会生成带有 Token 的 URL。这个 Token 是有过期时间的，一旦过期就无法继续访问。
 
-![image-20230306212028034](https://cdn.jsdelivr.net/gh/mieya/BlogImg/BLOG-IMG/image-20230306212028034.png)
+![image-20230306212028034](https://fastly.jsdelivr.net/gh/mieya/BlogImg/BLOG-IMG/image-20230306212028034.png)
 
 仓库建好之后，在个人主页依次选择【Settings】-【Developer settings】-【Personal access tokens】- 【Tokens(classic)】，然后点击【Generate new token】。填写好描述，有效期Expiration可以选择永久，勾选【repo】，然后点击【Generate token】就会生成一个 Token。注意，这个 Token 只会显示一次，请务必先保存下来，或者等后面配置好 PicGo 后再关闭此网页。
 
@@ -35,7 +35,7 @@ tags:
 
 Token生成后就可以在PicGo里进行配置了，点击此处[下载PicGo](https://github.com/Molunerfinn/picgo/releases)，安装完毕后，进入并在左侧【图床设置】中找到【Github】图床配置。
 
-![image-20230306212903776](https://cdn.jsdelivr.net/gh/mieya/BlogImg/BLOG-IMG/image-20230306212903776.png)
+![image-20230306212903776](https://fastly.jsdelivr.net/gh/mieya/BlogImg/BLOG-IMG/image-20230306212903776.png)
 
 注意**设定分支名**改为【main】，因为GitHub 官方表示,从2020年10月1日起,在该平台上创建的所有新的源代码仓库将默认被命名为"main",而不是原先的"master"。**设定存储路径**可以为空，如果想将图片上传到仓库的指定目录下，可以填写目录名加/，比如我想将图片存放在BlogImg仓库下的BLOG-IMG文件夹中，则此处需设置为 BLOG-IMG/。
 
@@ -51,7 +51,7 @@ Token生成后就可以在PicGo里进行配置了，点击此处[下载PicGo](ht
 
 在Typora中依次选择【文件】-【偏好设置】-【图像】，做出如下图所示设置，最后点击验证图片上传选项，显示验证成功即可。
 
-![image-20230306213619040](https://cdn.jsdelivr.net/gh/mieya/BlogImg/BLOG-IMG/image-20230306213619040.png)
+![image-20230306213619040](https://fastly.jsdelivr.net/gh/mieya/BlogImg/BLOG-IMG/image-20230306213619040.png)
 
 之后在编写md文件时，只要在【格式】-【图像】中找到【上传所有本地图片】，即可将当前文件中的所有本地图片上传至Github仓库。
 
