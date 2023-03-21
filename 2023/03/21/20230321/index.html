@@ -21,36 +21,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"mieya.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.14.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":"mac"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="预测一天">
+    <meta name="description" content="策略思想 预测未来两天： 当预测明天的价格低于后天的价格时，就以明天的价格买入所有股票。 当预测明天的价格高于后天的价格时，就以明天的价格卖出所有股票。  再根据最终的现金和股票数量计算策略的最终价值、收益率和年化收益率，并与市场涨幅进行对比。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Dlinear短时间序列预测效果">
-<meta property="og:url" content="https://mieya.github.io/2023/03/07/Dlinear%E7%9F%AD%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E9%A2%84%E6%B5%8B%E6%95%88%E6%9E%9C/index.html">
+<meta property="og:title" content="对Dlinear及Transformer类模型进行回测">
+<meta property="og:url" content="https://mieya.github.io/2023/03/21/20230321/index.html">
 <meta property="og:site_name" content="望舒的小站">
-<meta property="og:description" content="预测一天">
+<meta property="og:description" content="策略思想 预测未来两天： 当预测明天的价格低于后天的价格时，就以明天的价格买入所有股票。 当预测明天的价格高于后天的价格时，就以明天的价格卖出所有股票。  再根据最终的现金和股票数量计算策略的最终价值、收益率和年化收益率，并与市场涨幅进行对比。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://s1.ax1x.com/2023/03/07/ppZrs0g.png">
-<meta property="og:image" content="https://s1.ax1x.com/2023/03/07/ppZrbN9.png">
-<meta property="og:image" content="https://s1.ax1x.com/2023/03/07/ppZrznO.png">
-<meta property="og:image" content="https://s1.ax1x.com/2023/03/07/ppZspHe.png">
-<meta property="og:image" content="https://s1.ax1x.com/2023/03/07/ppZsi4A.png">
-<meta property="og:image" content="https://s1.ax1x.com/2023/03/07/ppZsnHg.png">
-<meta property="article:published_time" content="2023-03-07T02:38:42.000Z">
-<meta property="article:modified_time" content="2023-03-13T12:43:21.088Z">
+<meta property="article:published_time" content="2023-03-21T03:44:40.000Z">
+<meta property="article:modified_time" content="2023-03-21T04:26:04.649Z">
 <meta property="article:author" content="望舒">
-<meta property="article:tag" content="Dlinear">
-<meta property="article:tag" content="TSF">
+<meta property="article:tag" content="回测">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://s1.ax1x.com/2023/03/07/ppZrs0g.png">
 
 
-<link rel="canonical" href="https://mieya.github.io/2023/03/07/Dlinear%E7%9F%AD%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E9%A2%84%E6%B5%8B%E6%95%88%E6%9E%9C/">
+<link rel="canonical" href="https://mieya.github.io/2023/03/21/20230321/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://mieya.github.io/2023/03/07/Dlinear%E7%9F%AD%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E9%A2%84%E6%B5%8B%E6%95%88%E6%9E%9C/","path":"2023/03/07/Dlinear短时间序列预测效果/","title":"Dlinear短时间序列预测效果"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://mieya.github.io/2023/03/21/20230321/","path":"2023/03/21/20230321/","title":"对Dlinear及Transformer类模型进行回测"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Dlinear短时间序列预测效果 | 望舒的小站</title>
+<title>对Dlinear及Transformer类模型进行回测 | 望舒的小站</title>
   
 
 
@@ -151,7 +143,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%84%E6%B5%8B%E4%B8%80%E5%A4%A9"><span class="nav-number">1.</span> <span class="nav-text">预测一天</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%84%E6%B5%8B%E4%B8%89%E5%A4%A9"><span class="nav-number">2.</span> <span class="nav-text">预测三天</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%84%E6%B5%8B%E4%BA%94%E5%A4%A9"><span class="nav-number">3.</span> <span class="nav-text">预测五天</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8B%E5%91%A8%E5%AE%89%E6%8E%92"><span class="nav-number">4.</span> <span class="nav-text">下周安排</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AD%96%E7%95%A5%E6%80%9D%E6%83%B3"><span class="nav-number">1.</span> <span class="nav-text">策略思想</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E8%AE%BE%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text">实验设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E6%95%88%E6%9E%9C"><span class="nav-number">3.</span> <span class="nav-text">实验效果</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%B8%82%E5%9C%BA%E5%B9%B4%E5%8C%96%E6%94%B6%E7%9B%8A%E7%8E%87%EF%BC%9A-174-0780"><span class="nav-number">3.0.1.</span> <span class="nav-text">市场年化收益率：-174.0780%</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E8%AE%B0%E5%BD%95"><span class="nav-number">4.</span> <span class="nav-text">实验记录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8B%E5%91%A8%E5%B7%A5%E4%BD%9C"><span class="nav-number">5.</span> <span class="nav-text">下周工作</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -209,7 +201,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://mieya.github.io/2023/03/07/Dlinear%E7%9F%AD%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E9%A2%84%E6%B5%8B%E6%95%88%E6%9E%9C/">
+    <link itemprop="mainEntityOfPage" href="https://mieya.github.io/2023/03/21/20230321/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/tx1.jpg">
@@ -222,12 +214,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Dlinear短时间序列预测效果 | 望舒的小站">
+      <meta itemprop="name" content="对Dlinear及Transformer类模型进行回测 | 望舒的小站">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Dlinear短时间序列预测效果
+          对Dlinear及Transformer类模型进行回测
         </h1>
 
         <div class="post-meta-container">
@@ -237,15 +229,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2023-03-07 10:38:42" itemprop="dateCreated datePublished" datetime="2023-03-07T10:38:42+08:00">2023-03-07</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-03-13 20:43:21" itemprop="dateModified" datetime="2023-03-13T20:43:21+08:00">2023-03-13</time>
+      <time title="创建时间：2023-03-21 11:44:40 / 修改时间：12:26:04" itemprop="dateCreated datePublished" datetime="2023-03-21T11:44:40+08:00">2023-03-21</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -271,14 +257,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>484</span>
+      <span>2.9k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
+      <span>3 分钟</span>
     </span>
 </div>
 
@@ -289,57 +275,107 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h3 id="预测一天"><a href="#预测一天" class="headerlink" title="预测一天"></a>预测一天</h3><p><img data-src="https://s1.ax1x.com/2023/03/07/ppZrs0g.png" alt="预测一天.png"></p>
+        <h3 id="策略思想"><a href="#策略思想" class="headerlink" title="策略思想"></a>策略思想</h3><blockquote>
+<p>预测未来两天：</p>
+<p>当预测明天的价格低于后天的价格时，就以明天的价格买入所有股票。</p>
+<p>当预测明天的价格高于后天的价格时，就以明天的价格卖出所有股票。</p>
+</blockquote>
+<p>再根据最终的现金和股票数量计算策略的最终价值、收益率和年化收益率，并与市场涨幅进行对比。</p>
 <span id="more"></span>
 
-<p><img data-src="https://s1.ax1x.com/2023/03/07/ppZrbN9.png" alt="预测一天2.png"></p>
-<h3 id="预测三天"><a href="#预测三天" class="headerlink" title="预测三天"></a>预测三天</h3><p><img data-src="https://s1.ax1x.com/2023/03/07/ppZrznO.png" alt="预测三天.png"></p>
-<p><img data-src="https://s1.ax1x.com/2023/03/07/ppZspHe.png" alt="预测三天2.png"></p>
-<h3 id="预测五天"><a href="#预测五天" class="headerlink" title="预测五天"></a>预测五天</h3><p><img data-src="https://s1.ax1x.com/2023/03/07/ppZsi4A.png" alt="预测五天.png"></p>
-<p><img data-src="https://s1.ax1x.com/2023/03/07/ppZsnHg.png" alt="预测五天2.png"></p>
-<h3 id="下周安排"><a href="#下周安排" class="headerlink" title="下周安排"></a>下周安排</h3><p>截至2023年2月，五种不同任务各自的TOP3模型是：(排行榜来自<a target="_blank" rel="noopener" href="https://github.com/thuml/Time-Series-Library">https://github.com/thuml/Time-Series-Library</a>)</p>
-<table>
+<h3 id="实验设置"><a href="#实验设置" class="headerlink" title="实验设置"></a>实验设置</h3><p>为了方便起见，我暂时没有使用股票数据集，而是将汇率数据集exchange_rate.csv中的’OT’列看作收盘价进行回测计算，熟悉回测策略及其流程。</p>
+<h3 id="实验效果"><a href="#实验效果" class="headerlink" title="实验效果"></a>实验效果</h3><h5 id="市场年化收益率：-174-0780"><a href="#市场年化收益率：-174-0780" class="headerlink" title="市场年化收益率：-174.0780%"></a>市场年化收益率：-174.0780%</h5><table>
 <thead>
 <tr>
-<th>Model Ranking</th>
-<th>Long-term Forecasting</th>
-<th>Short-term Forecasting</th>
-<th>Imputation</th>
-<th>Anomaly Detection</th>
-<th>Classification</th>
+<th>模型</th>
+<th>MSE</th>
+<th>MAE</th>
+<th>策略年化收益率</th>
+<th>超额年化收益率</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>🥇 1st</td>
-<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2210.02186">TimesNet</a></td>
-<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2210.02186">TimesNet</a></td>
-<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2210.02186">TimesNet</a></td>
-<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2210.02186">TimesNet</a></td>
-<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2210.02186">TimesNet</a></td>
+<td>FEDformer</td>
+<td>1.382051</td>
+<td>0.773845</td>
+<td>-179.0415%</td>
+<td>-4.9635%</td>
 </tr>
 <tr>
-<td>🥈 2nd</td>
-<td><a target="_blank" rel="noopener" href="https://github.com/cure-lab/LTSF-Linear">DLinear</a></td>
-<td><a target="_blank" rel="noopener" href="https://github.com/thuml/Nonstationary_Transformers">Non-stationary Transformer</a></td>
-<td><a target="_blank" rel="noopener" href="https://github.com/thuml/Nonstationary_Transformers">Non-stationary Transformer</a></td>
-<td><a target="_blank" rel="noopener" href="https://github.com/thuml/Nonstationary_Transformers">Non-stationary Transformer</a></td>
-<td><a target="_blank" rel="noopener" href="https://github.com/MAZiqing/FEDformer">FEDformer</a></td>
+<td>Autoformer</td>
+<td>0.014931</td>
+<td>0.100018</td>
+<td>-192.9526%</td>
+<td>-18.8746%</td>
 </tr>
 <tr>
-<td>🥉 3rd</td>
-<td><a target="_blank" rel="noopener" href="https://github.com/thuml/Nonstationary_Transformers">Non-stationary Transformer</a></td>
-<td><a target="_blank" rel="noopener" href="https://github.com/MAZiqing/FEDformer">FEDformer</a></td>
-<td><a target="_blank" rel="noopener" href="https://github.com/thuml/Autoformer">Autoformer</a></td>
-<td><a target="_blank" rel="noopener" href="https://github.com/zhouhaoyi/Informer2020">Informer</a></td>
-<td><a target="_blank" rel="noopener" href="https://github.com/thuml/Autoformer">Autoformer</a></td>
+<td>Transformer</td>
+<td>0.006252</td>
+<td>0.061371</td>
+<td>-174.2428%</td>
+<td>-0.1648%</td>
+</tr>
+<tr>
+<td>Informer</td>
+<td>0.039667</td>
+<td>0.178975</td>
+<td>-179.0415%</td>
+<td>-4.9635%</td>
+</tr>
+<tr>
+<td>Dlinear</td>
+<td>0.002326</td>
+<td>0.034621</td>
+<td>-174.2428%</td>
+<td>-0.1648%</td>
 </tr>
 </tbody></table>
-<p>可以看到短时间序列预测中当前的TOP3为：</p>
-<p><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2210.02186">TimesNet</a>、<a target="_blank" rel="noopener" href="https://github.com/thuml/Nonstationary_Transformers">Non-stationary Transformer</a>、<a target="_blank" rel="noopener" href="https://github.com/MAZiqing/FEDformer">FEDformer</a>。</p>
-<ul>
-<li>复现不同的模型并对比实验效果</li>
-<li>检索并阅读相关文献</li>
-</ul>
+<h3 id="实验记录"><a href="#实验记录" class="headerlink" title="实验记录"></a>实验记录</h3><blockquote>
+<p>sh scripts&#x2F;EXP-LongForecasting&#x2F;myformers-short.sh</p>
+</blockquote>
+<p>&gt;&gt;&gt;&gt;&gt;&gt;&gt;testing : exchange_96_<strong>2_Autoformer</strong>_custom_ftMS_sl96_ll48_pl2_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_Exp_0&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</p>
+<p>test 99</p>
+<p>mse:0.01493128016591072, mae:0.10001752525568008</p>
+<p>回测序列长度： 96</p>
+<p>初始价值：10000000.0000  最终价值：4925081.4584</p>
+<p>回测总收益率：-50.7492 回测年化收益率：-192.9526</p>
+<p>市场总涨幅：-45.7849  市场年化收益率：-174.0780</p>
+<p>&gt;&gt;&gt;&gt;&gt;&gt;&gt;testing : exchange_96_<strong>2_Informer</strong>_custom_ftMS_sl96_ll48_pl2_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_Exp_0&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</p>
+<p>test 99</p>
+<p>mse:0.039666566997766495, mae:0.17897455394268036</p>
+<p>回测序列长度： 96</p>
+<p>初始价值：10000000.0000  最终价值：5290962.0168</p>
+<p>回测总收益率：-47.0904 回测年化收益率：-179.0415</p>
+<p>市场总涨幅：-45.7849  市场年化收益率：-174.0780</p>
+<p>&gt;&gt;&gt;&gt;&gt;&gt;&gt;testing : exchange_96_<strong>2_Transformer</strong>_custom_ftMS_sl96_ll48_pl2_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_Exp_0&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</p>
+<p>test 99</p>
+<p>mse:0.006251905113458633, mae:0.06137145683169365</p>
+<p>回测序列长度： 96</p>
+<p>初始价值：10000000.0000  最终价值：5417176.0332</p>
+<p>回测总收益率：-45.8282 回测年化收益率：-174.2428</p>
+<p>市场总涨幅：-45.7849  市场年化收益率：-174.0780</p>
+<blockquote>
+<p>sh FEDformer&#x2F;scripts&#x2F;myfedformer-short.sh</p>
+</blockquote>
+<p>&gt;&gt;&gt;&gt;&gt;&gt;&gt;testing : Exchange_<strong>FEDforme</strong>r_random_modes64_custom_ftMS_sl96_ll48_pl2_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_Exp_0&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</p>
+<p>test 99</p>
+<p>test shape: (3, 32, 2, 8) (3, 32, 2, 1)</p>
+<p>test shape: (96, 2, 8) (96, 2, 1)</p>
+<p>mse:1.3820511102676392, mae:0.773845374584198</p>
+<p>初始价值：10000000.0000  最终价值：5290962.0168</p>
+<p>回测总收益率：-47.0904 回测年化收益率：-179.0415</p>
+<p>市场总涨幅：-45.7849  市场年化收益率：-174.0780</p>
+<blockquote>
+<p>sh scripts&#x2F;EXP-LongForecasting&#x2F;mydlinear-short.sh</p>
+</blockquote>
+<p>&gt;&gt;&gt;&gt;&gt;&gt;&gt;testing : Exchange_96_<strong>2_DLinear</strong>_custom_ftMS_sl96_ll48_pl2_dm512_nh8_el2_dl1_df2048_fc1_ebtimeF_dtTrue_Exp_0&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</p>
+<p>test 99</p>
+<p>mse:0.0023264677729457617, mae:0.03462085500359535</p>
+<p>回测序列长度： 96</p>
+<p>初始价值：10000000.0000  最终价值：5417176.0332</p>
+<p>回测总收益率：-45.8282 回测年化收益率：-174.2428</p>
+<p>市场总涨幅：-45.7849  市场年化收益率：-174.0780</p>
+<h3 id="下周工作"><a href="#下周工作" class="headerlink" title="下周工作"></a>下周工作</h3><p>将数据集替换成股票数据CSI300.csv再次进行实验。</p>
 
     </div>
 
@@ -375,7 +411,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://mieya.github.io/2023/03/07/Dlinear%E7%9F%AD%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E9%A2%84%E6%B5%8B%E6%95%88%E6%9E%9C/" title="Dlinear短时间序列预测效果">https://mieya.github.io/2023/03/07/Dlinear短时间序列预测效果/</a>
+      <a href="https://mieya.github.io/2023/03/21/20230321/" title="对Dlinear及Transformer类模型进行回测">https://mieya.github.io/2023/03/21/20230321/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -401,22 +437,18 @@
 </div>
 
           <div class="post-tags">
-              <a href="/tags/Dlinear/" rel="tag"># Dlinear</a>
-              <a href="/tags/TSF/" rel="tag"># TSF</a>
+              <a href="/tags/%E5%9B%9E%E6%B5%8B/" rel="tag"># 回测</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2023/03/06/Typora+PicGo+Github%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/" rel="prev" title="Typora+PicGo+Github搭建图床">
-                  <i class="fa fa-chevron-left"></i> Typora+PicGo+Github搭建图床
+                <a href="/2023/03/07/Dlinear%E7%9F%AD%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E9%A2%84%E6%B5%8B%E6%95%88%E6%9E%9C/" rel="prev" title="Dlinear短时间序列预测效果">
+                  <i class="fa fa-chevron-left"></i> Dlinear短时间序列预测效果
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2023/03/21/20230321/" rel="next" title="对Dlinear及Transformer类模型进行回测">
-                  对Dlinear及Transformer类模型进行回测 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
