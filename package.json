@@ -31,7 +31,7 @@
     "hexo-symbols-count-time": "^0.7.1",
     "hexo-theme-landscape": "^0.0.3",
     "hexo-util": "^3.0.1",
-    "npm": "^8.5.3"
+    "npm": "^9.6.3"
   },
   "devDependencies": {
     "hexo-deployer-git": "^4.0.0"
