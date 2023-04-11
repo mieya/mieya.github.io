@@ -21,30 +21,32 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"mieya.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.14.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":"mac"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="前言　　在大一开始的时候就有前辈跟我说最好搭建一个自己的博客，一是可以与大家分享经验，二是可以强化自己的知识点。但因为之前的我一直很忙（太懒）因此一直没有动手试过。但随着我拜读了越来越多大佬的博客，自己也搭建一个博客的愿望就强烈了起来，我在搭建这个博客的过程中走了许多弯路，故在此将我的过程记录下来，希望能对他人有所帮助。 准备工作">
+    <meta name="description" content="策略思想 预测未来两天： 当预测明天的价格低于后天的价格时，就以明天的价格买入所有股票。 当预测明天的价格高于后天的价格时，就以明天的价格卖出所有股票。  再根据最终资产和股票数量计算策略的总收益率，并与市场涨幅进行对比。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="论菜鸡是如何使用hexo+github搭建个人博客的">
-<meta property="og:url" content="https://mieya.github.io/2019/11/19/1.my-first-blog/index.html">
+<meta property="og:title" content="实验结果">
+<meta property="og:url" content="https://mieya.github.io/2023/04/10/20230410/index.html">
 <meta property="og:site_name" content="望舒的小站">
-<meta property="og:description" content="前言　　在大一开始的时候就有前辈跟我说最好搭建一个自己的博客，一是可以与大家分享经验，二是可以强化自己的知识点。但因为之前的我一直很忙（太懒）因此一直没有动手试过。但随着我拜读了越来越多大佬的博客，自己也搭建一个博客的愿望就强烈了起来，我在搭建这个博客的过程中走了许多弯路，故在此将我的过程记录下来，希望能对他人有所帮助。 准备工作">
+<meta property="og:description" content="策略思想 预测未来两天： 当预测明天的价格低于后天的价格时，就以明天的价格买入所有股票。 当预测明天的价格高于后天的价格时，就以明天的价格卖出所有股票。  再根据最终资产和股票数量计算策略的总收益率，并与市场涨幅进行对比。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://mieya.github.io/%5Cimages%5Cpasted-0.png%5C">
-<meta property="article:published_time" content="2019-11-19T13:28:25.000Z">
-<meta property="article:modified_time" content="2023-03-02T13:13:47.419Z">
+<meta property="og:image" content="https://s1.ax1x.com/2023/04/11/ppL2hvQ.png">
+<meta property="og:image" content="https://s1.ax1x.com/2023/04/11/ppLRlPf.png">
+<meta property="og:image" content="https://s1.ax1x.com/2023/04/11/ppLWzA1.png">
+<meta property="article:published_time" content="2023-04-10T01:38:35.000Z">
+<meta property="article:modified_time" content="2023-04-11T03:56:10.451Z">
 <meta property="article:author" content="望舒">
-<meta property="article:tag" content="安装">
+<meta property="article:tag" content="回测">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://mieya.github.io/%5Cimages%5Cpasted-0.png%5C">
+<meta name="twitter:image" content="https://s1.ax1x.com/2023/04/11/ppL2hvQ.png">
 
 
-<link rel="canonical" href="https://mieya.github.io/2019/11/19/1.my-first-blog/">
+<link rel="canonical" href="https://mieya.github.io/2023/04/10/20230410/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://mieya.github.io/2019/11/19/1.my-first-blog/","path":"2019/11/19/1.my-first-blog/","title":"论菜鸡是如何使用hexo+github搭建个人博客的"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://mieya.github.io/2023/04/10/20230410/","path":"2023/04/10/20230410/","title":"实验结果"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>论菜鸡是如何使用hexo+github搭建个人博客的 | 望舒的小站</title>
+<title>实验结果 | 望舒的小站</title>
   
 
 
@@ -145,7 +147,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="nav-number">2.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%90%AD%E5%BB%BAgithub%E5%8D%9A%E5%AE%A2"><span class="nav-number">3.</span> <span class="nav-text">搭建github博客</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%88%91%E6%89%80%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91"><span class="nav-number">4.</span> <span class="nav-text">我所遇到的坑</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AD%96%E7%95%A5%E6%80%9D%E6%83%B3"><span class="nav-number">1.</span> <span class="nav-text">策略思想</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E6%95%88%E6%9E%9C"><span class="nav-number">2.</span> <span class="nav-text">实验效果</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CSI300%EF%BC%88%E6%B2%AA%E6%B7%B1300%EF%BC%89"><span class="nav-number">2.1.</span> <span class="nav-text">CSI300（沪深300）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#NDX100%EF%BC%88%E7%BA%B3%E6%96%AF%E8%BE%BE%E5%85%8B100%EF%BC%89"><span class="nav-number">2.2.</span> <span class="nav-text">NDX100（纳斯达克100）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SPY500%EF%BC%88%E6%A0%87%E6%99%AE500%EF%BC%89"><span class="nav-number">2.3.</span> <span class="nav-text">SPY500（标普500）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E5%9B%BE"><span class="nav-number">3.</span> <span class="nav-text">实验图</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CSI300"><span class="nav-number">3.1.</span> <span class="nav-text">CSI300</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#NDX100"><span class="nav-number">3.2.</span> <span class="nav-text">NDX100</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SPY500"><span class="nav-number">3.3.</span> <span class="nav-text">SPY500</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8B%E5%91%A8%E5%B7%A5%E4%BD%9C"><span class="nav-number">4.</span> <span class="nav-text">下周工作</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -203,7 +205,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://mieya.github.io/2019/11/19/1.my-first-blog/">
+    <link itemprop="mainEntityOfPage" href="https://mieya.github.io/2023/04/10/20230410/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/tx1.jpg">
@@ -216,12 +218,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="论菜鸡是如何使用hexo+github搭建个人博客的 | 望舒的小站">
+      <meta itemprop="name" content="实验结果 | 望舒的小站">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          论菜鸡是如何使用hexo+github搭建个人博客的
+          实验结果
         </h1>
 
         <div class="post-meta-container">
@@ -232,14 +234,23 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2019-11-19 21:28:25" itemprop="dateCreated datePublished" datetime="2019-11-19T21:28:25+08:00">2019-11-19</time>
+      <time title="创建时间：2023-04-10 09:38:35" itemprop="dateCreated datePublished" datetime="2023-04-10T09:38:35+08:00">2023-04-10</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-03-02 21:13:47" itemprop="dateModified" datetime="2023-03-02T21:13:47+08:00">2023-03-02</time>
+      <time title="修改时间：2023-04-11 11:56:10" itemprop="dateModified" datetime="2023-04-11T11:56:10+08:00">2023-04-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%BB%84%E4%BC%9A/" itemprop="url" rel="index"><span itemprop="name">组会</span></a>
+        </span>
     </span>
 
   
@@ -256,7 +267,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>811</span>
+      <span>1.1k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -274,19 +285,195 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h5 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h5><p>　　在大一开始的时候就有前辈跟我说最好搭建一个自己的博客，一是可以与大家分享经验，二是可以强化自己的知识点。但因为之前的我一直很忙<del>（太懒）</del>因此一直没有动手试过。但随着我拜读了越来越多大佬的博客，自己也搭建一个博客的愿望就强烈了起来，我在搭建这个博客的过程中走了许多弯路，故在此将我的过程记录下来，希望能对他人有所帮助。</p>
-<h5 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h5><span id="more"></span>
-<p>首先，我们需要：</p>
-<ul>
-<li>安装node.js、npm</li>
-<li>安装git for windows（或者其它git客户端）</li>
-<li>安装hexo</li>
-</ul>
-<p>　详细的安装过程可参考<a target="_blank" rel="noopener" href="https://blog.csdn.net/AinUser/article/details/77609180">https://blog.csdn.net/AinUser/article/details/77609180</a></p>
-<h5 id="搭建github博客"><a href="#搭建github博客" class="headerlink" title="搭建github博客"></a>搭建github博客</h5><p>　新建一个名为<strong>yourname</strong>.github.io的仓库，在这里yourname为你的github用户名，请注意必须为你的用户名，否则无效。这样子你的网站访问地址就是<strong><a target="_blank" rel="noopener" href="http://yourname.github.io/">http://yourname.github.io</a></strong>了。接下来就是，配置SSH key，以及将hexo部署到github，这一部分有位大佬写的很详细<a target="_blank" rel="noopener" href="https://www.cnblogs.com/jackyroc/p/7681938.html">https://www.cnblogs.com/jackyroc/p/7681938.html</a> ，另外hexo的默认主题虽然也不错，但如果能要追求多样化可以使用别人开源的主题或者自己写一个，我的博客是使用的<strong>yilia</strong>主题，<a target="_blank" rel="noopener" href="https://github.com/litten/hexo-theme-yilia">这个主题的github项目</a> 。具体主题设置可参考：<a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000004947261">https://segmentfault.com/a/1190000004947261</a></p>
-<h5 id="我所遇到的坑"><a href="#我所遇到的坑" class="headerlink" title="我所遇到的坑"></a>我所遇到的坑</h5><p>一：博客头像设置的问题</p>
-<p>　　最开始我使用如：! [ ] (&#x2F;images&#x2F;haha.jpg)这种格式来插入图片，但发现最后显示的效果只是一个小小的图片的标识<br><img data-src="/%5Cimages%5Cpasted-0.png%5C" alt="upload successful"><br>接着我使用本地路径：在hexo&#x2F;source目录下新建一个img文件夹，将图片放入该文件夹下，插入图片时链接为&#x2F;img&#x2F;图片名称则成功插入图片。</p>
-<p>To be continue……</p>
+        <h3 id="策略思想"><a href="#策略思想" class="headerlink" title="策略思想"></a>策略思想</h3><blockquote>
+<p>预测未来两天：</p>
+<p>当预测明天的价格低于后天的价格时，就以明天的价格买入所有股票。</p>
+<p>当预测明天的价格高于后天的价格时，就以明天的价格卖出所有股票。</p>
+</blockquote>
+<p>再根据最终资产和股票数量计算策略的总收益率，并与市场涨幅进行对比。</p>
+<span id="more"></span>
+
+<h3 id="实验效果"><a href="#实验效果" class="headerlink" title="实验效果"></a>实验效果</h3><h4 id="CSI300（沪深300）"><a href="#CSI300（沪深300）" class="headerlink" title="CSI300（沪深300）"></a>CSI300（沪深300）</h4><p><strong>市场总收益率：-5.3441%</strong></p>
+<table>
+<thead>
+<tr>
+<th>模型-5</th>
+<th>MSE</th>
+<th>MAE</th>
+<th>市场总收益率</th>
+<th>回测总收益率</th>
+<th>超额收益率</th>
+<th>ACC</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Autoformer</strong></td>
+<td>0.02752</td>
+<td>0.13120</td>
+<td>-5.3441%</td>
+<td>5.1505%</td>
+<td><strong>10.4946%</strong></td>
+<td>52.0833</td>
+</tr>
+<tr>
+<td>Transformer</td>
+<td>0.00916</td>
+<td>0.07564</td>
+<td>-5.3441%</td>
+<td>0.0000%</td>
+<td>5.3441%</td>
+<td>51.0417</td>
+</tr>
+<tr>
+<td>Informer</td>
+<td>0.01271</td>
+<td>0.09272</td>
+<td>-5.3441%</td>
+<td>-14.7044%</td>
+<td>-9.3603%</td>
+<td>47.9167</td>
+</tr>
+<tr>
+<td>Dlinear</td>
+<td>0.01090</td>
+<td>0.08073</td>
+<td>-5.3441%</td>
+<td>0.7264%</td>
+<td>6.0705%</td>
+<td>51.0417</td>
+</tr>
+<tr>
+<td>FEDformer</td>
+<td>0.74833</td>
+<td>0.59591</td>
+<td>-5.3441%</td>
+<td>-6.9510%</td>
+<td>-1.6069%</td>
+<td>50.0000</td>
+</tr>
+</tbody></table>
+<h4 id="NDX100（纳斯达克100）"><a href="#NDX100（纳斯达克100）" class="headerlink" title="NDX100（纳斯达克100）"></a>NDX100（纳斯达克100）</h4><p><strong>市场总收益率：-12.6135%</strong></p>
+<table>
+<thead>
+<tr>
+<th>模型-5</th>
+<th>MSE</th>
+<th>MAE</th>
+<th>市场总收益率</th>
+<th>回测总收益率</th>
+<th>超额收益率</th>
+<th>ACC</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Autoformer</td>
+<td>0.04554</td>
+<td>0.17111</td>
+<td>-12.6135%</td>
+<td>-15.7668%</td>
+<td>-3.1533%</td>
+<td>48.9583</td>
+</tr>
+<tr>
+<td>Transformer</td>
+<td>0.09022</td>
+<td>0.25512</td>
+<td>-12.6135%</td>
+<td>-12.6834%</td>
+<td>-0.0699%</td>
+<td>53.1250</td>
+</tr>
+<tr>
+<td>Informer</td>
+<td>0.17584</td>
+<td>0.35433</td>
+<td>-12.6135%</td>
+<td>-13.7383%</td>
+<td>-1.1248%</td>
+<td>51.0417</td>
+</tr>
+<tr>
+<td><strong>Dlinear</strong></td>
+<td>0.07290</td>
+<td>0.18293</td>
+<td>-12.6135%</td>
+<td>-10.4764%</td>
+<td><strong>2.1371%</strong></td>
+<td>52.0833</td>
+</tr>
+<tr>
+<td>FEDformer</td>
+<td>4.70454</td>
+<td>1.51242</td>
+<td>-12.6135%</td>
+<td>-12.6169%</td>
+<td>-0.0034%</td>
+<td>51.0417</td>
+</tr>
+</tbody></table>
+<h4 id="SPY500（标普500）"><a href="#SPY500（标普500）" class="headerlink" title="SPY500（标普500）"></a>SPY500（标普500）</h4><p><strong>市场总收益率：-5.6733%</strong></p>
+<table>
+<thead>
+<tr>
+<th>模型-5</th>
+<th>MSE</th>
+<th>MAE</th>
+<th>市场总收益率</th>
+<th>回测总收益率</th>
+<th>超额收益率</th>
+<th>ACC</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Autoformer</td>
+<td>0.02268</td>
+<td>0.11983</td>
+<td>-5.6733%</td>
+<td>0.9290%</td>
+<td>6.6023%</td>
+<td>54.1667</td>
+</tr>
+<tr>
+<td>Transformer</td>
+<td>0.02505</td>
+<td>0.13148</td>
+<td>-5.6733%</td>
+<td>-5.7487%</td>
+<td>-0.0754%</td>
+<td>53.1250</td>
+</tr>
+<tr>
+<td>Informer</td>
+<td>0.09579</td>
+<td>0.24243</td>
+<td>-5.6733%</td>
+<td>-6.7757%</td>
+<td>-1.1024%</td>
+<td>46.8750</td>
+</tr>
+<tr>
+<td><strong>Dlinear</strong></td>
+<td>0.02639</td>
+<td>0.12017</td>
+<td>-5.6733%</td>
+<td>1.6887%</td>
+<td><strong>7.3620%</strong></td>
+<td>52.0833</td>
+</tr>
+<tr>
+<td>FEDformer</td>
+<td>3.84018</td>
+<td>1.40037</td>
+<td>-5.6733%</td>
+<td>-10.6313%</td>
+<td>-4.9580%</td>
+<td>50.0000</td>
+</tr>
+</tbody></table>
+<h3 id="实验图"><a href="#实验图" class="headerlink" title="实验图"></a>实验图</h3><h4 id="CSI300"><a href="#CSI300" class="headerlink" title="CSI300"></a>CSI300</h4><p><img data-src="https://s1.ax1x.com/2023/04/11/ppL2hvQ.png" alt="CSI300.png"></p>
+<h4 id="NDX100"><a href="#NDX100" class="headerlink" title="NDX100"></a>NDX100</h4><p><img data-src="https://s1.ax1x.com/2023/04/11/ppLRlPf.png" alt="NDX100.png"></p>
+<h4 id="SPY500"><a href="#SPY500" class="headerlink" title="SPY500"></a>SPY500</h4><p><img data-src="https://s1.ax1x.com/2023/04/11/ppLWzA1.png" alt="SPY500.png"></p>
+<h3 id="下周工作"><a href="#下周工作" class="headerlink" title="下周工作"></a>下周工作</h3><p>熟悉实验代码，并继续阅读股票预测相关论文。</p>
 
     </div>
 
@@ -322,7 +509,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://mieya.github.io/2019/11/19/1.my-first-blog/" title="论菜鸡是如何使用hexo+github搭建个人博客的">https://mieya.github.io/2019/11/19/1.my-first-blog/</a>
+      <a href="https://mieya.github.io/2023/04/10/20230410/" title="实验结果">https://mieya.github.io/2023/04/10/20230410/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -348,18 +535,18 @@
 </div>
 
           <div class="post-tags">
-              <a href="/tags/%E5%AE%89%E8%A3%85/" rel="tag"># 安装</a>
+              <a href="/tags/%E5%9B%9E%E6%B5%8B/" rel="tag"># 回测</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
+                <a href="/2023/04/04/20230404/" rel="prev" title="实验结果与论文阅读">
+                  <i class="fa fa-chevron-left"></i> 实验结果与论文阅读
+                </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2023/01/28/%E5%8D%9A%E5%AE%A2%E9%87%8D%E5%BB%BA%E7%9A%84%E6%96%B0%E5%BC%80%E5%A7%8B/" rel="next" title="博客重建的新开始">
-                  博客重建的新开始 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
