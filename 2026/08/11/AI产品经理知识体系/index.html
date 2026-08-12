@@ -29,7 +29,7 @@
 <meta property="og:description" content="写在前面 AI 领域太新、变化太快，每天都有新模型、新产品冒出来，一不留神就跟不上了。为了逼自己系统性学习，我把这段时间积累的资料和思考整理成了这份笔记。下面进入正题。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-08-10T16:00:00.000Z">
-<meta property="article:modified_time" content="2026-08-11T15:09:40.101Z">
+<meta property="article:modified_time" content="2026-08-12T14:33:49.316Z">
 <meta property="article:author" content="望舒">
 <meta property="article:tag" content="AI产品经理">
 <meta property="article:tag" content="大语言模型">
@@ -62,8 +62,8 @@
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
   </noscript>
-<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}.beian img{display:inline-block!important}</style><link rel="alternate" href="/atom.xml" title="望舒的小站" type="application/atom+xml">
-</head>
+<link rel="alternate" href="/atom.xml" title="望舒的小站" type="application/atom+xml">
+<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}.beian img{display:inline-block!important}</style></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
   <div class="headband"></div>
@@ -150,7 +150,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%99%E5%9C%A8%E5%89%8D%E9%9D%A2"><span class="nav-number">1.</span> <span class="nav-text">写在前面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81AI-%E4%BA%A7%E5%93%81%E7%94%9F%E6%80%81%E5%9C%B0%E5%9B%BE"><span class="nav-number">2.</span> <span class="nav-text">一、AI 产品生态地图</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BD%E9%99%85%E4%B8%BB%E6%B5%81-AI-%E4%BA%A7%E5%93%81"><span class="nav-number">2.1.</span> <span class="nav-text">国际主流 AI 产品</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BD%E5%86%85%E4%B8%BB%E6%B5%81-AI-%E4%BA%A7%E5%93%81"><span class="nav-number">2.2.</span> <span class="nav-text">国内主流 AI 产品</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81AI-%E6%A8%A1%E5%9E%8B%E5%85%A8%E6%99%AF"><span class="nav-number">3.</span> <span class="nav-text">二、AI 模型全景</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B%E5%88%86%E7%B1%BB%E6%80%BB%E8%A7%88"><span class="nav-number">3.1.</span> <span class="nav-text">模型分类总览</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%91%E6%95%B4%E7%90%86%E7%9A%84%E9%80%89%E5%9E%8B%E6%80%9D%E8%B7%AF"><span class="nav-number">3.2.</span> <span class="nav-text">我整理的选型思路</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8C%89%E5%9C%BA%E6%99%AF%E9%80%89"><span class="nav-number">3.2.1.</span> <span class="nav-text">按场景选</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8C%89%E9%A2%84%E7%AE%97%E9%80%89"><span class="nav-number">3.2.2.</span> <span class="nav-text">按预算选</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81AI-%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF%E6%A8%A1%E5%BC%8F"><span class="nav-number">4.</span> <span class="nav-text">三、AI 核心技术模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-RAG%EF%BC%88%E6%A3%80%E7%B4%A2%E5%A2%9E%E5%BC%BA%E7%94%9F%E6%88%90%EF%BC%89"><span class="nav-number">4.1.</span> <span class="nav-text">3.1 RAG（检索增强生成）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-Agent%EF%BC%88%E6%99%BA%E8%83%BD%E4%BD%93%EF%BC%89"><span class="nav-number">4.2.</span> <span class="nav-text">3.2 Agent（智能体）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-Function-Calling-x2F-Tool-Use"><span class="nav-number">4.3.</span> <span class="nav-text">3.3 Function Calling &#x2F; Tool Use</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-Prompt-Engineering"><span class="nav-number">4.4.</span> <span class="nav-text">3.4 Prompt Engineering</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-5-Fine-tuning%EF%BC%88%E5%BE%AE%E8%B0%83%EF%BC%89"><span class="nav-number">4.5.</span> <span class="nav-text">3.5 Fine-tuning（微调）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-6-%E5%A4%9A-Agent-%E5%8D%8F%E4%BD%9C"><span class="nav-number">4.6.</span> <span class="nav-text">3.6 多 Agent 协作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-7-MCP-Model-Context-Protocol"><span class="nav-number">4.7.</span> <span class="nav-text">3.7 MCP (Model Context Protocol)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-8-Caching-x2F-%E6%B5%81%E5%BC%8F-x2F-%E5%BC%82%E6%AD%A5"><span class="nav-number">4.8.</span> <span class="nav-text">3.8 Caching &#x2F; 流式 &#x2F; 异步</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E4%B8%BB%E6%B5%81%E6%A1%86%E6%9E%B6%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD"><span class="nav-number">5.</span> <span class="nav-text">四、主流框架与基础设施</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%94%E3%80%81%E4%BA%A7%E5%93%81%E5%8E%9F%E5%9E%8B%E8%AE%BE%E8%AE%A1%E5%B7%A5%E5%85%B7"><span class="nav-number">6.</span> <span class="nav-text">五、产品原型设计工具</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%91%E7%9B%AE%E5%89%8D%E5%9C%A8%E7%94%A8%E7%9A%84%E5%B7%A5%E5%85%B7"><span class="nav-number">6.1.</span> <span class="nav-text">我目前在用的工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%91%E4%B8%AA%E4%BA%BA%E7%9A%84%E5%B7%A5%E5%85%B7%E6%90%AD%E9%85%8D"><span class="nav-number">6.2.</span> <span class="nav-text">我个人的工具搭配</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E7%82%B9%E5%BF%83%E5%BE%97"><span class="nav-number">6.3.</span> <span class="nav-text">一点心得</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AD%E3%80%81%E6%88%91%E7%90%86%E8%A7%A3%E7%9A%84-AI-PM-%E6%A0%B8%E5%BF%83%E8%83%BD%E5%8A%9B"><span class="nav-number">7.</span> <span class="nav-text">六、我理解的 AI PM 核心能力</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%83%E3%80%81%E6%88%91%E7%9A%84%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF"><span class="nav-number">8.</span> <span class="nav-text">七、我的学习路线</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E9%98%B6%E6%AE%B5%EF%BC%881-2-%E5%91%A8%EF%BC%89%E2%80%94%E2%80%94-%E5%BB%BA%E7%AB%8B%E8%AE%A4%E7%9F%A5%E5%9C%B0%E5%9B%BE"><span class="nav-number">8.1.</span> <span class="nav-text">第一阶段（1-2 周）—— 建立认知地图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E9%98%B6%E6%AE%B5%EF%BC%882-4-%E5%91%A8%EF%BC%89%E2%80%94%E2%80%94-%E5%8A%A8%E6%89%8B%E5%AE%9E%E8%B7%B5"><span class="nav-number">8.2.</span> <span class="nav-text">第二阶段（2-4 周）—— 动手实践</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E9%98%B6%E6%AE%B5%EF%BC%884-8-%E5%91%A8%EF%BC%89%E2%80%94%E2%80%94-%E6%B7%B1%E5%BA%A6%E4%B8%93%E9%A2%98%E7%A0%94%E7%A9%B6"><span class="nav-number">8.3.</span> <span class="nav-text">第三阶段（4-8 周）—— 深度专题研究</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%81%E7%BB%AD%E5%AD%A6%E4%B9%A0"><span class="nav-number">8.4.</span> <span class="nav-text">持续学习</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%99%E5%9C%A8%E5%90%8E%E9%9D%A2"><span class="nav-number">9.</span> <span class="nav-text">写在后面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%BA%90"><span class="nav-number">10.</span> <span class="nav-text">参考资源</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%99%E5%9C%A8%E5%89%8D%E9%9D%A2"><span class="nav-number">1.</span> <span class="nav-text">写在前面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81AI-%E4%BA%A7%E5%93%81%E7%94%9F%E6%80%81%E5%9C%B0%E5%9B%BE"><span class="nav-number">2.</span> <span class="nav-text">一、AI 产品生态地图</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BD%E9%99%85%E4%B8%BB%E6%B5%81-AI-%E4%BA%A7%E5%93%81"><span class="nav-number">2.1.</span> <span class="nav-text">国际主流 AI 产品</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BD%E5%86%85%E4%B8%BB%E6%B5%81-AI-%E4%BA%A7%E5%93%81"><span class="nav-number">2.2.</span> <span class="nav-text">国内主流 AI 产品</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81AI-%E6%A8%A1%E5%9E%8B%E5%85%A8%E6%99%AF"><span class="nav-number">3.</span> <span class="nav-text">二、AI 模型全景</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B%E5%88%86%E7%B1%BB%E6%80%BB%E8%A7%88"><span class="nav-number">3.1.</span> <span class="nav-text">模型分类总览</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%89%E5%9E%8B%E6%80%9D%E8%B7%AF"><span class="nav-number">3.2.</span> <span class="nav-text">选型思路</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8C%89%E5%9C%BA%E6%99%AF%E9%80%89"><span class="nav-number">3.2.1.</span> <span class="nav-text">按场景选</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8C%89%E9%A2%84%E7%AE%97%E9%80%89"><span class="nav-number">3.2.2.</span> <span class="nav-text">按预算选</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81AI-%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF%E6%A8%A1%E5%BC%8F"><span class="nav-number">4.</span> <span class="nav-text">三、AI 核心技术模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-RAG%EF%BC%88%E6%A3%80%E7%B4%A2%E5%A2%9E%E5%BC%BA%E7%94%9F%E6%88%90%EF%BC%89"><span class="nav-number">4.1.</span> <span class="nav-text">3.1 RAG（检索增强生成）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-Agent%EF%BC%88%E6%99%BA%E8%83%BD%E4%BD%93%EF%BC%89"><span class="nav-number">4.2.</span> <span class="nav-text">3.2 Agent（智能体）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-Function-Calling-Tool-Use"><span class="nav-number">4.3.</span> <span class="nav-text">3.3 Function Calling &#x2F; Tool Use</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-Prompt-Engineering"><span class="nav-number">4.4.</span> <span class="nav-text">3.4 Prompt Engineering</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-5-Fine-tuning%EF%BC%88%E5%BE%AE%E8%B0%83%EF%BC%89"><span class="nav-number">4.5.</span> <span class="nav-text">3.5 Fine-tuning（微调）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-6-%E5%A4%9A-Agent-%E5%8D%8F%E4%BD%9C"><span class="nav-number">4.6.</span> <span class="nav-text">3.6 多 Agent 协作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-7-MCP-Model-Context-Protocol"><span class="nav-number">4.7.</span> <span class="nav-text">3.7 MCP (Model Context Protocol)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-8-Caching-%E6%B5%81%E5%BC%8F-%E5%BC%82%E6%AD%A5"><span class="nav-number">4.8.</span> <span class="nav-text">3.8 Caching &#x2F; 流式 &#x2F; 异步</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E4%B8%BB%E6%B5%81%E6%A1%86%E6%9E%B6%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD"><span class="nav-number">5.</span> <span class="nav-text">四、主流框架与基础设施</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%94%E3%80%81%E4%BA%A7%E5%93%81%E5%8E%9F%E5%9E%8B%E8%AE%BE%E8%AE%A1%E5%B7%A5%E5%85%B7"><span class="nav-number">6.</span> <span class="nav-text">五、产品原型设计工具</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%91%E7%9B%AE%E5%89%8D%E5%9C%A8%E7%94%A8%E7%9A%84%E5%B7%A5%E5%85%B7"><span class="nav-number">6.1.</span> <span class="nav-text">我目前在用的工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8E%A8%E8%8D%90%E5%B7%A5%E5%85%B7%E6%90%AD%E9%85%8D"><span class="nav-number">6.2.</span> <span class="nav-text">推荐工具搭配</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AD%E3%80%81AI-PM-%E6%A0%B8%E5%BF%83%E8%83%BD%E5%8A%9B"><span class="nav-number">7.</span> <span class="nav-text">六、AI PM 核心能力</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%83%E3%80%81%E6%88%91%E7%9A%84%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF"><span class="nav-number">8.</span> <span class="nav-text">七、我的学习路线</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E9%98%B6%E6%AE%B5%EF%BC%881-2-%E5%91%A8%EF%BC%89%E2%80%94%E2%80%94-%E5%BB%BA%E7%AB%8B%E8%AE%A4%E7%9F%A5%E5%9C%B0%E5%9B%BE"><span class="nav-number">8.1.</span> <span class="nav-text">第一阶段（1-2 周）—— 建立认知地图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E9%98%B6%E6%AE%B5%EF%BC%882-4-%E5%91%A8%EF%BC%89%E2%80%94%E2%80%94-%E5%8A%A8%E6%89%8B%E5%AE%9E%E8%B7%B5"><span class="nav-number">8.2.</span> <span class="nav-text">第二阶段（2-4 周）—— 动手实践</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E9%98%B6%E6%AE%B5%EF%BC%884-8-%E5%91%A8%EF%BC%89%E2%80%94%E2%80%94-%E6%B7%B1%E5%BA%A6%E4%B8%93%E9%A2%98%E7%A0%94%E7%A9%B6"><span class="nav-number">8.3.</span> <span class="nav-text">第三阶段（4-8 周）—— 深度专题研究</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%81%E7%BB%AD%E5%AD%A6%E4%B9%A0"><span class="nav-number">8.4.</span> <span class="nav-text">持续学习</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%99%E5%9C%A8%E5%90%8E%E9%9D%A2"><span class="nav-number">9.</span> <span class="nav-text">写在后面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%BA%90"><span class="nav-number">10.</span> <span class="nav-text">参考资源</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -236,9 +236,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2026-08-11 00:00:00 / 修改时间：23:09:40" itemprop="dateCreated datePublished" datetime="2026-08-11T00:00:00+08:00">2026-08-11</time>
+      <time title="创建时间：2026-08-11 00:00:00" itemprop="dateCreated datePublished" datetime="2026-08-11T00:00:00+08:00">2026-08-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2026-08-12 22:33:49" itemprop="dateModified" datetime="2026-08-12T22:33:49+08:00">2026-08-12</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -264,14 +270,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>8.3k</span>
+      <span>7.8k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>8 分钟</span>
+      <span>7 分钟</span>
     </span>
 </div>
 
@@ -286,13 +292,12 @@
 <span id="more"></span>
 
 <hr>
-<h2 id="一、AI-产品生态地图"><a href="#一、AI-产品生态地图" class="headerlink" title="一、AI 产品生态地图"></a>一、AI 产品生态地图</h2><p>我觉得 AI PM 首先要对市面上有哪些玩家、各家在做什么有个大致的认知，不然跟人聊天都会露怯。以下是我梳理的国际和国内主要产品，说不上全面，但涵盖了我平时关注度比较高的那些。</p>
-<h3 id="国际主流-AI-产品"><a href="#国际主流-AI-产品" class="headerlink" title="国际主流 AI 产品"></a>国际主流 AI 产品</h3><table>
+<h2 id="一、AI-产品生态地图"><a href="#一、AI-产品生态地图" class="headerlink" title="一、AI 产品生态地图"></a>一、AI 产品生态地图</h2><h3 id="国际主流-AI-产品"><a href="#国际主流-AI-产品" class="headerlink" title="国际主流 AI 产品"></a>国际主流 AI 产品</h3><table>
 <thead>
 <tr>
 <th>厂商</th>
 <th>产品</th>
-<th>我的了解与备注</th>
+<th>备注</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -346,7 +351,7 @@
 <tr>
 <th>厂商</th>
 <th>产品</th>
-<th>我的了解与备注</th>
+<th>备注</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -399,7 +404,7 @@
 <th>代表模型</th>
 <th>核心能力</th>
 <th>典型产品场景</th>
-<th>我在关注什么</th>
+<th>备注</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -459,7 +464,7 @@
 <td>向量维度、多语言支持好不好、检索精度</td>
 </tr>
 </tbody></table>
-<h3 id="我整理的选型思路"><a href="#我整理的选型思路" class="headerlink" title="我整理的选型思路"></a>我整理的选型思路</h3><p>做产品方案的时候，选模型大致可以从两个角度出发：</p>
+<h3 id="选型思路"><a href="#选型思路" class="headerlink" title="选型思路"></a>选型思路</h3><p>做产品方案的时候，选模型大致可以从两个角度出发：</p>
 <h4 id="按场景选"><a href="#按场景选" class="headerlink" title="按场景选"></a>按场景选</h4><ul>
 <li>需要强推理&#x2F;逻辑 → Claude Opus 5 &#x2F; DeepSeek-R1</li>
 <li>需要多模态理解 → Gemini 3 &#x2F; GPT-5</li>
@@ -474,13 +479,12 @@
 <li>零预算、自部署 → Llama 4 &#x2F; Qwen3（开源）</li>
 </ul>
 <blockquote>
-<p>注：以上只是我目前的理解和参考做法，实际选型还要看具体的场景需求、延迟要求、合规约束等等。</p>
+<p>注：实际选型还要看具体的场景需求、延迟要求、合规约束等等。</p>
 </blockquote>
 <hr>
-<h2 id="三、AI-核心技术模式"><a href="#三、AI-核心技术模式" class="headerlink" title="三、AI 核心技术模式"></a>三、AI 核心技术模式</h2><p>这部分是我花时间最多的——因为不管做什么 AI 产品，这几个模式基本都会碰到。我试着把每个模式的核心思想和我自己的理解写下来。</p>
-<h3 id="3-1-RAG（检索增强生成）"><a href="#3-1-RAG（检索增强生成）" class="headerlink" title="3.1 RAG（检索增强生成）"></a>3.1 RAG（检索增强生成）</h3><p><strong>我的理解：</strong> 简单说就是让 LLM “开卷考试”而不是”闭卷瞎猜”。用户问问题 → 先去知识库里搜相关文档 → 把搜到的内容作为参考材料塞给 LLM → LLM 基于这些材料生成回答。</p>
+<h2 id="三、AI-核心技术模式"><a href="#三、AI-核心技术模式" class="headerlink" title="三、AI 核心技术模式"></a>三、AI 核心技术模式</h2><h3 id="3-1-RAG（检索增强生成）"><a href="#3-1-RAG（检索增强生成）" class="headerlink" title="3.1 RAG（检索增强生成）"></a>3.1 RAG（检索增强生成）</h3><p><strong>我的理解：</strong> 简单说就是让 LLM “开卷考试”而不是”闭卷瞎猜”。用户问问题 → 先去知识库里搜相关文档 → 把搜到的内容作为参考材料塞给 LLM → LLM 基于这些材料生成回答。</p>
 <p><strong>为什么需要它？</strong> LLM 的知识有截止日期，也不知道你们公司内部的资料，还容易胡说八道。RAG 就是解决这三个问题的。</p>
-<p><strong>我在关注什么：</strong></p>
+<p><strong>值得关注：</strong></p>
 <ul>
 <li>分块策略（chunk size）——文档切多大块？切太大检索不精准，切太小又丢上下文。我目前的理解是 FAQ 类用小 chunk（256 左右），长文档类用大一点的（512-1024），还要加 overlap 防止关键信息被切断</li>
 <li>检索精度 vs 召回率——前者是”搜出来的多少是对的”，后者是”该搜出来的搜到了多少”。不同产品场景偏重不一样，需要跟工程师商量定目标</li>
@@ -491,7 +495,7 @@
 <p>这块我还在深入学，后面可能会单独写一篇 RAG 的详细笔记。</p>
 </blockquote>
 <h3 id="3-2-Agent（智能体）"><a href="#3-2-Agent（智能体）" class="headerlink" title="3.2 Agent（智能体）"></a>3.2 Agent（智能体）</h3><p><strong>我的理解：</strong> 如果说 Chatbot 是”你问一句我答一句”，Agent 就是”你告诉我想要什么结果，我自己想办法做”。Agent &#x3D; LLM（大脑）+ 规划 + 工具调用 + 记忆 + 反思。</p>
-<p><strong>我在关注什么：</strong></p>
+<p><strong>值得关注：</strong></p>
 <ul>
 <li>任务完成率——Agent 能成功搞定多少任务？简单任务应该 &gt; 95%，复杂任务七成以上就很不错了</li>
 <li>工具链设计——Agent 能调用哪些工具，工具描述写得好不好，直接决定了它能做什么</li>
@@ -499,36 +503,34 @@
 <li>安全边界——涉及写操作（删数据、发邮件）的场景，Agent 做之前最好让用户确认一下</li>
 </ul>
 <p>我自己在Dify上搭了几个 Agent demo 之后，对”循环调用”和”错误恢复”的体会深了很多——Agent 真的很容易陷入死循环，需要在设计时就考虑好退出机制。</p>
-<h3 id="3-3-Function-Calling-x2F-Tool-Use"><a href="#3-3-Function-Calling-x2F-Tool-Use" class="headerlink" title="3.3 Function Calling &#x2F; Tool Use"></a>3.3 Function Calling &#x2F; Tool Use</h3><p><strong>我的理解：</strong> 模型不直接输出文字，而是输出一个结构化的 JSON 表示”我要调这个函数，参数是这些”。这是 Agent 能够操作外部世界的底层能力。</p>
-<p><strong>我在关注什么：</strong> 工具描述的设计（这其实是 PM 能直接影响模型行为的地方）、模型选工具的准确率、参数提取得对不对、能不能并行调用多个工具。</p>
+<h3 id="3-3-Function-Calling-Tool-Use"><a href="#3-3-Function-Calling-Tool-Use" class="headerlink" title="3.3 Function Calling &#x2F; Tool Use"></a>3.3 Function Calling &#x2F; Tool Use</h3><p><strong>我的理解：</strong> 模型不直接输出文字，而是输出一个结构化的 JSON 表示”我要调这个函数，参数是这些”。这是 Agent 能够操作外部世界的底层能力。</p>
+<p><strong>值得关注：</strong> 工具描述的设计（这其实是 PM 能直接影响模型行为的地方）、模型选工具的准确率、参数提取得对不对、能不能并行调用多个工具。</p>
 <h3 id="3-4-Prompt-Engineering"><a href="#3-4-Prompt-Engineering" class="headerlink" title="3.4 Prompt Engineering"></a>3.4 Prompt Engineering</h3><p><strong>我的理解：</strong> 这是 PM 的”新编程语言”——通过设计提示词来控制模型输出，不用写代码就能调优产品行为。成本最低、迭代最快。</p>
-<p><strong>我在关注什么：</strong></p>
+<p><strong>值得关注：</strong></p>
 <ul>
 <li>System Prompt 设计——给模型定人设、定规则、定输出格式。这其实就是一个 AI 产品的”规格说明书”</li>
 <li>Few-shot——给几个例子让模型照葫芦画瓢，效果往往比长篇规则描述更好</li>
 <li>Chain-of-Thought——加一句”让我们一步一步思考”，复杂推理的准确率能明显提升</li>
 </ul>
-<p>我平时会自己维护一个小测试集，改完 Prompt 就跑一遍看看效果有没有变差。</p>
 <h3 id="3-5-Fine-tuning（微调）"><a href="#3-5-Fine-tuning（微调）" class="headerlink" title="3.5 Fine-tuning（微调）"></a>3.5 Fine-tuning（微调）</h3><p><strong>我的理解：</strong> 用自己准备的数据在基座模型上再训练一下，让它在特定任务上更稳。成本比 Prompt Engineering 高不少，但效果更可控。</p>
-<p><strong>我目前的认识：</strong> 先 Prompt 后微调，不要一上来就微调——因为 Prompt 改起来几分钟，微调可能要几周。什么时候该微调？Prompt 已经优化到天花板了、有足够多的高质量标注数据了、需要一个很稳定的风格输出的时候。</p>
+<p><strong>经验：</strong> 先 Prompt 后微调，不要一上来就微调——因为 Prompt 改起来几分钟，微调可能要几周。什么时候该微调？Prompt 已经优化到天花板了、有足够多的高质量标注数据了、需要一个很稳定的风格输出的时候。</p>
 <h3 id="3-6-多-Agent-协作"><a href="#3-6-多-Agent-协作" class="headerlink" title="3.6 多 Agent 协作"></a>3.6 多 Agent 协作</h3><p><strong>我的理解：</strong> 让多个专业 Agent 组队干活。常见的有监督者模式（一个老大分活给小兵）、流水线模式（A 干完给 B）、辩论模式（大家互相挑刺最后达成一致）。</p>
-<p><strong>我目前的看法：</strong> 多 Agent 看起来很酷，但很容易过度设计。大多数场景一个 Agent + 多个工具就够了，多加一个 Agent 就多一个出错的可能。</p>
+<p><strong>看法：</strong> 多 Agent 看起来很酷，但很容易过度设计。大多数场景一个 Agent + 多个工具就够了，多加一个 Agent 就多一个出错的可能。</p>
 <h3 id="3-7-MCP-Model-Context-Protocol"><a href="#3-7-MCP-Model-Context-Protocol" class="headerlink" title="3.7 MCP (Model Context Protocol)"></a>3.7 MCP (Model Context Protocol)</h3><p><strong>我的理解：</strong> Anthropic 提出的一套标准化协议，让 AI 和外部工具&#x2F;数据源之间能”即插即用”。可以类比成 AI 世界的 USB-C 接口。</p>
-<p><strong>为什么我在关注它：</strong> 如果 MCP 真的成为行业标准，”能接多少数据源”就不再是各家 AI 产品的竞争壁垒了（因为大家都能接），竞争会回到模型能力和产品体验本身。这个可能会改变整个生态格局。</p>
-<h3 id="3-8-Caching-x2F-流式-x2F-异步"><a href="#3-8-Caching-x2F-流式-x2F-异步" class="headerlink" title="3.8 Caching &#x2F; 流式 &#x2F; 异步"></a>3.8 Caching &#x2F; 流式 &#x2F; 异步</h3><p><strong>我的理解：</strong> 这几个是工程层面的优化杠杆，但 PM 也需要懂——因为它们直接影响成本和体验。</p>
+<p><strong>看法：</strong> 如果 MCP 真的成为行业标准，”能接多少数据源”就不再是各家 AI 产品的竞争壁垒了（因为大家都能接），竞争会回到模型能力和产品体验本身。这个可能会改变整个生态格局。</p>
+<h3 id="3-8-Caching-流式-异步"><a href="#3-8-Caching-流式-异步" class="headerlink" title="3.8 Caching &#x2F; 流式 &#x2F; 异步"></a>3.8 Caching &#x2F; 流式 &#x2F; 异步</h3><p><strong>我的理解：</strong> 这几个是工程层面的优化杠杆，它们直接影响成本和体验。</p>
 <ul>
 <li>Prompt Caching：System Prompt 等不变的部分可以缓存，能节省 50-90% 输入成本</li>
 <li>流式输出：一个字一个字往外蹦，比等全部生成完了再显示，用户感知速度快很多</li>
 <li>异步批处理：不需要实时返回的任务（如批量分析报告），可以走 batch API，成本直接砍半</li>
 </ul>
 <hr>
-<h2 id="四、主流框架与基础设施"><a href="#四、主流框架与基础设施" class="headerlink" title="四、主流框架与基础设施"></a>四、主流框架与基础设施</h2><p>以下是我整理的一些常用框架和工具，属于”知道是干什么的”级别。</p>
-<table>
+<h2 id="四、主流框架与基础设施"><a href="#四、主流框架与基础设施" class="headerlink" title="四、主流框架与基础设施"></a>四、主流框架与基础设施</h2><table>
 <thead>
 <tr>
 <th>类别</th>
 <th>工具&#x2F;框架</th>
-<th>我理解的用途</th>
+<th>用途</th>
 <th>生态地位</th>
 </tr>
 </thead>
@@ -629,7 +631,7 @@
 <td>⭐⭐⭐⭐⭐</td>
 </tr>
 </tbody></table>
-<h3 id="我个人的工具搭配"><a href="#我个人的工具搭配" class="headerlink" title="我个人的工具搭配"></a>我个人的工具搭配</h3><p><strong>日常三件套：</strong></p>
+<h3 id="推荐工具搭配"><a href="#推荐工具搭配" class="headerlink" title="推荐工具搭配"></a>推荐工具搭配</h3><p><strong>日常三件套：</strong></p>
 <ul>
 <li><strong>Figma</strong> —— 常规 UI 和交互设计</li>
 <li><strong>V0 &#x2F; Bolt</strong> —— 快速生成可交互的页面原型（AI PM 的神器）</li>
@@ -642,9 +644,8 @@
 <li><strong>飞书多维表格</strong> —— 做数据收集和轻量数据库</li>
 <li><strong>Jupyter Notebook</strong> —— 做数据分析和 Prompt 实验（这个我还在学）</li>
 </ul>
-<h3 id="一点心得"><a href="#一点心得" class="headerlink" title="一点心得"></a>一点心得</h3><p>AI 时代 PM 跟工具的关系在变化。用 ChatGPT&#x2F;Claude 辅助写 PRD，用 Perplexity 做竞品调研，用 AI 工具直接生成原型——这些都不是什么高大上的事情，就是日常提效的手段。关键还是你自己得清楚要做什么、怎么判断好不好。</p>
 <hr>
-<h2 id="六、我理解的-AI-PM-核心能力"><a href="#六、我理解的-AI-PM-核心能力" class="headerlink" title="六、我理解的 AI PM 核心能力"></a>六、我理解的 AI PM 核心能力</h2><p>这部分是结合我自己的学习和跟一些前辈交流后整理的，可能不够全面，但应该覆盖了比较核心的几块。</p>
+<h2 id="六、AI-PM-核心能力"><a href="#六、AI-PM-核心能力" class="headerlink" title="六、AI PM 核心能力"></a>六、AI PM 核心能力</h2><p>这部分是结合我自己的学习和跟一些前辈交流后整理的，可能不够全面，但应该覆盖了比较核心的几块。</p>
 <table>
 <thead>
 <tr>
@@ -656,7 +657,7 @@
 <tbody><tr>
 <td><strong>01</strong></td>
 <td>🎯 AI 产品嗅觉</td>
-<td>能不能判断一个场景到底适不适合用 AI？用哪种 AI 模式最合适？区分 AI-Native 和 AI-Wrapper 的差别——这个我现在还在培养中</td>
+<td>能不能判断一个场景到底适不适合用 AI？用哪种 AI 模式最合适？区分 AI-Native 和 AI-Wrapper 的差别</td>
 </tr>
 <tr>
 <td><strong>02</strong></td>
@@ -666,7 +667,7 @@
 <tr>
 <td><strong>03</strong></td>
 <td>💬 Prompt Engineering</td>
-<td>PM 的”新编程语言”。你不需要会写 Python，但得会写 Prompt 来控制产品行为。这个技能我觉得是 AI PM 和传统 PM 最大的区别之一</td>
+<td>PM 的”新编程语言”。不需要会写 Python，但得会写 Prompt 来控制产品行为。</td>
 </tr>
 <tr>
 <td><strong>04</strong></td>
@@ -676,7 +677,7 @@
 <tr>
 <td><strong>05</strong></td>
 <td>⚖️ AI 安全与合规</td>
-<td>幻觉问题、偏见问题、隐私问题、内容安全问题——都是 AI 产品特有的是非之地。国内还有算法备案等要求，需要关注</td>
+<td>幻觉问题、偏见问题、隐私问题、内容安全问题——都是 AI 产品特有的，国内还有算法备案等要求，需要关注</td>
 </tr>
 <tr>
 <td><strong>06</strong></td>
@@ -729,11 +730,10 @@
 <li>每个月做一次复盘：这个月 AI 行业最重要的变化是什么？</li>
 </ul>
 <hr>
-<h2 id="写在后面"><a href="#写在后面" class="headerlink" title="写在后面"></a>写在后面</h2><p>这份笔记我会持续更新——AI 行业变得太快了，今天记的东西可能下个月就过时了。写出来的目的，一方面是为了让自己学得更扎实，另一方面也是希望能和有同样方向的小伙伴交流。</p>
-<p>如果你也感兴趣，或者已经是这个领域的前辈，欢迎留言交流。我自己还有很多不懂的地方，比如怎么做 AI 产品的用户研究、怎么设计 eval set 更科学、Agent 产品的定价策略到底怎么定……如果有经验的朋友愿意分享就太好了。</p>
+<h2 id="写在后面"><a href="#写在后面" class="headerlink" title="写在后面"></a>写在后面</h2><p>这份笔记我会持续更新——写出来的目的，一方面是为了让自己学得更扎实，另一方面也是希望能和有同样方向的小伙伴交流。</p>
+<p>如果你也感兴趣，或者已经是这个领域的前辈，欢迎留言交流。我还有很多不懂的地方，比如怎么做 AI 产品的用户研究、怎么设计 eval set 更科学、Agent 产品的定价策略到底怎么定……如果有经验的朋友愿意分享就太好了。</p>
 <hr>
-<h2 id="参考资源"><a href="#参考资源" class="headerlink" title="参考资源"></a>参考资源</h2><p>以下是我平时主要看的一些信息源：</p>
-<ul>
+<h2 id="参考资源"><a href="#参考资源" class="headerlink" title="参考资源"></a>参考资源</h2><ul>
 <li>OpenAI 官方博客：<a target="_blank" rel="noopener" href="https://openai.com/blog">https://openai.com/blog</a></li>
 <li>Anthropic 官方文档：<a target="_blank" rel="noopener" href="https://docs.anthropic.com/">https://docs.anthropic.com</a></li>
 <li>Google AI 博客：<a target="_blank" rel="noopener" href="https://ai.googleblog.com/">https://ai.googleblog.com</a></li>
@@ -864,7 +864,7 @@
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">17 分钟</span>
+    <span title="站点阅读时长">16 分钟</span>
   </span>
 </div>
 <div class="busuanzi-count">
@@ -934,7 +934,7 @@
 <script src="/js/third-party/math/mathjax.js"></script>
 
 
-<script src="https://unpkg.com/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
 
 <script>
 var options = {
